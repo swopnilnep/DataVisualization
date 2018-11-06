@@ -6,6 +6,6 @@ __Authors__: [Giang Nguyen](https://github.com/huonggiang100399), [Swopnil N. Sh
 ## Journals
 | Date  | Title  | Link |
 |---|---|---|
-| `2018-11-06`  | Selecting the Dataset: Motivations, Goals, Initial Ideas  | [img](link.png) |
+| `2018-11-06`  | Selecting the Dataset: Motivations, Goals, Initial Ideas  | ![img](link.png) |
 
 ## Analyses
