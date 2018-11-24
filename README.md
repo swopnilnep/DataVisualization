@@ -5,3 +5,5 @@
 | `2018-11-10`  | Git Commands | Giang | [![img](link.png)](journals/20181110_giang.md) |
 | `2018-11-10`  | Data Visualization Project Management Schedule | Swopnil | [![img](link.png)](journals/20181115_swopnil.md) |
 | `2018-11-11`  | Markdown Lesson | Giang | [![img](link.png)](journals/20181111_giang.md) |
+| `2018-11-12`  | Transcription and Unification of the datasets | Giang | [![img](link.png)](journals/20181122_giang.md) |
+
