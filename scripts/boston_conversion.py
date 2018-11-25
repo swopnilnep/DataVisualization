@@ -28,9 +28,7 @@ df_end = df_end[['end_date','station','lat','lng']]
 
 # Rename end columns 
 df_end = df_end.rename(columns={'end_date':'end_time','station':'end_station', 'lat':'end_lat','lng':'end_lng'})
-
 df_start[['end_time','end_station','end_lat','end_lng']] = df_end
-
 df = df_start[['duration','start_time','end_time','start_station','end_station','start_lat','end_lat','start_lng','end_lng','user_type','birth_year','gender']]
 
 # Change usertype to `member` and `non-member`
