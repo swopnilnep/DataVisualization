@@ -25,9 +25,13 @@ Get the Boston data from here:
 * Stations - Included in trip history download
 * [Data](http://files.hubwaydatachallenge.org/hubway_2011_07_through_2013_11.zip) -  Save to `/data/bikeshare/data/boston/boston.csv`
 
-In your repository, navigate to `./scripts` and run all three scripts.
-<br> `$ python3 nyc_conversion.py`
-<br> Make sure you have pandas and numpy installed through either pip or Anaconda
+In your repository, navigate to `./scripts` and run all three scripts in this particular order.
+```
+$ python3 nyc_normalize.py
+$ python3 boston_normalize.py
+$ python3 merge_datasets.py
+```
+Make sure you have pandas and numpy installed through either pip or Anaconda
 
 ## Ipython Notebooks 
  Title  | Description | Link |
