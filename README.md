@@ -30,11 +30,11 @@ In your repository, navigate to `./scripts` and run all three scripts.
 <br> Make sure you have pandas and numpy installed through either pip or Anaconda
 
 ## Ipython Notebooks 
- Title  | Description |
-|---|---|
-|Preliminary Analysis | Looking at the ridership of the NYC and Boston Bicycles and various other variables that add to it like gender and membership.
-| 2D Data Analysis | Some other stages of the data analysis including 2 dimensional data as well as grouping the data by various variables |
-| Geographical Analysis | Looking at latitudes and longitudes and plotting them in heatmaps and animations in a geographical plane
+ Title  | Description | Link |
+|---|---|---| 
+|Preliminary Analysis | Looking at the ridership of the NYC and Boston Bicycles and various other variables that add to it like gender and membership.| [![img](./images/link.png)](ipython/analysis_giang.ipynb) |
+| 2D Data Analysis | Some other stages of the data analysis including 2 dimensional data as well as grouping the data by various variables |[![img](./images/link.png)](ipython/analysis_swopnil.ipynb) |
+| Geographical Analysis | Looking at latitudes and longitudes and plotting them in heatmaps and animations in a geographical plane | [![img](./images/link.png)](ipython/gmaps_visualizations.ipynb.ipynb) |
 
 ## Journals
 | Date  | Title  | Author | Link |
