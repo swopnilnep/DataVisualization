@@ -10,9 +10,11 @@ $ cd /data/bikeshare/
 ```
 
 If the directory does not exist, make a directory in the location
-<br>`$ mkdir data`
-<br>`$ cd data`
-<br>`$ mkdir nyc unified boston`
+```
+$ mkdir data`
+$ cd data`
+$ mkdir nyc unified boston
+```
 
 
 Get the NYC data from here: 
