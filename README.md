@@ -4,8 +4,10 @@ In this project, we aim to analyze and create visualizations based on 2 of the U
 
 ## Setup Instructions
 Firstly, in a terminal window clone the git repository: 
-<br>`$ git clone https://github.com/swopnilnep/DataVisualization`
-<br>`$ cd /data/bikeshare/`
+```
+$ git clone https://github.com/swopnilnep/DataVisualization
+$ cd /data/bikeshare/
+```
 
 If the directory does not exist, make a directory in the location
 <br>`$ mkdir data`
