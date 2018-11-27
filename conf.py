@@ -64,7 +64,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -91,7 +91,7 @@ html_theme = 'bootstrap'
 # theme further.
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "dataviz",
+    'navbar_title': "bikeshare",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Bikeshare Visualizations",
@@ -104,8 +104,8 @@ html_theme_options = {
     # Note the "1" or "True" value above as the third argument to indicate
     # an arbitrary url.
     'navbar_links': [
-        ("Journals", "readme.html", True),
-        ("Notebooks", "ipython", True),
+        ("Journals", "docs/journals.html", True),
+        ("Notebooks", "docs/notebooks.html", True),
     ],
 
     # Render the next and previous page links in navbar. (Default: true)
@@ -151,8 +151,6 @@ html_theme_options = {
     # that's used (the next config option).
     #
     # Currently, the supported themes are:
-    # - Bootstrap 2: https://bootswatch.com/2
-    # - Bootstrap 3: https://bootswatch.com/3
     'bootswatch_theme': "cosmo",
 
     # Choose Bootstrap version.

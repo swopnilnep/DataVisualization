@@ -33,23 +33,6 @@ $ python3 merge_datasets.py
 ```
 Make sure you have pandas and numpy installed through either pip or Anaconda
 
-## IPython Notebooks 
- Title  | Description | Link |
-|---|---|---| 
-|Preliminary Analysis | Looking at the ridership of the NYC and Boston Bicycles and various other variables that add to it like gender and membership.| [![img](./images/link.png)](ipython/analysis_giang.ipynb) |
-| 2D Data Analysis | Some other stages of the data analysis including 2 dimensional data as well as grouping the data by various variables |[![img](./images/link.png)](ipython/analysis_swopnil.ipynb) |
-| Geographical Analysis | Looking at latitudes and longitudes and plotting them in heatmaps and animations in a geographical plane | [![img](./images/link.png)](ipython/gmaps_visualizations.ipynb.ipynb) |
-
-## Journals
-| Date  | Title  | Author | Link |
-|---|---|---|---|
-| `2018-11-06`  | Selecting the Dataset: Motivations, Goals, Initial Ideas  | Swopnil | [![img](./images/link.png)](journals/20181106_swopnil.rst) |
-| `2018-11-09`  | Selecting the Modules and Languages: Which languages we are using and why?  | Swopnil | [![img](./images/link.png)](journals/20181109_swopnil.rst) |
-| `2018-11-10`  | Git Commands | Giang | [![img](./images/link.png)](journals/20181110_giang.rst) |
-| `2018-11-10`  | Data Visualization Project Management Schedule | Swopnil | [![img](./images/link.png)](journals/20181115_swopnil.rst) |
-| `2018-11-11`  | Markdown Lesson | Giang | [![img](./images/link.png)](journals/20181111_giang.rst) |
-| `2018-11-12`  | Transcription and Unification of the datasets | Giang | [![img](./images/link.png)](journals/20181122_giang.rst) |
-
 ## Sources
 * BuzzFeed Bikeshare Data Visualization
 * Citibike - NYC Bikeshare Data
