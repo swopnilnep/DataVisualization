@@ -1,0 +1,37 @@
+Transcription and Unification of the datasets
+=============================================
+
+Our goal is to compare the similarity and the difference of bikeshare in
+two big cities Boston and New York. Therefore, Swop and I decided to
+normalize all the features in two datasets first. We will be using the
+features listed below:
+
+Features Unification
+--------------------
+
++-------------------+------------------+-------------------------+--------------+-------------------+
+| Feature           | Column           | Unit                    | Data Type    | Missing           |
++===================+==================+=========================+==============+===================+
+| Duration          | duration         | minutes                 | int64        | No                |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| Start Time        | start\_time      | datetime                | datetime64   | Yes, ``np.nan``   |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| End Time          | end\_time        | datetime                | datetime64   | Yes, ``np.nan``   |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| Start Station     | start\_station   | N/A                     | object       | Yes, ``np.nan``   |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| End Station       | end\_station     | N/A                     | object       | Yes, ``np.nan``   |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| Start Longitude   | start\_lng       | N/A                     | float64      | Yes, ``np.nan``   |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| End Longitude     | end\_lng         | N/A                     | float64      | Yes, ``np.nan``   |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| Start Latitude    | start\_lat       | N/A                     | float64      | Yes, ``np.nan``   |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| End Latitude      | end\_lat         | N/A                     | float64      | Yes, ``np.nan``   |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| User Type         | start\_lng       | Member, Non-Member      | object       | No                |
++-------------------+------------------+-------------------------+--------------+-------------------+
+| Gender            | gender           | Male, Female, Unknown   | object       | as Unknown        |
++-------------------+------------------+-------------------------+--------------+-------------------+
+
