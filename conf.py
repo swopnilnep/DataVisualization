@@ -40,7 +40,7 @@ release = '0.0.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.githubpages',
+    'sphinx.ext.githubpages','nbsphinx'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -49,8 +49,12 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
+# source_suffix = '.rst'
+
+source_parsers = {
+   '.md': 'recommonmark.parser.CommonMarkParser',
+}
 
 # The master toctree document.
 master_doc = 'index'
@@ -100,8 +104,8 @@ html_theme_options = {
     # Note the "1" or "True" value above as the third argument to indicate
     # an arbitrary url.
     'navbar_links': [
-        ("Journals", "journals", True),
-        ("Notebooks", "notebooks", True),
+        ("Journals", "readme.html", True),
+        ("Notebooks", "ipython", True),
     ],
 
     # Render the next and previous page links in navbar. (Default: true)

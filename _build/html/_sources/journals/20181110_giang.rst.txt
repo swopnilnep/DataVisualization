@@ -1,0 +1,21 @@
+Basic Git command
+=================
+
+1.  **git init**: Create a new local respository
+2.  **git clone username@host:/path/to.repository**: Check out a
+    repository for a remote server
+3.  **git add filename**: add files
+4.  **git commit -m "Commit message"**: Commit changese to head (but not
+    yet to the reomote repository)
+5.  **git commit -a**: Commit any files you have added with git add, and
+    also commit any files you have changed
+6.  **git push origin master**: send changes to the master branch of
+    your remote repository
+7.  **git status**: List the files you have changed and those you still
+    need to commit
+8.  **git remote add origin **: connect to a remote repository
+9.  **git pull**: update from the remote repository
+10. **git fetch origin**: Instead, to drop all your local changes and
+    commits, fetch the latest history fro the server and point your
+    local master and branch at it
+

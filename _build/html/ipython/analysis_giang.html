@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Gender and gender by usertype distribution &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          dataviz</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../readme.html">Journals</a></li>
+                <li><a href="../ipython">Notebooks</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Bikeshare Visualizations <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Navigate <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Gender and gender by usertype distribution</a><ul>
+<li><a class="reference internal" href="#Distribution-of-Trip-Duration">Distribution of Trip Duration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#The-first-30-minutes-of-each-ride-are-included-in-the-price-of-the-pass,-and-you-can-take-as-many-rides-as-you-want-while-your-pass-is-active.-If-you-keep-a-bike-out-for-more-than-30-minutes-at-a-time,-it's-an-extra-$4-per-additional-15-minutes.-Therefore,-I-will-look-up-for-the-distribution-of-trip-duration-less-than-30-minutes.">The first 30 minutes of each ride are included in the price of the pass, and you can take as many rides as you want while your pass is active. If you keep a bike out for more than 30 minutes at a time, it’s an extra $4 per additional 15 minutes. Therefore, I will look up for the distribution of trip duration less than 30 minutes.</a></li>
+<li><a class="reference internal" href="#Analysis">Analysis</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput,
+div.nbinput div.prompt,
+div.nbinput div.input_area,
+div.nbinput div[class*=highlight],
+div.nbinput div[class*=highlight] pre,
+div.nboutput,
+div.nbinput div.prompt,
+div.nbinput div.output_area,
+div.nboutput div[class*=highlight],
+div.nboutput div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput,
+div.nboutput {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput,
+    div.nboutput {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput div.prompt pre {
+    color: #303F9F;
+}
+
+/* output prompt */
+div.nboutput div.prompt pre {
+    color: #D84315;
+}
+
+/* all prompts */
+div.nbinput div.prompt,
+div.nboutput div.prompt {
+    min-width: 9ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput div.prompt,
+    div.nboutput div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput div.prompt pre,
+div.nboutput div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput div.input_area,
+div.nboutput div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput div.input_area,
+    div.nboutput div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput div.input_area {
+    border: 1px solid #cfcfcf;
+    border-radius: 2px;
+    background: #f7f7f7;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.pngmath center alignment in output cells */
+div.nboutput div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">folium</span>
+<span class="kn">from</span> <span class="nn">folium</span> <span class="k">import</span> <span class="n">plugins</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">folium.plugins</span> <span class="k">import</span> <span class="n">HeatMap</span>
+<span class="kn">from</span> <span class="nn">folium.plugins</span> <span class="k">import</span> <span class="n">MarkerCluster</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nyc_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/data/bikeshare/data/unified/nyc.csv&quot;</span><span class="p">)</span>
+<span class="n">boston_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/data/bikeshare/data/unified/boston.csv&quot;</span><span class="p">)</span>
+<span class="n">main_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/data/bikeshare/data/unified/merged.csv&quot;</span><span class="p">)</span>
+
+<span class="n">nyc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;New York City, NY&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">nyc_data</span><span class="p">}</span>
+<span class="n">boston</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Boston, MA&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">boston_data</span><span class="p">}</span>
+<span class="n">main</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;All Data&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">main_data</span><span class="p">}</span>
+<span class="n">nyc_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>duration</th>
+      <th>start_time</th>
+      <th>end_time</th>
+      <th>start_station</th>
+      <th>end_station</th>
+      <th>start_lng</th>
+      <th>end_lng</th>
+      <th>start_lat</th>
+      <th>end_lat</th>
+      <th>user_type</th>
+      <th>birth_year</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>16.833333</td>
+      <td>2013-09-01 00:00:02</td>
+      <td>2013-09-01 00:16:52</td>
+      <td>W 11 St &amp; 6 Ave</td>
+      <td>Greenwich St &amp; Warren St</td>
+      <td>-73.998004</td>
+      <td>-74.011220</td>
+      <td>40.735324</td>
+      <td>40.715422</td>
+      <td>Member</td>
+      <td>1974.0</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>24.050000</td>
+      <td>2013-09-01 00:00:09</td>
+      <td>2013-09-01 00:24:12</td>
+      <td>Cleveland Pl &amp; Spring St</td>
+      <td>E 17 St &amp; Broadway</td>
+      <td>-73.997203</td>
+      <td>-73.990093</td>
+      <td>40.721816</td>
+      <td>40.737050</td>
+      <td>Non-member</td>
+      <td>NaN</td>
+      <td>Unknown</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>23.116667</td>
+      <td>2013-09-01 00:00:16</td>
+      <td>2013-09-01 00:23:23</td>
+      <td>W 56 St &amp; 6 Ave</td>
+      <td>Washington St &amp; Gansevoort St</td>
+      <td>-73.977225</td>
+      <td>-74.008119</td>
+      <td>40.763406</td>
+      <td>40.739323</td>
+      <td>Member</td>
+      <td>1992.0</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>6.750000</td>
+      <td>2013-09-01 00:00:18</td>
+      <td>2013-09-01 00:07:03</td>
+      <td>8 Ave &amp; W 33 St</td>
+      <td>W 20 St &amp; 11 Ave</td>
+      <td>-73.993934</td>
+      <td>-74.007756</td>
+      <td>40.751551</td>
+      <td>40.746745</td>
+      <td>Member</td>
+      <td>1973.0</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>4.500000</td>
+      <td>2013-09-01 00:00:20</td>
+      <td>2013-09-01 00:04:50</td>
+      <td>St Marks Pl &amp; 2 Ave</td>
+      <td>E 5 St &amp; Avenue C</td>
+      <td>-73.987140</td>
+      <td>-73.979955</td>
+      <td>40.728419</td>
+      <td>40.722992</td>
+      <td>Member</td>
+      <td>1984.0</td>
+      <td>Male</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="Gender-and-gender-by-usertype-distribution">
+<h1>Gender and gender by usertype distribution<a class="headerlink" href="#Gender-and-gender-by-usertype-distribution" title="Permalink to this headline">¶</a></h1>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">riders_by_gender</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">gender</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gender</span>
+    <span class="n">gender_plot</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">gender_by_user_type</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">gender_by_usertype</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;user_type&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">riders_by_gender</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_6_0.png" src="../_images/ipython_analysis_giang_6_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [19]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">riders_by_gender</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_7_0.png" src="../_images/ipython_analysis_giang_7_0.png" />
+</div>
+</div>
+<p>Throughout the bar plot, we can easily observe that the number of the
+make bikeshare is higher third times as that of the female bikeshare.
+Moreover, all female and male are subscriber (annual member) and all
+unknown people are customer (24-hour pass or 3-day pass user -
+non-member).</p>
+<div class="section" id="Distribution-of-Trip-Duration">
+<h2>Distribution of Trip Duration<a class="headerlink" href="#Distribution-of-Trip-Duration" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># How many trips went from Station A all the way to Station A</span>
+<span class="c1"># New York City</span>
+<span class="n">totalTrips</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nyc_data</span><span class="p">)</span>
+<span class="n">same_station</span> <span class="o">=</span> <span class="n">nyc_data</span><span class="p">[</span><span class="n">nyc_data</span><span class="o">.</span><span class="n">start_station</span> <span class="o">==</span> <span class="n">nyc_data</span><span class="o">.</span><span class="n">end_station</span><span class="p">]</span>
+<span class="n">tripDuration</span> <span class="o">=</span> <span class="n">same_station</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Total number of trips of New York Bikeshare: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">totalTrips</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">((</span><span class="s1">&#39;Trips from A -&gt; A: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">same_station</span><span class="p">)))</span>
+<span class="nb">print</span> <span class="p">((</span><span class="s1">&#39;Trips from A -&gt; A: </span><span class="si">{:.1%}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">same_station</span><span class="p">)</span> <span class="o">/</span> <span class="n">totalTrips</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Total number of trips of New York Bikeshare: 5,562,321
+Trips from A -&gt; A: 137,027
+Trips from A -&gt; A: 2.5%
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># How many trips went from Station A all the way to Station A</span>
+<span class="c1"># Boston</span>
+<span class="n">totalTrips1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">boston_data</span><span class="p">)</span>
+<span class="n">same_station1</span> <span class="o">=</span> <span class="n">boston_data</span><span class="p">[</span><span class="n">boston_data</span><span class="o">.</span><span class="n">start_station</span> <span class="o">==</span> <span class="n">boston_data</span><span class="o">.</span><span class="n">end_station</span><span class="p">]</span>
+<span class="n">tripDuration1</span> <span class="o">=</span> <span class="n">same_station</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Total number of trips of Boston Bikeshare: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">totalTrips1</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">((</span><span class="s1">&#39;Trips from A -&gt; A: </span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">same_station1</span><span class="p">)))</span>
+<span class="nb">print</span> <span class="p">((</span><span class="s1">&#39;Trips from A -&gt; A: </span><span class="si">{:.1%}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">same_station1</span><span class="p">)</span> <span class="o">/</span> <span class="n">totalTrips1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Total number of trips of Boston Bikeshare: 1,579,025
+Trips from A -&gt; A: 76,311
+Trips from A -&gt; A: 4.8%
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># General distribution information about trip duration in New York City</span>
+<span class="n">tripDuration</span> <span class="o">=</span> <span class="n">same_station</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+<span class="n">tripDuration</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[22]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>count    137027.000000
+mean         23.085907
+std          70.636620
+min           1.000000
+25%           3.250000
+50%          12.983333
+75%          28.966667
+max       10019.616667
+Name: duration, dtype: float64
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># General distribution information about trip duration in New York City</span>
+<span class="n">tripDuration1</span> <span class="o">=</span> <span class="n">same_station1</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span>
+<span class="n">tripDuration1</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[23]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>count    7.631100e+04
+mean     3.247803e+03
+std      1.445736e+04
+min      0.000000e+00
+25%      5.400000e+02
+50%      1.527000e+03
+75%      3.474000e+03
+max      2.645243e+06
+Name: duration, dtype: float64
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [24]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># check out trip in minutes distribution</span>
+<span class="c1"># New York City</span>
+<span class="n">tripDuration</span><span class="p">[</span><span class="n">tripDuration</span> <span class="o">&lt;</span> <span class="n">tripDuration</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">95</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;General New York Trip Duration Distribution&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[24]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;General New York Trip Duration Distribution&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_14_1.png" src="../_images/ipython_analysis_giang_14_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># check out trip in minutes distribution</span>
+<span class="c1"># Boston</span>
+<span class="n">tripDuration1</span><span class="p">[</span><span class="n">tripDuration1</span> <span class="o">&lt;</span> <span class="n">tripDuration1</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">95</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;General Boston Trip Duration Distribution&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[25]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;General Boston Trip Duration Distribution&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_15_1.png" src="../_images/ipython_analysis_giang_15_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># distribution grouped by subscriber type</span>
+<span class="c1"># New York City</span>
+<span class="n">same_station</span><span class="p">[</span><span class="n">tripDuration</span> <span class="o">&lt;</span> <span class="n">tripDuration</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">95</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of same station trip by user type in New York City&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[26]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;Distribution of same station trip by user type in New York City&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_16_1.png" src="../_images/ipython_analysis_giang_16_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># distribution grouped by subscriber type</span>
+<span class="c1"># Boston</span>
+<span class="n">same_station1</span><span class="p">[</span><span class="n">tripDuration1</span> <span class="o">&lt;</span> <span class="n">tripDuration1</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="o">.</span><span class="mi">95</span><span class="p">)]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of same station trip by user type in Boston&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[27]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;Distribution of same station trip by user type in Boston&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_17_1.png" src="../_images/ipython_analysis_giang_17_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="The-first-30-minutes-of-each-ride-are-included-in-the-price-of-the-pass,-and-you-can-take-as-many-rides-as-you-want-while-your-pass-is-active.-If-you-keep-a-bike-out-for-more-than-30-minutes-at-a-time,-it's-an-extra-$4-per-additional-15-minutes.-Therefore,-I-will-look-up-for-the-distribution-of-trip-duration-less-than-30-minutes.">
+<h1>The first 30 minutes of each ride are included in the price of the pass, and you can take as many rides as you want while your pass is active. If you keep a bike out for more than 30 minutes at a time, it’s an extra $4 per additional 15 minutes. Therefore, I will look up for the distribution of trip duration less than 30 minutes.<a class="headerlink" href="#The-first-30-minutes-of-each-ride-are-included-in-the-price-of-the-pass,-and-you-can-take-as-many-rides-as-you-want-while-your-pass-is-active.-If-you-keep-a-bike-out-for-more-than-30-minutes-at-a-time,-it's-an-extra-$4-per-additional-15-minutes.-Therefore,-I-will-look-up-for-the-distribution-of-trip-duration-less-than-30-minutes." title="Permalink to this headline">¶</a></h1>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [28]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># New york City</span>
+<span class="n">same_station</span><span class="p">[</span><span class="n">same_station</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration (&lt;30) distribution in New York&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[28]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;Trip Duration (&lt;30) distribution in New York&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_19_1.png" src="../_images/ipython_analysis_giang_19_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [29]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Boston</span>
+<span class="n">same_station1</span><span class="p">[</span><span class="n">same_station1</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration (&lt;30) distribution in Boston&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[29]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;Trip Duration (&lt;30) distribution in Boston&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_20_1.png" src="../_images/ipython_analysis_giang_20_1.png" />
+</div>
+</div>
+<p>We notice that lots of trip duration are less than 3 minutes. We can
+regard less than three-minute trip duration is the accidental checkouts.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [30]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Approximate the number of accidental checkouts</span>
+<span class="c1"># New York</span>
+<span class="n">old_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">same_station</span><span class="p">)</span>
+<span class="n">same_station</span> <span class="o">=</span> <span class="n">same_station</span><span class="p">[</span><span class="n">same_station</span><span class="o">.</span><span class="n">duration</span> <span class="o">&gt;</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">new_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">same_station</span><span class="p">)</span>
+<span class="n">accidental_checkout</span> <span class="o">=</span> <span class="n">old_count</span> <span class="o">-</span> <span class="n">new_count</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number of accidental checkouts in New York is about </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accidental_checkout</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The number of accidental checkouts in New York is about 32668
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Approximate the number of accidental checkouts</span>
+<span class="c1"># Boston</span>
+<span class="n">old_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">same_station1</span><span class="p">)</span>
+<span class="n">same_station1</span> <span class="o">=</span> <span class="n">same_station1</span><span class="p">[</span><span class="n">same_station1</span><span class="o">.</span><span class="n">duration</span> <span class="o">&gt;</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">new_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">same_station1</span><span class="p">)</span>
+<span class="n">accidental_checkout</span> <span class="o">=</span> <span class="n">old_count</span> <span class="o">-</span> <span class="n">new_count</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number of accidental checkouts in Boston is about </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accidental_checkout</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+The number of accidental checkouts in Boston is about 4751
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Examine the &lt; 30 minutes trip duration again after dropping the accidental checkouts</span>
+<span class="c1"># New York City</span>
+<span class="n">same_station</span><span class="p">[</span><span class="n">same_station</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Duration Distribution in New York City without the accidental checkouts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[32]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;Duration Distribution in New York City without the accidental checkouts&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_24_1.png" src="../_images/ipython_analysis_giang_24_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Examine the &lt; 30 minutes trip duration again after dropping the accidental checkouts</span>
+<span class="c1"># Boston</span>
+<span class="n">same_station1</span><span class="p">[</span><span class="n">same_station1</span><span class="p">[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;user_type&#39;</span><span class="p">)[</span><span class="s1">&#39;duration&#39;</span><span class="p">]</span> \
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (minutes)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Duration Distribution in Boston without the accidental checkouts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Out[33]:
+</pre></div>
+</div>
+<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
+<span></span>Text(0.5, 1.0, &#39;Duration Distribution in Boston without the accidental checkouts&#39;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/ipython_analysis_giang_25_1.png" src="../_images/ipython_analysis_giang_25_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Analysis">
+<h1>Analysis<a class="headerlink" href="#Analysis" title="Permalink to this headline">¶</a></h1>
+<p>Through the graphs of New York City and Bostion duration distribution
+without accidental checkouts, we observe that there are few people who
+are non-members rent the bikeshare with duration time less than 30
+minutes while lots people in New York City rent the bikeshare with
+duration time less than 30 minutes (both members and non-members).
+However, the range of duration time between New York City and Boston
+varies a lot: New York City is from 0 to 70 (minutes) and Boston is from
+0 - 9000 (minutes). It means that people often rent the bike day by day
+(short time) in New York City while people in Boston often rent the bike
+for a whole week (they regard bike as the main vehicle). Therefore, we
+can see in the graphs that the user type of poeple in Boston are annual
+member while that in New York varies between subscriber and customer a
+lot.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Swopnil N. Shrestha.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

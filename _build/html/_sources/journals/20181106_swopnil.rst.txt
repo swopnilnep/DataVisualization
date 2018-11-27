@@ -1,0 +1,147 @@
+Selecting the Dataset: Motivations, Goals, Initial Ideas
+--------------------------------------------------------
+
+Author: `Swopnil N. Shrestha <https://github.com/swopnilnep>`__
+
+To begin our project, we started by searching for the dataset we aimed
+to investigate on. After some exploration on Kaggle and GitHub in search
+for datasets, we came across
+`BuzzFeedNews's <https://github.com/BuzzFeedNews>`__ repository to
+multiple bikeshare companies across various Northeastern US cities.
+
+We decided to build from the work that BuzzFeedNews had already done and
+define the goals, motivations and initial ideas for projects that we
+will be doing.
+
+Motivation
+----------
+
+Bicycles ridership can tell a lot about the accessibility and lifestyle
+of a city. We wanted to take this project as an opportunity to visualize
+as well as tell a story through the lives of the bicyclists whose data
+lives were portrayed in the data.
+
+Goals
+-----
+
+Collecting data from the data vendors listed below and unifying the
+features listed into a singular dataset for 4 US cities: **Boston**,
+**New York City**, **Chicago** and Washington, D.C.
+
+The summary of the dataset is listed below:
+
+Boston — Hubway
+~~~~~~~~~~~~~~~
+
+-  **Data homepage**: http://hubwaydatachallenge.org/
+
+Trip History Data
+^^^^^^^^^^^^^^^^^
+
+-  **Where to find it**:
+   http://hubwaydatachallenge.org/trip-history-data/
+-  **Coverage**: 2012-10-01 to 2013-11-30
+-  **Extra fields**: gender (subscribers only), birth year (subscribers
+   only)
+
+Station Data
+^^^^^^^^^^^^
+
+Included in the trip-history download.
+
+--------------
+
+Chicago — Divvy
+~~~~~~~~~~~~~~~
+
+-  **Data homepage**: https://www.divvybikes.com/datachallenge
+
+Trip History Data
+^^^^^^^^^^^^^^^^^
+
+-  **Where to find it**:
+   http://hubwaydatachallenge.org/trip-history-data/
+-  **Coverage**: 2013-06-27 to 2013-12-31
+-  **Extra fields**: gender (subscribers only), birth year (subscribers
+   only)
+
+Station Data
+^^^^^^^^^^^^
+
+Included in the trip-history download.
+
+--------------
+
+New York City — Citi Bike
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Data homepage:** http://www.citibikenyc.com/system-data
+
+Trip History Data
+^^^^^^^^^^^^^^^^^
+
+-  **Where to find it:** http://www.citibikenyc.com/system-data
+-  **Coverage**: 2013-07-01 to 2014-02-28
+-  **Extra fields**: gender (subscribers only), birth year (subscribers
+   only)
+
+Citi Bike provides month-by-month downloads of its trip history data. To
+download all available months and merge them into a single CSV file, use
+`the Bash script included in this
+repository <scripts/nyc-citibike/fetch-all.sh>`__:
+
+.. code:: sh
+
+    ./scripts/nyc-citibike/fetch-all.sh > PATH/TO/FILE.csv
+
+Station Data
+^^^^^^^^^^^^
+
+-  **Where to find it**: `live
+   JSON <http://www.citibikenyc.com/stations/json>`__
+
+A JSON file listing all active Citi Bike stations can be downloaded link
+above. Basic station attributes can also be extracted from the trip
+history data (see above).
+
+--------------
+
+Washington, D.C. — Capital Bikeshare
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-  **Data homepage:** https://www.capitalbikeshare.com/system-data
+
+Trip History Data
+^^^^^^^^^^^^^^^^^
+
+-  **Where to find it**:
+   https://www.capitalbikeshare.com/trip-history-data
+-  **Coverage**: 2010-09-15 to 2014-03-31
+-  **Extra fields**: None
+
+Capital Bikeshare provides quarterly downloads of its trip history data.
+Data through the third quarter of 2013 are provided as direct CSV
+downloads. Data for later quarters are provided as ZIP files of CSV
+files. To download all available quarters and merge them into a single
+CSV file, use `the Bash script included in this
+repository <scripts/dc-capital-bikeshare/fetch-all.sh>`__:
+
+.. code:: sh
+
+    ./scripts/dc-capital-bikeshare/fetch-all.sh > PATH/TO/FILE.csv
+
+Station Data
+^^^^^^^^^^^^
+
+-  **Where to find it**: `live
+   XML <https://www.capitalbikeshare.com/data/stations/bikeStations.xml>`__
+
+A XML file listing all active Capital Bikeshare stations can be
+downloaded from link above. Basic station attributes can also be
+extracted from the trip history data (see above).
+
+--------------
+
+Sources: 1.
+`bikeshare-data-sources <https://github.com/BuzzFeedNews/bikeshare-data-sources>`__
+1. `BuzzFeedNews Repository <https://github.com/BuzzFeedNews>`__

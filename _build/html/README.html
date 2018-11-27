@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>US Bikeshare Data Visualization &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          dataviz</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="readme.html">Journals</a></li>
+                <li><a href="ipython">Notebooks</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Bikeshare Visualizations <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Navigate <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">US Bikeshare Data Visualization</a><ul>
+<li><a class="reference internal" href="#setup-instructions">Setup Instructions</a></li>
+<li><a class="reference internal" href="#ipython-notebooks">IPython Notebooks</a></li>
+<li><a class="reference internal" href="#journals">Journals</a></li>
+<li><a class="reference internal" href="#sources">Sources</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="us-bikeshare-data-visualization">
+<span id="us-bikeshare-data-visualization"></span><h1>US Bikeshare Data Visualization<a class="headerlink" href="#us-bikeshare-data-visualization" title="Permalink to this headline">¶</a></h1>
+<p>In this project, we aim to analyze and create visualizations based on 2 of the US’s most popular bikeshare service providers: CitiBike in NYC and BlueBikes in Boston. Based on the data we will compare several stories that underly within the data.</p>
+<div class="section" id="setup-instructions">
+<span id="setup-instructions"></span><h2>Setup Instructions<a class="headerlink" href="#setup-instructions" title="Permalink to this headline">¶</a></h2>
+<p>Firstly, in a terminal window clone the git repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/swopnilnep/DataVisualization
+$ cd /data/bikeshare/
+</pre></div>
+</div>
+<p>If the directory does not exist, make a directory in the location</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir data`
+$ cd data`
+$ mkdir nyc unified boston
+</pre></div>
+</div>
+<p>Get the NYC data from here:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://feeds.citibikenyc.com/stations/stations.json">Stations</a> - Save to <code class="docutils literal notranslate"><span class="pre">/data/bikeshare/data/nyc/stations.json</span></code></li>
+<li><a class="reference external" href="https://s3.amazonaws.com/tripdata/index.html">Data</a> - Save to <code class="docutils literal notranslate"><span class="pre">/data/bikeshare/data/nyc/nyc.csv</span></code></li>
+</ul>
+<p>Get the Boston data from here:</p>
+<ul class="simple">
+<li>Stations - Included in trip history download</li>
+<li><a class="reference external" href="http://files.hubwaydatachallenge.org/hubway_2011_07_through_2013_11.zip">Data</a> -  Save to <code class="docutils literal notranslate"><span class="pre">/data/bikeshare/data/boston/boston.csv</span></code></li>
+</ul>
+<p>In your repository, navigate to <code class="docutils literal notranslate"><span class="pre">./scripts</span></code> and run all three scripts in this particular order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 nyc_normalize.py
+$ python3 boston_normalize.py
+$ python3 merge_datasets.py
+</pre></div>
+</div>
+<p>Make sure you have pandas and numpy installed through either pip or Anaconda</p>
+</div>
+<div class="section" id="ipython-notebooks">
+<span id="ipython-notebooks"></span><h2>IPython Notebooks<a class="headerlink" href="#ipython-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>Title  | Description | Link |
+|—|—|—|
+|Preliminary Analysis | Looking at the ridership of the NYC and Boston Bicycles and various other variables that add to it like gender and membership.| <a class="reference internal" href="ipython/analysis_giang.html"><span class="doc">img</span></a> |
+| 2D Data Analysis | Some other stages of the data analysis including 2 dimensional data as well as grouping the data by various variables |<a class="reference internal" href="ipython/analysis_swopnil.html"><span class="doc">img</span></a> |
+| Geographical Analysis | Looking at latitudes and longitudes and plotting them in heatmaps and animations in a geographical plane | <a class="reference external" href="ipython/gmaps_visualizations.ipynb.ipynb"><img alt="img" src="_images/link.png" /></a> |</p>
+</div>
+<div class="section" id="journals">
+<span id="journals"></span><h2>Journals<a class="headerlink" href="#journals" title="Permalink to this headline">¶</a></h2>
+<p>| Date  | Title  | Author | Link |
+|—|—|—|—|
+| <code class="docutils literal notranslate"><span class="pre">2018-11-06</span></code>  | Selecting the Dataset: Motivations, Goals, Initial Ideas  | Swopnil | <a class="reference internal" href="journals/20181106_swopnil.html"><span class="doc">img</span></a> |
+| <code class="docutils literal notranslate"><span class="pre">2018-11-09</span></code>  | Selecting the Modules and Languages: Which languages we are using and why?  | Swopnil | <a class="reference internal" href="journals/20181109_swopnil.html"><span class="doc">img</span></a> |
+| <code class="docutils literal notranslate"><span class="pre">2018-11-10</span></code>  | Git Commands | Giang | <a class="reference internal" href="journals/20181110_giang.html"><span class="doc">img</span></a> |
+| <code class="docutils literal notranslate"><span class="pre">2018-11-10</span></code>  | Data Visualization Project Management Schedule | Swopnil | <a class="reference internal" href="journals/20181115_swopnil.html"><span class="doc">img</span></a> |
+| <code class="docutils literal notranslate"><span class="pre">2018-11-11</span></code>  | Markdown Lesson | Giang | <a class="reference internal" href="journals/20181111_giang.html"><span class="doc">img</span></a> |
+| <code class="docutils literal notranslate"><span class="pre">2018-11-12</span></code>  | Transcription and Unification of the datasets | Giang | <a class="reference internal" href="journals/20181122_giang.html"><span class="doc">img</span></a> |</p>
+</div>
+<div class="section" id="sources">
+<span id="sources"></span><h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>BuzzFeed Bikeshare Data Visualization</li>
+<li>Citibike - NYC Bikeshare Data</li>
+<li>Hubway - Boston</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Swopnil N. Shrestha.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
