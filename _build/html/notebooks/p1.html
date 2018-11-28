@@ -67,6 +67,7 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Overview of the Data</a><ul>
 <li><a class="reference internal" href="#Gender-and-gender-by-usertype-distribution">Gender and gender by usertype distribution</a></li>
+<li><a class="reference internal" href="#Gender-of-Users-(Percentage)">Gender of Users (Percentage)</a></li>
 <li><a class="reference internal" href="#Distribution-of-Trip-Duration">Distribution of Trip Duration</a></li>
 <li><a class="reference internal" href="#Users-by-Age">Users by Age</a></li>
 </ul>
@@ -308,11 +309,6 @@ div.nboutput div.output_area.stderr {
 <span></span><span class="n">nyc_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/data/bikeshare/data/unified/nyc.csv&quot;</span><span class="p">)</span>
 <span class="n">boston_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/data/bikeshare/data/unified/boston.csv&quot;</span><span class="p">)</span>
 <span class="n">main_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;/data/bikeshare/data/unified/merged.csv&quot;</span><span class="p">)</span>
-
-<span class="n">nyc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;New York City, NY&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">nyc_data</span><span class="p">}</span>
-<span class="n">boston</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Boston, MA&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">boston_data</span><span class="p">}</span>
-<span class="n">main</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;All Data&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">main_data</span><span class="p">}</span>
-<span class="n">nyc_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -440,6 +436,18 @@ div.nboutput div.output_area.stderr {
 </table>
 </div></div>
 </div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nyc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;New York City&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">nyc_data</span><span class="p">,</span> <span class="s1">&#39;ref&#39;</span><span class="p">:</span><span class="s1">&#39;nyc&#39;</span><span class="p">}</span>
+<span class="n">boston</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Boston&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">boston_data</span><span class="p">,</span> <span class="s1">&#39;ref&#39;</span><span class="p">:</span><span class="s1">&#39;bos&#39;</span><span class="p">}</span>
+<span class="n">main</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;All Data&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">main_data</span><span class="p">,</span> <span class="s1">&#39;ref&#39;</span><span class="p">:</span><span class="s1">&#39;all&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="Gender-and-gender-by-usertype-distribution">
 <h2>Gender and gender by usertype distribution<a class="headerlink" href="#Gender-and-gender-by-usertype-distribution" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
@@ -480,7 +488,7 @@ div.nboutput div.output_area.stderr {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_8_0.png" src="../_images/notebooks_p1_8_0.png" />
+<img alt="../_images/notebooks_p1_9_0.png" src="../_images/notebooks_p1_9_0.png" />
 </div>
 </div>
 <p><strong>Boston</strong></p>
@@ -498,7 +506,7 @@ div.nboutput div.output_area.stderr {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_10_0.png" src="../_images/notebooks_p1_10_0.png" />
+<img alt="../_images/notebooks_p1_11_0.png" src="../_images/notebooks_p1_11_0.png" />
 </div>
 </div>
 <p>Throughout the bar plot, we can easily observe that the number of the
@@ -506,6 +514,84 @@ make bikeshare is higher third times as that of the female bikeshare.
 Moreover, all female and male are subscriber (annual member) and all
 unknown people are customer (24-hour pass or 3-day pass user -
 non-member).</p>
+</div>
+<div class="section" id="Gender-of-Users-(Percentage)">
+<h2>Gender of Users (Percentage)<a class="headerlink" href="#Gender-of-Users-(Percentage)" title="Permalink to this headline">¶</a></h2>
+<p>How does bikeshare service usage differ by gender?</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">users_by_gender</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">/</span><span class="n">count</span><span class="p">)</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Ratio out of </span><span class="si">{}</span><span class="s2"> riders&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Age of Bikeshare Riders in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../images/1/users_by_gender &#39;</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">users_by_gender</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_p1_15_0.png" src="../_images/notebooks_p1_15_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [33]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">users_by_gender</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_p1_16_0.png" src="../_images/notebooks_p1_16_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [34]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">users_by_gender</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_p1_17_0.png" src="../_images/notebooks_p1_17_0.png" />
+</div>
+</div>
+<p>Male ridership seems to be higher in Boston compared to NYC where male
+ridership is 80% with females being under 20%. In NYC, male ridership is
+a little above 60% and female ridership is also higher above 20%.</p>
 </div>
 <div class="section" id="Distribution-of-Trip-Duration">
 <h2>Distribution of Trip Duration<a class="headerlink" href="#Distribution-of-Trip-Duration" title="Permalink to this headline">¶</a></h2>
@@ -651,7 +737,7 @@ Name: duration, dtype: float64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_17_1.png" src="../_images/notebooks_p1_17_1.png" />
+<img alt="../_images/notebooks_p1_24_1.png" src="../_images/notebooks_p1_24_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -682,7 +768,7 @@ Name: duration, dtype: float64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_18_1.png" src="../_images/notebooks_p1_18_1.png" />
+<img alt="../_images/notebooks_p1_25_1.png" src="../_images/notebooks_p1_25_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -713,7 +799,7 @@ Name: duration, dtype: float64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_19_1.png" src="../_images/notebooks_p1_19_1.png" />
+<img alt="../_images/notebooks_p1_26_1.png" src="../_images/notebooks_p1_26_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -744,7 +830,7 @@ Name: duration, dtype: float64
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_20_1.png" src="../_images/notebooks_p1_20_1.png" />
+<img alt="../_images/notebooks_p1_27_1.png" src="../_images/notebooks_p1_27_1.png" />
 </div>
 </div>
 <p>The first 30 minutes of each ride are included in the price of the pass,
@@ -781,7 +867,7 @@ distribution of trip duration less than 30 minutes.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_22_1.png" src="../_images/notebooks_p1_22_1.png" />
+<img alt="../_images/notebooks_p1_29_1.png" src="../_images/notebooks_p1_29_1.png" />
 </div>
 </div>
 <p>We notice that lots of trip duration are less than 3 minutes. We can
@@ -864,7 +950,7 @@ The number of accidental checkouts in Boston is about 4751
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_26_1.png" src="../_images/notebooks_p1_26_1.png" />
+<img alt="../_images/notebooks_p1_33_1.png" src="../_images/notebooks_p1_33_1.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -897,7 +983,7 @@ The number of accidental checkouts in Boston is about 4751
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_27_1.png" src="../_images/notebooks_p1_27_1.png" />
+<img alt="../_images/notebooks_p1_34_1.png" src="../_images/notebooks_p1_34_1.png" />
 </div>
 </div>
 <p><strong>Analysis</strong> Through the graphs of New York City and Bostion duration
@@ -949,7 +1035,7 @@ lot.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_31_0.png" src="../_images/notebooks_p1_31_0.png" />
+<img alt="../_images/notebooks_p1_38_0.png" src="../_images/notebooks_p1_38_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -966,7 +1052,7 @@ lot.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_32_0.png" src="../_images/notebooks_p1_32_0.png" />
+<img alt="../_images/notebooks_p1_39_0.png" src="../_images/notebooks_p1_39_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -983,7 +1069,7 @@ lot.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p1_33_0.png" src="../_images/notebooks_p1_33_0.png" />
+<img alt="../_images/notebooks_p1_40_0.png" src="../_images/notebooks_p1_40_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">

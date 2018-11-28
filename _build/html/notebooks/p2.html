@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Users by Age &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <title>What Happens in a Day &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -65,9 +65,12 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Users by Age</a></li>
+<li><a class="reference internal" href="#">What Happens in a Day</a><ul>
 <li><a class="reference internal" href="#Riders-by-Hour-of-Day">Riders by Hour of Day</a></li>
-<li><a class="reference internal" href="#Gender-of-Users">Gender of Users</a></li>
+<li><a class="reference internal" href="#Riders-by-Day-of-Month">Riders by Day of Month</a></li>
+<li><a class="reference internal" href="#Riders-by-Day-of-Week">Riders by Day of Week</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -267,9 +270,11 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 </style>
+<div class="section" id="What-Happens-in-a-Day">
+<h1>What Happens in a Day<a class="headerlink" href="#What-Happens-in-a-Day" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [287]:
+<span></span>In [1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -282,7 +287,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [144]:
+<span></span>In [17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -294,61 +299,47 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [145]:
+<span></span>In [18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">nyc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;New York City, NY&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">nyc_data</span><span class="p">}</span>
-<span class="n">boston</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Boston, MA&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">boston_data</span><span class="p">}</span>
-<span class="n">main</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;All Data&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">main_data</span><span class="p">}</span>
+<span></span><span class="n">nyc</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;New York City&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">nyc_data</span><span class="p">,</span> <span class="s1">&#39;ref&#39;</span><span class="p">:</span><span class="s1">&#39;nyc&#39;</span><span class="p">}</span>
+<span class="n">boston</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Boston&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">boston_data</span><span class="p">,</span> <span class="s1">&#39;ref&#39;</span><span class="p">:</span><span class="s1">&#39;bos&#39;</span><span class="p">}</span>
+<span class="n">main</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;All Data&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span><span class="n">main_data</span><span class="p">,</span> <span class="s1">&#39;ref&#39;</span><span class="p">:</span><span class="s1">&#39;all&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="Users-by-Age">
-<h1>Users by Age<a class="headerlink" href="#Users-by-Age" title="Permalink to this headline">¶</a></h1>
-<p>How does bikeshare service usage differ by age?</p>
+<div class="section" id="Riders-by-Hour-of-Day">
+<h2>Riders by Hour of Day<a class="headerlink" href="#Riders-by-Hour-of-Day" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [146]:
+<span></span>In [7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">users_by_age</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">age_counts</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2018</span> <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">birth_year</span><span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span></span><span class="k">def</span> <span class="nf">riders_by_hour</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">start_time</span><span class="p">))</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">times</span><span class="o">.</span><span class="n">hour</span><span class="p">])</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">d</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
     <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-    <span class="n">axes</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">18</span><span class="p">,</span><span class="mi">80</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">age_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">age_counts</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Age of Bikeshare Riders in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Hour of Day&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">23</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Count of Bikeshare Riders in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../images/2/riders_by_hour_&#39;</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;ref&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [147]:
+<span></span>In [8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">users_by_age</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_p2_5_0.png" src="../_images/notebooks_p2_5_0.png" />
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [148]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">users_by_age</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
+<span></span><span class="n">riders_by_hour</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -361,11 +352,11 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [149]:
+<span></span>In [9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">users_by_age</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
+<span></span><span class="n">riders_by_hour</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -378,105 +369,7 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [192]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="c1"># Distribution of age</span>
-<span class="p">(</span><span class="mi">2018</span> <span class="o">-</span> <span class="n">main_data</span><span class="o">.</span><span class="n">birth_year</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[192]:
-</pre></div>
-</div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>count    5.232128e+06
-mean     4.240304e+01
-std      1.105295e+01
-min      2.100000e+01
-25%      3.400000e+01
-50%      4.000000e+01
-75%      5.000000e+01
-max      1.190000e+02
-Name: birth_year, dtype: float64
-</pre></div>
-</div>
-</div>
-<p><strong>Analysis</strong> Taking a closer look at the main data. We can see that the
-distribution of age is skewed to the right. The majority of the users
-are between their 30s-50s. A reason for the use of bicycles for the
-current demographic could be 2 reasons in my opinion: 1. As people earn
-more, they stray away from bicycles. Hence people with higher median
-earnings (who generally tend to be older, could use other means of
-transportation) 2. While the bicycles are cheaper than taxis and ride
-hailing apps, they are more expensive than the metro in NYC or Boston.
-Demographics with a lower income, generally &lt;20 year olds could use the
-metro otherwise.</p>
-</div>
-<div class="section" id="Riders-by-Hour-of-Day">
-<h1>Riders by Hour of Day<a class="headerlink" href="#Riders-by-Hour-of-Day" title="Permalink to this headline">¶</a></h1>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [283]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">riders_by_hour</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span>
-    <span class="n">sample</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">start_time</span><span class="p">))</span>
-    <span class="n">age</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2018</span> <span class="o">-</span> <span class="n">sample</span><span class="o">.</span><span class="n">birth_year</span><span class="p">)</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">times</span><span class="o">.</span><span class="n">hour</span><span class="p">])</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">d</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
-    <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Hour of Day&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
-    <span class="n">axes</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">23</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Age of Bikeshare Riders in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [284]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">riders_by_hour</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_p2_12_0.png" src="../_images/notebooks_p2_12_0.png" />
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [285]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">riders_by_hour</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_p2_13_0.png" src="../_images/notebooks_p2_13_0.png" />
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [286]:
+<span></span>In [10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -488,39 +381,118 @@ metro otherwise.</p>
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/notebooks_p2_14_0.png" src="../_images/notebooks_p2_14_0.png" />
+<img alt="../_images/notebooks_p2_8_0.png" src="../_images/notebooks_p2_8_0.png" />
 </div>
 </div>
 </div>
-<div class="section" id="Gender-of-Users">
-<h1>Gender of Users<a class="headerlink" href="#Gender-of-Users" title="Permalink to this headline">¶</a></h1>
-<p>How does bikeshare service usage differ by gender?</p>
+<div class="section" id="Riders-by-Day-of-Month">
+<h2>Riders by Day of Month<a class="headerlink" href="#Riders-by-Day-of-Month" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [183]:
+<span></span>In [11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">users_by_gender</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">gender</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">/</span><span class="n">count</span><span class="p">)</span>
+<span></span><span class="k">def</span> <span class="nf">riders_by_day</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">start_time</span><span class="p">))</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">times</span><span class="o">.</span><span class="n">day</span><span class="p">])</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
     <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-    <span class="n">axes</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Ratio out of </span><span class="si">{}</span><span class="s2"> riders&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">count</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Day of Month&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">23</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Age of Bikeshare Riders in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../images/2/riders_by_month_&#39;</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;ref&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [185]:
+<span></span>In [12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">users_by_gender</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
+<span></span><span class="n">riders_by_day</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_p2_11_0.png" src="../_images/notebooks_p2_11_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">riders_by_day</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_p2_12_0.png" src="../_images/notebooks_p2_12_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="Riders-by-Day-of-Week">
+<h2>Riders by Day of Week<a class="headerlink" href="#Riders-by-Day-of-Week" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">riders_by_weekday</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#     n = 10000</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">times</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">start_time</span><span class="p">))</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">times</span><span class="o">.</span><span class="n">dayofweek</span><span class="p">])</span><span class="o">.</span><span class="n">duration</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+    <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Day of Week&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Age of Bikeshare Riders in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../images/2/riders_by_weekday_&#39;</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;ref&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">riders_by_weekday</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_p2_15_0.png" src="../_images/notebooks_p2_15_0.png" />
+</div>
+</div>
+riders_by_weekday(nyc)<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">riders_by_weekday</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -531,43 +503,17 @@ metro otherwise.</p>
 <img alt="../_images/notebooks_p2_17_0.png" src="../_images/notebooks_p2_17_0.png" />
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [186]:
+<span></span>In [ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">users_by_gender</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
+<span></span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
 </div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_p2_18_0.png" src="../_images/notebooks_p2_18_0.png" />
-</div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [181]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">users_by_gender</span><span class="p">(</span><span class="n">main</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/notebooks_p2_19_0.png" src="../_images/notebooks_p2_19_0.png" />
-</div>
-</div>
-<p>Male ridership seems to be higher in Boston compared to NYC where male
-ridership is 80% with females being under 20%. In NYC, male ridership is
-a little above 60% and female ridership is also higher above 20%.</p>
 </div>
 
 
