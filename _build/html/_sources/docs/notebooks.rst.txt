@@ -1,22 +1,28 @@
 IPython Notebooks
------------------
+=================
 
-To do the analysis, we have divided the technical part of the analysis according to the actual aanalysis. Feel free to look under the hood to see how we did these analyses. 
+To do the analysis, we have divided the technical part of the analysis
+according to the analysis sections in the main articles. Feel free to
+look under the hood of these IPython notebooks to go over how we did
+these analyses.
 
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
-| Title                   | Description                                                                                                                      | Link    |
-+=========================+==================================================================================================================================+=========+
-| Preliminary Analysis    | Looking at the ridership of the NYC and Boston Bicycles and various other variables that add to it like gender and membership.   | |img|   |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
-| 2D Data Analysis        | Some other stages of the data analysis including 2 dimensional data as well as grouping the data by various variables            | |img|   |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
-| Geographical Analysis   | Looking at latitudes and longitudes and plotting them in heatmaps and animations in a geographical plane                         | |img|   |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+---------+
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
+| Title                   | Description                                                                                                                                                                                                                                                                    | Link     |
++=========================+================================================================================================================================================================================================================================================================================+==========+
+| Overview of the Data    | Here, we take a basic overview of the data. We divide the data by whether the riders were members, non-members, male or female and we oversee the general trends to find some interesting insights                                                                             | |img1|   |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
+| What Happens in a Day   | In this notebook, we look at everyday events that may seem insignificant and look at timeseries data; what happens in every hour of the day, how does that differ by day of week, or what about month of day. We look at seasonal trends and trends that are time dependant.   | |img2|   |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
+| Looking from Above      | This notebook is all about geographical data. We plot intersting visualizations into animated maps and oversee the trends and the use cases of where most of the bicycle usage tends to be. We also try to gain some insights into why that is the case.                       | |img3|   |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
+| From Here to There      | Here, we take a look at networks and which stations people are more likely to visit one after the other. We also analyze the trends based on different parts of the city based on interactive graphs.                                                                          | |img4|   |
++-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+
 
-.. |img| image:: ../images/link.png
-   :target: ../notebooks/analysis_giang.html
-.. |img| image:: ../images/link.png
-   :target: ../notebooks/analysis_swopnil.html
-.. |img| image:: ../images/link.png
-   :target: ../notebooks/gmaps_visualizations.html
-
+.. |img1| image:: ../images/link.png
+   :target: ../notebooks/p1.html
+.. |img2| image:: ../images/link.png
+   :target: ../notebooks/p2.html
+.. |img3| image:: ../images/link.png
+   :target: ../notebooks/p3.html
+.. |img4| image:: ../images/link.png
+   :target: ../notebooks/p4.html

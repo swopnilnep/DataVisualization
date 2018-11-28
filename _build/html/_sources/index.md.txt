@@ -53,7 +53,7 @@ amet feugiat condimentum, ex ipsum faucibus magna, sit amet lacinia
 lorem nisl a velit. Nam facilisis ullamcorper porttitor. Donec finibus,
 diam a finibus volutpat, lacus
 
-## Riders Stories in a Day
+## What Happens in a Day
 
 How did we setup the
 datasets like we did. Before we setup the data, firstly let's setup the

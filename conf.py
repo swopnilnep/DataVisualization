@@ -104,8 +104,8 @@ html_theme_options = {
     # Note the "1" or "True" value above as the third argument to indicate
     # an arbitrary url.
     'navbar_links': [
-        ("Journals", "docs/journals.html", True),
-        ("Notebooks", "docs/notebooks.html", True),
+        ("Journals", "docs/journals.html", 1),
+        ("Notebooks", "docs/notebooks.html", 1),
     ],
 
     # Render the next and previous page links in navbar. (Default: true)
