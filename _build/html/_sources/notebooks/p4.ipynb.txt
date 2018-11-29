@@ -1,6 +1,94 @@
 {
  "cells": [
   {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# From Here to There"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "import matplotlib\n",
+    "import matplotlib.pyplot as plt"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting ig\n",
+      "  Downloading https://files.pythonhosted.org/packages/19/b8/fc77b505359f39a033a1b3a37c90cee39a53401168c0db42e88855849122/ig-0.0.1.tar.gz\n",
+      "Installing collected packages: ig\n",
+      "  Running setup.py install for ig ... \u001b[?25ldone\n",
+      "\u001b[?25hSuccessfully installed ig-0.0.1\n"
+     ]
+    },
+    {
+     "ename": "ModuleNotFoundError",
+     "evalue": "No module named 'igraph'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-13-33efaaff7688>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mget_ipython\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msystem\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'pip install ig'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0;32mimport\u001b[0m \u001b[0migraph\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mig\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'igraph'"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install ig\n",
+    "import igraph as ig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "nyc_data = pd.read_csv(\"/data/bikeshare/data/unified/nyc.csv\")\n",
+    "boston_data = pd.read_csv(\"/data/bikeshare/data/unified/boston.csv\")\n",
+    "main_data = pd.read_csv(\"/data/bikeshare/data/unified/merged.csv\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "nyc = {'name':'New York City', 'data':nyc_data, 'ref':'nyc'}\n",
+    "boston = {'name':'Boston', 'data':boston_data, 'ref':'bos'}\n",
+    "main = {'name':'All Data', 'data':main_data, 'ref':'all'}"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Network Graph"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
    "metadata": {},
