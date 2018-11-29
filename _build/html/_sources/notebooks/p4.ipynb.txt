@@ -173,7 +173,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 35,
    "metadata": {
     "scrolled": true
    },
@@ -181,7 +181,7 @@
     {
      "data": {
       "application/vnd.jupyter.widget-view+json": {
-       "model_id": "4c18bfc755d54fc8a7b55ecd51185dad",
+       "model_id": "b20ba8d373a94da7a5f13ed5b9a886b3",
        "version_major": 2,
        "version_minor": 0
       },
@@ -206,7 +206,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 36,
    "metadata": {
     "scrolled": true
    },
@@ -214,7 +214,7 @@
     {
      "data": {
       "application/vnd.jupyter.widget-view+json": {
-       "model_id": "4a727d12332a453b87a358225a58adab",
+       "model_id": "c06d450609374f69b8362b7846df3b14",
        "version_major": 2,
        "version_minor": 0
       },
@@ -229,6 +229,13 @@
    "source": [
     "plot_interactive(boston)"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
