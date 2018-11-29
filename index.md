@@ -80,6 +80,8 @@ We notice that lots of trip durations are less than 3 minutes. We can regard les
 [img]: # (Figure of Trip Distribution Boston)
 ![Distribution of trip duration < 30 without accidental checkouts](images/1/boston_duration_distribution_without_accidentalcheckouts_bos.png)
 
+We can observe that the graphs with and without accidental checkouts are not different a lot. Therefore, we can conclude that the number of accidental checkouts doesn't affect the model of two datasets a lot.
+
 ### Distribution by Age
 The next question is "How does bikeshare service usage differ by age?". Taking a closer look at the main data. We can see that the distribution of age is skewed to the right. The majority of the users are between their 30s-50s. A reason for the use of bicycles for the current demographic could be 2 reasons in my opinion: 1. As people earn more, they stray away from bicycles. Hence people with higher median earnings (who generally tend to be older, could use other means of transportation) 2. While the bicycles are cheaper than taxis and ride hailing apps, they are more expensive than the metro in NYC or Boston. Demographics with a lower income, generally <20 year olds could use the metro otherwise.
 
