@@ -154,6 +154,20 @@ diam a finibus volutpat, lacus
 
 ## From Here to There
 
+### Next station by location
+From where you are, where would you most likely go? 
+
+
+### Most popular stations
+
+__New York City__
+
+![Bos by year](images/4/20_popular_nyc.png)
+
+__Boston__
+
+![Bos by year](images/4/20_popular_bos.png)
+
 How did we setup the datasets like we did. Before we setup the data,
 firstly let's setup the data like we did.
 
