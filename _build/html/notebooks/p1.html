@@ -70,6 +70,7 @@
 <li><a class="reference internal" href="#Gender-of-Users-(Percentage)">Gender of Users (Percentage)</a></li>
 <li><a class="reference internal" href="#Distribution-of-Trip-Duration">Distribution of Trip Duration</a></li>
 <li><a class="reference internal" href="#Users-by-Age">Users by Age</a></li>
+<li><a class="reference internal" href="#Overall-Work">Overall Work</a></li>
 </ul>
 </li>
 </ul>
@@ -951,9 +952,30 @@ transportation) 2. While the bicycles are cheaper than taxis and ride
 hailing apps, they are more expensive than the metro in NYC or Boston.
 Demographics with a lower income, generally &lt;20 year olds could use the
 metro otherwise.</p>
-<div class="figure" id="id1">
-<img alt="img" src="../_images/link1.png" />
-<p class="caption"><span class="caption-text">img</span></p>
+</div>
+<div class="section" id="Overall-Work">
+<h2>Overall Work<a class="headerlink" href="#Overall-Work" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [113]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Collection&#39;</span><span class="p">,</span><span class="s1">&#39;Manipulation&#39;</span><span class="p">,</span><span class="s1">&#39;Visualiztion and Analysis&#39;</span><span class="p">,</span><span class="s1">&#39;Documentation / Presentation&#39;</span><span class="p">,</span><span class="s1">&#39;Learning&#39;</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">35</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">l</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1"> </span><span class="si">%%</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Time Share of Our Work&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../images/1/apple_pie.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../_images/notebooks_p1_45_0.png" src="../_images/notebooks_p1_45_0.png" />
+</div>
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>

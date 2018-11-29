@@ -119,7 +119,7 @@ If we look into the availability of stations we can see that almost all of the s
 
 __Cluster location of stations__
 [*Click to view projection*
-![Bos by year](images/3/nyc_cluster.png)](images/3/nyc_bikeshare_stops_cluster.html)
+![Bos by year](images/3/nyc_cluster.png)](../../images/3/nyc_bikeshare_stops_cluster.html)
 
 Amongst those in availability in NYC, most of the density of usage takes place in midtown and downtown Manhattan. This makes sense as midtown consists of a lot of major businesses and tourist sites whereas downtown consists of areas such a Chinatown and Wall Street which is also a hub for greater traffic. 
 
@@ -127,7 +127,7 @@ This density map matches directly in proportion with the population density of t
 
 __Density of usage__
 [*Click to view projection*
-![Bos by year](images/3/nyc_heat.png)](images/3/nyc_heatmap.html)
+![Bos by year](images/3/nyc_heat.png)](../../images/3/nyc_heatmap.html)
 
 ### Boston
 
@@ -135,13 +135,13 @@ The same case is in Boston where there are more stations in the downtown area. B
 
 __Cluster location of stations__
 [*Click to view projection*
-![Bos by year](images/3/boston_cluster.png)](images/3/boston_bikeshare_stops_cluster.html)
+![Bos by year](images/3/boston_cluster.png)](../../images/3/boston_bikeshare_stops_cluster.html)
 
 However, the stations with university locations like Harvard, UMass or MIT are underused compared to the main Boston downtown areas. While these do provide a sustainable means of transportation for college students, these areas areas are underutilized.
 
 __Density of usage__
 [*Click to view projection*
-![Bos by year](images/3/boston_heat.png)](images/3/boston_heatmap.html)
+![Bos by year](images/3/boston_heat.png)](../../images/3/boston_heatmap.html)
 
 ## From Here to There
 
@@ -149,13 +149,9 @@ __Density of usage__
 
 Representing the same informaition in a chart, we can see that the downtown areas have the highest frequency of use. In fact, for both NYC and Boston, all of the top 20 stations are downtown. 
 
-__New York City__
+![Bos by year](images/4/20_popular_nyc.png) ![Bos by year](images/4/20_popular_bos.png)
 
-![Bos by year](images/4/20_popular_nyc.png)
-
-__Boston__
-
-![Bos by year](images/4/20_popular_bos.png)
+By seperating this data by station we can make further calculation and find some insights about where people are going from which station. As we notice in the interactive plots below, for NYC stations in midtown and downtown Manhattan are popular amonst all the stations, whereas neighbouring stations are the next popular. 
 
 ### Next station by location
 From where you are, where would you most likely go? 
@@ -2699,43 +2695,20 @@ From where you are, where would you most likely go?
 </body>
 </html>
 
+One way station usage differs in NYC and Boston are that in New York city, neighbouring stations are most popular from any station. Whereas in Boston, more of the downtown locations are prominent in any station. 
+
+This also takes into account how both bikeshare companies policies shape bicycle checkouts. Since CitiBike (NYC) restricts rides to 30 minutes people most likely go to the closest station they can within those 30 minutes and check out another bike compared to Boston where people check out the bike for a longer period of time so they can just bike to the desired location. 
+
 ## Conclusion
 
-How did we setup the datasets like we did. Before we setup the data,
-firstly let's setup the data like we did.
+Looking at all the data and analysis, we realized that data science consists of many steps and data science is not just about analysis of data. A large part of data science work (sometimes even the majority) consists of collecting and feature scaling / manipulating the datasets. This was about 5% and 10% of the work respectively of the work that we did. 
 
-Firstly, in a terminal window clone the git repository. Lorem ipsum
-dolor sit amet, consectetur adipiscing elit. Nam dictum venenatis eros
-sed dignissim. Vestibulum nisi lorem, bibendum ut est ut, pharetra
-mattis enim. Aenean blandit ut nulla vehicula blandit. Duis non lectus
-laoreet, ornare velit sit amet, vestibulum odio. Nullam fringilla
-sodales justo. Morbi quis turpis maximus, vehicula massa sed, commodo
-tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-Suspendisse sed est a velit cursus imperdiet. Ut est diam, dignissim
-eget metus eu, semper tincidunt nulla.
+The main analysis and visualization generation was also about another 23%. 
 
-Duis volutpat in lorem et vehicula. Fusce fringilla, est in pulvinar
-accumsan, diam ligula auctor lorem, vitae ultrices ante ex in urna.
-Pellentesque pellentesque ultricies ligula, eu posuere risus eleifend
-nec. Sed vulputate sollicitudin magna, pulvinar fringilla magna cursus
-id. Cras ut ex sit amet nulla aliquet eleifend vel sed arcu. Suspendisse
-quis convallis arcu. Nunc gravida quis tellus sed placerat. Nunc
-facilisis suscipit augue, ut tincidunt mi vulputate sed.
+A large part of our effort was put into documenting our work by writing journals and also presenting our story in a legible and informative way taking our audience into consideration. This was probably the largest part of the work as we experimented with markdown, Sphinx, Hugo and different modules to manipulate the data. This was about 27% of the time. 
 
-Maecenas efficitur magna sed fermentum pretium. Aliquam mattis ante et
-vestibulum fermentum. Phasellus efficitur maximus eros. Quisque vitae
-tortor erat. Phasellus id iaculis massa, imperdiet sollicitudin ante.
-Aenean ultricies ex erat. Proin vehicula nunc eu nulla scelerisque, non
-porta metus laoreet. Mauris tincidunt ante elit, et cursus justo
-pellentesque vel. Morbi ut pulvinar est. Maecenas arcu quam, mattis
-vitae quam et, sodales porta ante. Orci varius natoque penatibus et
-magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat
-volutpat. Pellentesque a tempor lorem, non fermentum nulla. Suspendisse
-potenti.
+Almost all of the time when we encountered a problem, we also took into account learning new things. Whether it is proper repository management, writing in reStructured text and generating documentation websites out of Sphinx, learning new content took almost 35% of our times. 
 
-Donec efficitur faucibus tellus ac rhoncus. Nam condimentum interdum
-lorem nec hendrerit. Sed id nunc lectus. Integer cursus mauris suscipit
-arcu bibendum, non ullamcorper turpis vestibulum. Sed aliquet, dui sit
-amet feugiat condimentum, ex ipsum faucibus magna, sit amet lacinia
-lorem nisl a velit. Nam facilisis ullamcorper porttitor. Donec finibus,
-diam a finibus volutpat, lacus
+![apple pie](images/1/apple_pie.png)
+
+In the end, we learned that raw data consists of the many of the insights that we can convert into information but it is up to us to define what that is. Looking at the bikeshare usage of NYC and Boston, these reflect a meagre take of people who live there giving us insight about what time they go to work, where they go work and how they live their lives. Many insights can also be taken from what is not represented in the data. In this way, even though it is about bikesharing in these cities, represents stories about the lives of its users. 
