@@ -21,7 +21,7 @@ import sphinx_bootstrap_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Bikeshare Data Visualization'
-copyright = '2018, Giang Nguyen'
+copyright = '2018, Swopnil N. Shrestha & Giang Nguyen'
 author = 'Swopnil N. Shrestha'
 
 # The short X.Y version
