@@ -70,7 +70,7 @@ For Citibike, the first 30 minutes of each ride are included in the price of the
 ![Distribution of trip duration < 30 in NY](images/1/nyc_duration_distribution_<30nyc.png)
 
 [img]: # (Figure of Trip Distribution Boston)
-![Distribution of trip duration < 30 in Boston](images/1/boston_duration_distribution_<30bos.png)
+![Distribution of trip duration < 30 in Boston](images/1/boston_duration_distribution_<30_bos.png)
 
 We notice that lots of trip durations are less than 3 minutes. We can regard less than three-minute trip duration is the accidental checkout. Therefore, the number of accidentals checkouts in New York and Boston are 32668 and 4751 respectively. Here are the distribution of duration trips < 30 minutes of two cities after dropping all the accidental checkouts:
 
