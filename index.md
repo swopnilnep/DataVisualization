@@ -29,11 +29,7 @@ After making the dataset, we looked at the fundamental information of the datase
 
 ### Distribution of Gender
 
-[img]: # (Figure of Gender Distribution NYC)
-![Riders by genders](images/1/distribution_by_gender_nyc.png)
-
-[img]: # (Figure of Gender Distribution Boston)
-![Riders by the hour](images/1/distribution_by_gender_bos.png)
+![Riders by genders](images/1/distribution_by_gender_nyc.png) ![Riders by the hour](images/1/distribution_by_gender_bos.png)
 
 Looking at the data, there was an immediate observation about the gender distribution of bikeshare riders. It was that women were using bikeshare services way less than men. In New York City, the ratio of men to women was 70% to 30% whereas in Boston, this ratio was close to 80% to 20%. In either case, men were three or four times more likely to use bikeshare services. 
 
@@ -41,11 +37,7 @@ As to why women don't ride bicycles as much as men, there have been many theorie
 
 ### Distribution of Trip Duration
 
-[img]: # (Figure of Trip Distribution NYC)
-![Riders by the hour](images/1/general_ny_duration_distribution_nyc.png)
-
-[img]: # (Figure of Trip Distribution Boston)
-![Riders by the hour](images/1/general_boston_duration_distribution_bos.png)
+![Riders by the hour](images/1/general_ny_duration_distribution_nyc.png) ![Riders by the hour](images/1/general_boston_duration_distribution_bos.png)
 
 In regards to the duration of the rides, people in Boston were much more likely to have checked out the bikes for a longer time. While the range of duration time in New York is from 0 to 70 minutes, that in Boston is from 0 - 9000 minutes (about 6 days).
 
@@ -57,43 +49,28 @@ However in Boston, people checked the bikes out for a much longer period as ther
 
 We then continued to do some distribution of trip duration by the user type (member, and non-member). Here below are the histograms of New York and Boston's trip durations by the user types. We can easily observe that the number of members and non-member in New York is quite the same while most of riders in Boston is non-member.
 
-[img]: # (Figure of Trip Distribution NYC)
-![Distribution of trip duration by user type](images/1/duration_distribution_by_usertype_nyc.png)
 
-[img]: # (Figure of Trip Distribution Boston)
-![Distribution of trip duration by user type](images/1/boston_duration_distribution_by_usertype_bos.png)
+![Distribution of trip duration by user type](images/1/duration_distribution_by_usertype_nyc.png)  ![Distribution of trip duration by user type](images/1/boston_duration_distribution_by_usertype_bos.png)
 
 #### Accidental Checkouts 
 
 For Citibike, the first 30 minutes of each ride are included in the price of the pass, and you can take as many rides as you want while your pass is active. If you keep a bike out for more than 30 minutes at a time, it’s an extra $4 per additional 15 minutes. Therefore, we will look up for the distribution of trip duration less than 30 minutes:
 
-[img]: # (Figure of Trip Distribution NYC)
-![Distribution of trip duration < 30 in NY](images/1/nyc_duration_distribution_<30nyc.png)
 
-[img]: # (Figure of Trip Distribution Boston)
-![Distribution of trip duration < 30 in Boston](images/1/boston_duration_distribution_<30_bos.png)
+![Distribution of trip duration < 30 in NY](images/1/nyc_duration_distribution_<30nyc.png) ![Distribution of trip duration < 30 in Boston](images/1/boston_duration_distribution_<30_bos.png)
 
 We notice that lots of trip durations are less than 3 minutes. We can regard less than three-minute trip duration is the accidental checkout. Therefore, the number of accidentals checkouts in New York and Boston are 32668 and 4751 respectively. Here are the distribution of duration trips < 30 minutes of two cities after dropping all the accidental checkouts:
 
-[img]: # (Figure of Trip Distribution NYC)
-![Distribution of trip duration < 30 without accidental checkouts](images/1/ny_duration_distribution_without_accidentalcheckouts_nyc.png)
 
-[img]: # (Figure of Trip Distribution Boston)
-![Distribution of trip duration < 30 without accidental checkouts](images/1/boston_duration_distribution_without_accidentalcheckouts_bos.png)
+![Distribution of trip duration < 30 without accidental checkouts](images/1/ny_duration_distribution_without_accidentalcheckouts_nyc.png) ![Distribution of trip duration < 30 without accidental checkouts](images/1/boston_duration_distribution_without_accidentalcheckouts_bos.png)
 
 We can observe that the graphs with and without accidental checkouts are not different a lot. Therefore, we can conclude that the number of accidental checkouts doesn't affect the model of two datasets a lot.
 
 ### Distribution by Age
 The next question is "How does bikeshare service usage differ by age?". Taking a closer look at the main data. We can see that the distribution of age is skewed to the right. The majority of the users are between their 30s-50s. A reason for the use of bicycles for the current demographic could be 2 reasons in my opinion: 1. As people earn more, they stray away from bicycles. Hence people with higher median earnings (who generally tend to be older, could use other means of transportation) 2. While the bicycles are cheaper than taxis and ride hailing apps, they are more expensive than the metro in NYC or Boston. Demographics with a lower income, generally 20 year olds or older could use the metro otherwise.
 
-[img]: # (Figure of Age Distribution NYC)
-![Users by age](images/1/duration_distribution_by_age_nyc.png)
 
-[img]: # (Figure of Trip Distribution Boston)
-![Users by age](images/1/duration_distribution_by_age_bos.png)
-
-[img]: # (Figure of Trip Distribution NYC)
-![Users by age](images/1/duration_distribution_by_age_all.png)
+![Users by age](images/1/duration_distribution_by_age_nyc.png) ![Users by age](images/1/duration_distribution_by_age_bos.png) !![Users by age](images/1/duration_distribution_by_age_all.png)
 
 
 ## What Happens in a Day

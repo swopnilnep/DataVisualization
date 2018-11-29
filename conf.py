@@ -82,6 +82,7 @@ pygments_style = None
 #
 
 html_theme = 'bootstrap'
+# html_style = 'my_theme.css' 
 
 # (Optional) Logo. Should be small enough to fit the navbar (ideally 24x24).
 # Path should be relative to the ``_static`` files directory.
