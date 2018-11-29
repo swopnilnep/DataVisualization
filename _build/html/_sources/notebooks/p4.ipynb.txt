@@ -9,73 +9,38 @@
   },
   {
    "cell_type": "code",
-<<<<<<< HEAD
-   "execution_count": 3,
-=======
    "execution_count": 315,
->>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
    "metadata": {},
    "outputs": [],
    "source": [
     "import pandas as pd\n",
     "import numpy as np\n",
-<<<<<<< HEAD
-    "import matplotlib\n",
-=======
     "import matplotlib as mpl\n",
->>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
     "import matplotlib.pyplot as plt"
    ]
   },
   {
    "cell_type": "code",
-<<<<<<< HEAD
-   "execution_count": 13,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Collecting ig\n",
-      "  Downloading https://files.pythonhosted.org/packages/19/b8/fc77b505359f39a033a1b3a37c90cee39a53401168c0db42e88855849122/ig-0.0.1.tar.gz\n",
-      "Installing collected packages: ig\n",
-      "  Running setup.py install for ig ... \u001b[?25ldone\n",
-      "\u001b[?25hSuccessfully installed ig-0.0.1\n"
-     ]
-    },
-    {
-     "ename": "ModuleNotFoundError",
-     "evalue": "No module named 'igraph'",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mModuleNotFoundError\u001b[0m                       Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-13-33efaaff7688>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mget_ipython\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msystem\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'pip install ig'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0;32mimport\u001b[0m \u001b[0migraph\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0mig\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
-      "\u001b[0;31mModuleNotFoundError\u001b[0m: No module named 'igraph'"
-     ]
-    }
-   ],
-   "source": [
-    "!pip install ig\n",
-    "import igraph as ig"
-=======
    "execution_count": 316,
    "metadata": {},
    "outputs": [],
    "source": [
     "from ipywidgets import interact, interactive, fixed, interact_manual\n",
     "import ipywidgets as widgets"
->>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
    ]
   },
   {
    "cell_type": "code",
-<<<<<<< HEAD
-   "execution_count": 4,
-=======
+   "execution_count": 465,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import _pickle as cPickle"
+   ]
+  },
+  {
+   "cell_type": "code",
    "execution_count": 231,
->>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
    "metadata": {},
    "outputs": [],
    "source": [
@@ -86,11 +51,7 @@
   },
   {
    "cell_type": "code",
-<<<<<<< HEAD
-   "execution_count": 5,
-=======
    "execution_count": 232,
->>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
    "metadata": {},
    "outputs": [],
    "source": [
@@ -103,68 +64,53 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-<<<<<<< HEAD
-    "## Network Graph"
-=======
     "## Interactive Chart"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 451,
+   "execution_count": 485,
    "metadata": {},
    "outputs": [],
    "source": [
-    "n = 100000\n",
-    "data = nyc['data']# .sample(n)\n",
-    "# Remove trips to the same station\n",
-    "diff_station = data[data['start_station'] != data['end_station']]\n",
-    "# Find next stations\n",
-    "trip_summaries = diff_station[['start_station','end_station','duration']].groupby(['start_station','end_station']).count().rename(columns={'duration':'count'}).reset_index()"
+    "def plot_interactive(location):\n",
+    "    # n = 100000\n",
+    "    data = location['data']# .sample(n)\n",
+    "    # Remove trips to the same station\n",
+    "    diff_station = data[data['start_station'] != data['end_station']]\n",
+    "    # Find next stations\n",
+    "    trip_summaries = diff_station[['start_station','end_station','duration']].groupby(['start_station','end_station']).count().rename(columns={'duration':'count'}).reset_index()\n",
+    "\n",
+    "    unique_stations = list(diff_station.start_station.unique())\n",
+    "\n",
+    "    def plot_bar(station):\n",
+    "        next_count = trip_summaries[trip_summaries['start_station'] == station].sort_values('count', ascending=False).head(20)[['end_station','count']]\n",
+    "        # plot\n",
+    "        plt.barh(next_count['end_station'], next_count['count'])\n",
+    "        plt.title('Frequency of next location from '+station)\n",
+    "        plt.xlabel('Count')\n",
+    "        fig = plt.gcf()\n",
+    "        fig.set_size_inches(5,6)\n",
+    "\n",
+    "    return interactive(plot_bar, station=unique_stations)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### New York City"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 452,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "unique_stations = list(diff_station.start_station.unique())"
->>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
-   ]
-  },
-  {
-   "cell_type": "code",
-<<<<<<< HEAD
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
-=======
-   "execution_count": 453,
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "def plot_bar(station):\n",
-    "    next_count = trip_summaries[trip_summaries['start_station'] == station].sort_values('count', ascending=False).head(20)[['end_station','count']]\n",
-    "    # plot\n",
-    "    plt.barh(next_count['end_station'], next_count['count'])\n",
-    "    plt.title('Frequency of next location from '+station)\n",
-    "    plt.xlabel('Count')\n",
-    "    fig = plt.gcf()\n",
-    "    fig.set_size_inches(5,6)\n",
-    "    plt.show()"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 454,
+   "execution_count": 486,
    "metadata": {},
    "outputs": [
     {
      "data": {
       "application/vnd.jupyter.widget-view+json": {
-       "model_id": "84ad435c2a484d09881070163d1be602",
+       "model_id": "9c5ed4c3ab774727b42ab13c88e1a4fa",
        "version_major": 2,
        "version_minor": 0
       },
@@ -177,16 +123,39 @@
     }
    ],
    "source": [
-    "interactive(plot_bar, station=unique_stations)"
+    "plot_interactive(nyc)"
    ]
->>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Boston"
+   ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 487,
    "metadata": {},
-   "outputs": [],
-   "source": []
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "2db49db79af8414d855fee0de1c713f4",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "interactive(children=(Dropdown(description='station', options=('Cross St. at Hanover St.', 'Lewis Wharf - Atla…"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "plot_interactive(boston)"
+   ]
   }
  ],
  "metadata": {

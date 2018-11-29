@@ -66,7 +66,11 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">From Here to There</a><ul>
-<li><a class="reference internal" href="#Interactive-Chart">Interactive Chart</a></li>
+<li><a class="reference internal" href="#Interactive-Chart">Interactive Chart</a><ul>
+<li><a class="reference internal" href="#New-York-City">New York City</a></li>
+<li><a class="reference internal" href="#Boston">Boston</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -296,6 +300,16 @@ div.nboutput div.output_area.stderr {
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [465]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">_pickle</span> <span class="k">as</span> <span class="nn">cPickle</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [231]:
 </pre></div>
 </div>
@@ -322,54 +336,42 @@ div.nboutput div.output_area.stderr {
 <h2>Interactive Chart<a class="headerlink" href="#Interactive-Chart" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [451]:
+<span></span>In [485]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">100000</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">nyc</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="c1"># .sample(n)</span>
-<span class="c1"># Remove trips to the same station</span>
-<span class="n">diff_station</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;start_station&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;end_station&#39;</span><span class="p">]]</span>
-<span class="c1"># Find next stations</span>
-<span class="n">trip_summaries</span> <span class="o">=</span> <span class="n">diff_station</span><span class="p">[[</span><span class="s1">&#39;start_station&#39;</span><span class="p">,</span><span class="s1">&#39;end_station&#39;</span><span class="p">,</span><span class="s1">&#39;duration&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;start_station&#39;</span><span class="p">,</span><span class="s1">&#39;end_station&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;duration&#39;</span><span class="p">:</span><span class="s1">&#39;count&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span></span><span class="k">def</span> <span class="nf">plot_interactive</span><span class="p">(</span><span class="n">location</span><span class="p">):</span>
+    <span class="c1"># n = 100000</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">location</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="c1"># .sample(n)</span>
+    <span class="c1"># Remove trips to the same station</span>
+    <span class="n">diff_station</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;start_station&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;end_station&#39;</span><span class="p">]]</span>
+    <span class="c1"># Find next stations</span>
+    <span class="n">trip_summaries</span> <span class="o">=</span> <span class="n">diff_station</span><span class="p">[[</span><span class="s1">&#39;start_station&#39;</span><span class="p">,</span><span class="s1">&#39;end_station&#39;</span><span class="p">,</span><span class="s1">&#39;duration&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;start_station&#39;</span><span class="p">,</span><span class="s1">&#39;end_station&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;duration&#39;</span><span class="p">:</span><span class="s1">&#39;count&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="n">unique_stations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">diff_station</span><span class="o">.</span><span class="n">start_station</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">plot_bar</span><span class="p">(</span><span class="n">station</span><span class="p">):</span>
+        <span class="n">next_count</span> <span class="o">=</span> <span class="n">trip_summaries</span><span class="p">[</span><span class="n">trip_summaries</span><span class="p">[</span><span class="s1">&#39;start_station&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">station</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)[[</span><span class="s1">&#39;end_station&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">]]</span>
+        <span class="c1"># plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">next_count</span><span class="p">[</span><span class="s1">&#39;end_station&#39;</span><span class="p">],</span> <span class="n">next_count</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frequency of next location from &#39;</span><span class="o">+</span><span class="n">station</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">interactive</span><span class="p">(</span><span class="n">plot_bar</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="n">unique_stations</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [452]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">unique_stations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">diff_station</span><span class="o">.</span><span class="n">start_station</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [453]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">def</span> <span class="nf">plot_bar</span><span class="p">(</span><span class="n">station</span><span class="p">):</span>
-    <span class="n">next_count</span> <span class="o">=</span> <span class="n">trip_summaries</span><span class="p">[</span><span class="n">trip_summaries</span><span class="p">[</span><span class="s1">&#39;start_station&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">station</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)[[</span><span class="s1">&#39;end_station&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">]]</span>
-    <span class="c1"># plot</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">next_count</span><span class="p">[</span><span class="s1">&#39;end_station&#39;</span><span class="p">],</span> <span class="n">next_count</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frequency of next location from &#39;</span><span class="o">+</span><span class="n">station</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="New-York-City">
+<h3>New York City<a class="headerlink" href="#New-York-City" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [454]:
+<span></span>In [486]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">interactive</span><span class="p">(</span><span class="n">plot_bar</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="n">unique_stations</span><span class="p">)</span>
+<span></span><span class="n">plot_interactive</span><span class="p">(</span><span class="n">nyc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -377,16 +379,26 @@ div.nboutput div.output_area.stderr {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "84ad435c2a484d09881070163d1be602", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9c5ed4c3ab774727b42ab13c88e1a4fa", "version_major": 2, "version_minor": 0}</script></div>
 </div>
-<div class="nbinput nblast docutils container">
+</div>
+<div class="section" id="Boston">
+<h3>Boston<a class="headerlink" href="#Boston" title="Permalink to this headline">¶</a></h3>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
+<span></span>In [487]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span>
+<span></span><span class="n">plot_interactive</span><span class="p">(</span><span class="n">boston</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "2db49db79af8414d855fee0de1c713f4", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 </div>
