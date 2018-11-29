@@ -66,7 +66,11 @@
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">From Here to There</a><ul>
+<<<<<<< HEAD
 <li><a class="reference internal" href="#Network-Graph">Network Graph</a></li>
+=======
+<li><a class="reference internal" href="#Interactive-Chart">Interactive Chart</a></li>
+>>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
 </ul>
 </li>
 </ul>
@@ -272,17 +276,26 @@ div.nboutput div.output_area.stderr {
 <h1>From Here to There<a class="headerlink" href="#From-Here-to-There" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<<<<<<< HEAD
 <span></span>In [3]:
+=======
+<span></span>In [315]:
+>>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<<<<<<< HEAD
 <span class="kn">import</span> <span class="nn">matplotlib</span>
+=======
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+>>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
+<<<<<<< HEAD
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [13]:
@@ -323,6 +336,22 @@ Successfully installed ig-0.0.1
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [4]:
+=======
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [316]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="k">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [231]:
+>>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -334,7 +363,11 @@ Successfully installed ig-0.0.1
 </div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<<<<<<< HEAD
 <span></span>In [5]:
+=======
+<span></span>In [232]:
+>>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -344,8 +377,72 @@ Successfully installed ig-0.0.1
 </pre></div>
 </div>
 </div>
+<<<<<<< HEAD
 <div class="section" id="Network-Graph">
 <h2>Network Graph<a class="headerlink" href="#Network-Graph" title="Permalink to this headline">¶</a></h2>
+=======
+<div class="section" id="Interactive-Chart">
+<h2>Interactive Chart<a class="headerlink" href="#Interactive-Chart" title="Permalink to this headline">¶</a></h2>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [451]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">nyc</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="c1"># .sample(n)</span>
+<span class="c1"># Remove trips to the same station</span>
+<span class="n">diff_station</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;start_station&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;end_station&#39;</span><span class="p">]]</span>
+<span class="c1"># Find next stations</span>
+<span class="n">trip_summaries</span> <span class="o">=</span> <span class="n">diff_station</span><span class="p">[[</span><span class="s1">&#39;start_station&#39;</span><span class="p">,</span><span class="s1">&#39;end_station&#39;</span><span class="p">,</span><span class="s1">&#39;duration&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;start_station&#39;</span><span class="p">,</span><span class="s1">&#39;end_station&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;duration&#39;</span><span class="p">:</span><span class="s1">&#39;count&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [452]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">unique_stations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">diff_station</span><span class="o">.</span><span class="n">start_station</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [453]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">def</span> <span class="nf">plot_bar</span><span class="p">(</span><span class="n">station</span><span class="p">):</span>
+    <span class="n">next_count</span> <span class="o">=</span> <span class="n">trip_summaries</span><span class="p">[</span><span class="n">trip_summaries</span><span class="p">[</span><span class="s1">&#39;start_station&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">station</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)[[</span><span class="s1">&#39;end_station&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">]]</span>
+    <span class="c1"># plot</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">next_count</span><span class="p">[</span><span class="s1">&#39;end_station&#39;</span><span class="p">],</span> <span class="n">next_count</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frequency of next location from &#39;</span><span class="o">+</span><span class="n">station</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
+<span></span>In [454]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">interactive</span><span class="p">(</span><span class="n">plot_bar</span><span class="p">,</span> <span class="n">station</span><span class="o">=</span><span class="n">unique_stations</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "84ad435c2a484d09881070163d1be602", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+>>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
@@ -356,6 +453,7 @@ Successfully installed ig-0.0.1
 </pre></div>
 </div>
 </div>
+<<<<<<< HEAD
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre>
 <span></span>In [ ]:
@@ -366,6 +464,8 @@ Successfully installed ig-0.0.1
 </pre></div>
 </div>
 </div>
+=======
+>>>>>>> 30d7215e1a737f52f09ba9e357e45fbe02e7c1e3
 </div>
 </div>
 
