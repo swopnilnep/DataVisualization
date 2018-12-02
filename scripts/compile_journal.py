@@ -22,7 +22,6 @@ table_header = """
 
 """
 
-
 # Write to the document
 doc.write(pre_markdown.strip()+"\n" * 2)
 doc.write(table_header.strip())
@@ -56,7 +55,7 @@ for file_name in sorted(listdir(journals_dir)):
         
         ''' Markdown Output Link Constructor '''
         
-        link_img = "![img_{}](../images/link.png)".format(link_num)
+        link_img = "![img{}](../images/link.png)".format(link_num)
         link_num += 1
         
         md_link = "[{}]({})".format(link_img,link)

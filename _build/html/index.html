@@ -132,19 +132,19 @@
       
   <div class="section" id="the-tale-of-bikesharing-in-the-united-states">
 <span id="the-tale-of-bikesharing-in-the-united-states"></span><h1>The Tale of Bikesharing in the United States<a class="headerlink" href="#the-tale-of-bikesharing-in-the-united-states" title="Permalink to this headline">¶</a></h1>
-<p>In this project we look at bikeshare data from bikeshare companies in
-Boston (Hubway) and New York City (Citi Bikes). As bikesharing services
+<p>In this project, we look at bike share data from bike-share companies in
+Boston (Hubway) and New York City (Citi Bikes). As bike sharing services
 begin to roll out in many US cities, bike sharing is becoming a more
 sustainable option for commuters. Or is it?? With the rise of
-bikesharing services all across the United States, we decided that 2018
-was a good time to look at the publicly available bikesharing data.</p>
+bike-sharing services all across the United States, we decided that 2018
+was a good time to look at the publicly available bike-sharing data.</p>
 <p>In the repository, we (Swopnil and Giang) have taken around 7 million
 rides from publicly available data in both New York City and Boston and distributed our analysis into
 many parts. Below is how we have documented the process of our data
 analysis. This analysis will be divided into five parts.</p>
 <div class="section" id="overview-of-the-data">
 <span id="overview-of-the-data"></span><h2>Overview of the Data<a class="headerlink" href="#overview-of-the-data" title="Permalink to this headline">¶</a></h2>
-<p>We began by combining the datasets from Boston and New York. We took the most relevant features and added them to our dataframes and wrote Python scripts to collect, combine and feature scale the information. The datasets included the following features:</p>
+<p>We began by combining the datasets from Boston and New York. We took the most relevant features and added them to our data frames and wrote Python scripts to collect, combine and feature scale the information. The datasets included the following features:</p>
 <ol class="simple">
 <li>Duration - time each bike was checked out for</li>
 <li>Start time - the date and time that the bike was checked out</li>
@@ -152,39 +152,39 @@ analysis. This analysis will be divided into five parts.</p>
 <li>Start longitude, Start latitude - the geographical coordinates of the station the bike was checked out from</li>
 <li>End longitude, End latitude - the geographical coordinates of the station the bike was checked back into</li>
 <li>User Type - Whether the bike user was a registered user or one time user</li>
-<li>Birth Year - Birth year of the user (some values were missing)</li>
+<li>Birth Year - the Birth year of the user (some values were missing)</li>
 <li>Gender - Male, Female, or Unknown</li>
 </ol>
-<p>After making the dataset, we looked at the fundamental information of the dataset using Python Data Visulalization tools like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
+<p>After making the dataset, we looked at the fundamental information of the dataset using Python Data Visualization tools like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="section" id="distribution-of-gender">
 <span id="distribution-of-gender"></span><h3>Distribution of Gender<a class="headerlink" href="#distribution-of-gender" title="Permalink to this headline">¶</a></h3>
 <p><img alt="Riders by genders" src="_images/distribution_by_gender_nyc.png" /> <img alt="Riders by the hour" src="_images/distribution_by_gender_bos.png" /></p>
-<p>Looking at the data, there was an immediate observation about the gender distribution of bikeshare riders. It was that women were using bikeshare services way less than men. In New York City, the ratio of men to women was 70% to 30% whereas in Boston, this ratio was close to 80% to 20%. In either case, men were three or four times more likely to use bikeshare services.</p>
-<p>As to why women don’t ride bicycles as much as men, there have been many theories including factors such as percieved safety mentioned in <a class="reference external" href="https://fivethirtyeight.com/features/why-women-dont-cycle/">this article by FiveThirtyEight</a>, and the data holds true to its claim.</p>
+<p>Looking at the data, there was an immediate observation of the gender distribution of bike share riders. It was that women were using bikeshare services way less than men. In New York City, the ratio of men to women was 70% to 30% whereas in Boston, this ratio was close to 80% to 20%. In either case, men were three or four times more likely to use bike share services.</p>
+<p>As to why women don’t ride bicycles as much as men, there have been many theories including factors such as perceived safety mentioned in <a class="reference external" href="https://fivethirtyeight.com/features/why-women-dont-cycle/">this article by FiveThirtyEight</a>, and the data holds true to its claim.</p>
 </div>
 <div class="section" id="distribution-of-trip-duration">
 <span id="distribution-of-trip-duration"></span><h3>Distribution of Trip Duration<a class="headerlink" href="#distribution-of-trip-duration" title="Permalink to this headline">¶</a></h3>
 <p><img alt="Riders by the hour" src="_images/general_ny_duration_distribution_nyc.png" /> <img alt="Riders by the hour" src="_images/general_boston_duration_distribution_bos.png" /></p>
 <p>In regards to the duration of the rides, people in Boston were much more likely to have checked out the bikes for a longer time. While the range of duration time in New York is from 0 to 70 minutes, that in Boston is from 0 - 9000 minutes (about 6 days).</p>
 <p>Since Citi Bikes puts a restriction of 30 minutes on bicycle checkout, most of the rides in New York were under 30 minutes.</p>
-<p>However in Boston, people checked the bikes out for a much longer period as there was a longer checkout period for the bikes. Hence a lot of people even checked out the bikes for 5 days. We then wonder about the special case with trips from Station A all the way to Station A. We find out that the percentages of same station trips in New York and Boston are 2.5 % (13,707 trips out of 5,562,321 total trips ) and 4.8% (76, 311 trips out of 1,579,025 total trips).</p>
+<p>However, in Boston, people checked the bikes out for a much longer period as there was a longer checkout period for the bikes. Hence a lot of people even checked out the bikes for 5 days. We then wonder about the special case with trips from Station A all the way to Station A. We find out that the percentages of same station trips in New York and Boston are 2.5 % (13,707 trips out of 5,562,321 total trips ) and 4.8% (76, 311 trips out of 1,579,025 total trips).</p>
 <div class="section" id="members-and-nonmembers">
 <span id="members-and-nonmembers"></span><h4>Members and Nonmembers<a class="headerlink" href="#members-and-nonmembers" title="Permalink to this headline">¶</a></h4>
-<p>We then continued to do some distribution of trip duration by the user type (member, and non-member). Here below are the histograms of New York and Boston’s trip durations by the user types. We can easily observe that the number of members and non-member in New York is quite the same while most of riders in Boston is non-member.</p>
+<p>We then continued to do some distribution of trip duration by the user type (member, and non-member). Here below are the histograms of New York and Boston’s trip durations by the user types. We can easily observe that the number of members and non-member in New York is quite the same while most of the riders in Boston is a non-member.</p>
 <p><img alt="Distribution of trip duration by user type" src="_images/duration_distribution_by_usertype_nyc.png" />  <img alt="Distribution of trip duration by user type" src="_images/boston_duration_distribution_by_usertype_bos.png" /></p>
 </div>
 <div class="section" id="accidental-checkouts">
 <span id="accidental-checkouts"></span><h4>Accidental Checkouts<a class="headerlink" href="#accidental-checkouts" title="Permalink to this headline">¶</a></h4>
 <p>For Citibike, the first 30 minutes of each ride are included in the price of the pass, and you can take as many rides as you want while your pass is active. If you keep a bike out for more than 30 minutes at a time, it’s an extra $4 per additional 15 minutes. Therefore, we will look up for the distribution of trip duration less than 30 minutes:</p>
 <p><img alt="Distribution of trip duration &lt; 30 in NY" src="_images/nyc_duration_distribution_&lt;30nyc.png" /> <img alt="Distribution of trip duration &lt; 30 in Boston" src="_images/boston_duration_distribution_&lt;30_bos.png" /></p>
-<p>We notice that lots of trip durations are less than 3 minutes. We can regard less than three-minute trip duration is the accidental checkout. Therefore, the number of accidentals checkouts in New York and Boston are 32668 and 4751 respectively. Here are the distribution of duration trips &lt; 30 minutes of two cities after dropping all the accidental checkouts:</p>
+<p>We notice that lots of trip durations are less than 3 minutes. We can regardless than three-minute trip duration is the accidental checkout. Therefore, the number of accidentals checkouts in New York and Boston are 32668 and 4751 respectively. Here is the distribution of duration trips &lt; 30 minutes of two cities after dropping all the accidental checkouts:</p>
 <p><img alt="Distribution of trip duration &lt; 30 without accidental checkouts" src="_images/ny_duration_distribution_without_accidentalcheckouts_nyc.png" /> <img alt="Distribution of trip duration &lt; 30 without accidental checkouts" src="_images/boston_duration_distribution_without_accidentalcheckouts_bos.png" /></p>
 <p>We can observe that the graphs with and without accidental checkouts are not different a lot. Therefore, we can conclude that the number of accidental checkouts doesn’t affect the model of two datasets a lot.</p>
 </div>
 </div>
 <div class="section" id="distribution-by-age">
 <span id="distribution-by-age"></span><h3>Distribution by Age<a class="headerlink" href="#distribution-by-age" title="Permalink to this headline">¶</a></h3>
-<p>The next question is “How does bikeshare service usage differ by age?”. Taking a closer look at the main data. We can see that the distribution of age is skewed to the right. The majority of the users are between their 30s-50s. A reason for the use of bicycles for the current demographic could be 2 reasons in my opinion: 1. As people earn more, they stray away from bicycles. Hence people with higher median earnings (who generally tend to be older, could use other means of transportation) 2. While the bicycles are cheaper than taxis and ride hailing apps, they are more expensive than the metro in NYC or Boston. Demographics with a lower income, generally 20 year olds or older could use the metro otherwise.</p>
+<p>The next question is “How does bike share service usage differ by age?”. Taking a closer look at the main data. We can see that the distribution of age is skewed to the right. The majority of the users are between their 30s-50s. A reason for the use of bicycles for the current demographic could be 2 reasons in my opinion: 1. As people earn more, they stray away from bicycles. Hence people with higher median earnings (who generally tend to be older, could use other means of transportation) 2. While the bicycles are cheaper than taxis and ride-hailing apps, they are more expensive than the metro in NYC or Boston. Demographics with a lower income, generally 20-year-olds or older could use the metro otherwise.</p>
 <p><img alt="Users by age" src="_images/duration_distribution_by_age_nyc.png" /> <img alt="Users by age" src="_images/duration_distribution_by_age_bos.png" /> !<img alt="Users by age" src="_images/duration_distribution_by_age_all.png" /></p>
 </div>
 </div>
@@ -195,8 +195,8 @@ analysis. This analysis will be divided into five parts.</p>
 <p>In one day in a city like Boston or New York City, a lot of activity takes place in different areas of towns. In essence, the data is also a reflection of what New Yorkers or people in Boston live their lives.</p>
 <p>Looking at activity by time of day, we can see that even during late nights some New Yorkers are still active on their bicycles.</p>
 <p><img alt="NYC by day" src="_images/riders_by_hour_nyc.png" /></p>
-<p>In the midst of dusk and dawn around 3 am is the lowest bicycle traffic. The distribution is bimodal containing two peaks representing the two times that New Yorkers rush in and our of work; these take place around 8am and between 5-7pm.</p>
-<p>The higher peak in the evening hours could also have been affected by more tourists choosing to ride the bicycles or more people biking around for recreation.</p>
+<p>In the midst of dusk and dawn around 3 am is the lowest bicycle traffic. The distribution is bimodal containing two peaks representing the two times that New Yorkers rush in and out of work; these take place around 8am and between 5-7pm.</p>
+<p>The higher peak in the evening hours could also have been affected by more tourists choosing to ride bicycles or more people biking around for recreation.</p>
 <p><img alt="BOS by day" src="_images/riders_by_hour_bos.png" /></p>
 <p>Boston also follows a similar peak where the traffic drops drastically around 8pm until around 7am when it rises back to a peak and drops for the midday until around mega rush hour.</p>
 <p>The similarity of these peaks tells us that the location (in this case New York City or Boston) does not that that much effect on the bike riding trend.</p>
@@ -217,7 +217,7 @@ analysis. This analysis will be divided into five parts.</p>
 <span id="looking-from-above"></span><h2>Looking from Above<a class="headerlink" href="#looking-from-above" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="new-york-city">
 <span id="new-york-city"></span><h3>New York City<a class="headerlink" href="#new-york-city" title="Permalink to this headline">¶</a></h3>
-<p>If we look into the availability of stations we can see that almost all of the stations in New York city are in Manhattan. While Manhattan has over 300 statations, Brooklyn has less than 20 combined. Queens, Staten Island and the Bronx don’t even have a bikeshare station.</p>
+<p>If we look into the availability of stations we can see that almost all of the stations in New York City are in Manhattan. While Manhattan has over 300 stations, Brooklyn has less than 20 combined. Queens, Staten Island, and the Bronx don’t even have a bike-share station.</p>
 <p><strong>Cluster location of stations</strong>
 <a class="reference external" href="../../images/3/nyc_bikeshare_stops_cluster.html"><em>Click to view projection</em>
 <img alt="Bos by year" src="_images/nyc_cluster.png" /></a></p>
@@ -229,7 +229,7 @@ analysis. This analysis will be divided into five parts.</p>
 </div>
 <div class="section" id="boston">
 <span id="boston"></span><h3>Boston<a class="headerlink" href="#boston" title="Permalink to this headline">¶</a></h3>
-<p>The same case is in Boston where there are more stations in the downtown area. Boston is also a little different in this case as Boston consists of a hub of universities which the bikeshare company probably targetted by placing the stations near the universities or even inside them.</p>
+<p>The same case is in Boston where there are more stations in the downtown area. Boston is also a little different in this case as Boston consists of a hub of universities which the bike share company probably targetted by placing the stations near the universities or even inside them.</p>
 <p><strong>Cluster location of stations</strong>
 <a class="reference external" href="../../images/3/boston_bikeshare_stops_cluster.html"><em>Click to view projection</em>
 <img alt="Bos by year" src="_images/boston_cluster.png" /></a></p>
