@@ -64,7 +64,7 @@ for file_name in sorted(listdir(journals_dir)):
         ''' Markdown Line '''
  
         # Date | Title | Author | Link
-        md_line = "| `{}` | {} | {} | {} |".format(date, title, author, md_link)
+        md_line = "| {} | {} | {} | {} |".format(date, title, author, md_link)
         
         # Write to Markdown document
         doc.write("\n"+md_line)

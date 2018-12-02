@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fundamental Pandas Functions &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          bikeshare</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../docs/journals.html">Journals</a></li>
+                <li><a href="../docs/notebooks.html">Notebooks</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Bikeshare Visualizations <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Navigate <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Fundamental Pandas Functions</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="fundamental-pandas-functions">
+<span id="fundamental-pandas-functions"></span><h1>Fundamental Pandas Functions<a class="headerlink" href="#fundamental-pandas-functions" title="Permalink to this headline">¶</a></h1>
+<p>Today’s journal is about basic Pandas module functions that have been useful for our project recently that I reccommend others to use as well.</p>
+<p><strong>csv tools</strong></p>
+<p>Both read csv and to csv are very helpful commands to work with csv documents. They allow you to set the character encoding, delimiter and make the work of manipulating the data very minimal and best of all, very efficient. They allowed me to read millions of lines of data in a matter of seconds whereas with other method such as <code class="docutils literal notranslate"><span class="pre">open()</span></code>, I would have had to wait a couple minutes.</p>
+<p>They are also good for separating your data files if you have a lot of data as having large dataframes tends to clog up your RAM.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">pandas.to_csv()</span></code></li>
+</ul>
+<p><strong>Selecting Dataframes</strong></p>
+<p>A lot of times in a datset, there is a lot fo information that you don’t need. We did not end up using a lot of the columns that existed into a dataset. Selecting out the data allows for faster manipulation of the data and also less storage space in the memory or virtual memory. Selecting data in pandas is simple. Add the name of a dataframe and pass an array of strings with the names of the columns.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+
+    <span class="n">df_selective</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>In this case, the columns of <code class="docutils literal notranslate"><span class="pre">df_selective</span></code> would be a subset of <code class="docutils literal notranslate"><span class="pre">df</span></code> columns with columns <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<p><strong>Getting size, shape and other dataset information</strong></p>
+<p>There are multiple ways to get information in Pandas to get data about the count of the rows in Pandas. While I have seen many different techniques, the one’s I have seen in use are the follwing:</p>
+<p><em>using shape</em>
+Since <code class="docutils literal notranslate"><span class="pre">df.shape</span></code> returns a tuple of <code class="docutils literal notranslate"><span class="pre">(rows,</span> <span class="pre">columns)</span></code>, using  <code class="docutils literal notranslate"><span class="pre">df.shape[0]</span></code>
+allows us to take out the row information.</p>
+<p><em>Getting rows with <code class="docutils literal notranslate"><span class="pre">len()</span></code></em>
+The Python inbuilt function <code class="docutils literal notranslate"><span class="pre">len()</span></code> also works on DataFrames returning the number of rows in the DataFrame or the Series.</p>
+<p><em>Getting columns from <code class="docutils literal notranslate"><span class="pre">keys</span></code></em>
+Using <code class="docutils literal notranslate"><span class="pre">len(df.keys())</span></code> also allows us to get the number of columns.</p>
+<p>Part 2 of this journal will be presented tomorrow.</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Gia Swop.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

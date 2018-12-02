@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Writing the Scripts and Normalizing the Data &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          bikeshare</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../docs/journals.html">Journals</a></li>
+                <li><a href="../docs/notebooks.html">Notebooks</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Bikeshare Visualizations <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Navigate <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Writing the Scripts and Normalizing the Data</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="writing-the-scripts-and-normalizing-the-data">
+<span id="writing-the-scripts-and-normalizing-the-data"></span><h1>Writing the Scripts and Normalizing the Data<a class="headerlink" href="#writing-the-scripts-and-normalizing-the-data" title="Permalink to this headline">¶</a></h1>
+<p>Today, I started working on the datsets with one task in mind: to normalize the data for both the datasets.</p>
+<p>I began by looking at both the datasets and noticed the common features.</p>
+<p>Boston’s dataset had features like: <code class="docutils literal notranslate"><span class="pre">seq_id</span></code>, <code class="docutils literal notranslate"><span class="pre">hubway_id</span></code>, <code class="docutils literal notranslate"><span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">start_statn</span></code>, and other encoded information like zip code, DOB, gender etc.</p>
+<p>NYC’s dataset also had similar features but were encoded differently and had different names for features.</p>
+<p>The first task was to plan out features that we would actually use. We decided that we would use the features <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">start_time</span></code>, <code class="docutils literal notranslate"><span class="pre">end_time</span></code>, <code class="docutils literal notranslate"><span class="pre">start_station</span></code>, <code class="docutils literal notranslate"><span class="pre">end_station</span></code>, <code class="docutils literal notranslate"><span class="pre">start_longitude</span></code>, <code class="docutils literal notranslate"><span class="pre">end_longitude</span></code>, <code class="docutils literal notranslate"><span class="pre">start_latitude</span></code>, <code class="docutils literal notranslate"><span class="pre">end_latitiude</span></code>, <code class="docutils literal notranslate"><span class="pre">user_type</span></code>, <code class="docutils literal notranslate"><span class="pre">gender</span></code>.</p>
+<p>For more information on feature selection, take a look at <a class="reference external" href="20181122_giang.html">this journal</a></p>
+<p>We took the data and firstly removed the data we didn’t need by selecting the required features from the dataframe.</p>
+<p>For timeseries data we used the <code class="docutils literal notranslate"><span class="pre">pandas.to_datetime()</span></code> function to convert the data to the save string format.</p>
+<p>NYC data had the rides in hours while Boston had the rides in minutes. We converted both these rides to time in minutes.</p>
+<p>I also realized that Boston did not have columns for latitude and longitude in the bicycling dataset but had that data in the station dataset. I took data from the station datset and merged them into our new normalized dataset.</p>
+<p>At the end, I wrote some Python scripts that we could run through the Python interpreter which would do all this work. These are the <a class="reference external" href="https://github.com/swopnilnep/DataVisualization/scripts">scripts</a>.</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, Gia Swop.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+# Managing the Repository
+
+As we started with our analysis, we added Ipython notebooks, Python scripts and Sphinx files all into one repository. This is when I realized that we were due for some repository management as all our work was starting to get cluttered. 
+
+For Sphinx, I started out by giving it access to the whole project since the website would be the main location of display rather than the GitHub site. Although if someone wanted to look under the hood, they needn't be restricted by GitHub so I also made the GitHub page accessible. 
+
+I added a `README.me` to GitHub with instructions on how we managed to get the data until this stage. Hence if anyone wanted to restart or fork our project they would have the tools to do so. 
+
+I also added a `/docs` folder to keep the Ipython Notebooks and Jounrals organized. They are organized and edited as `.rst` files and we can quickly make an entry if we choose to do so. 
+
+I will be adding further updates to make the repository clean and organized.

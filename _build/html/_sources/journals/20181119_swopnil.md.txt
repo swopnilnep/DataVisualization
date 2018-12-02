@@ -1,0 +1,44 @@
+# Fundamental Pandas Functions
+
+Today's journal is about basic Pandas module functions that have been useful for our project recently that I reccommend others to use as well. 
+
+__csv tools__
+
+Both read csv and to csv are very helpful commands to work with csv documents. They allow you to set the character encoding, delimiter and make the work of manipulating the data very minimal and best of all, very efficient. They allowed me to read millions of lines of data in a matter of seconds whereas with other method such as `open()`, I would have had to wait a couple minutes. 
+
+They are also good for separating your data files if you have a lot of data as having large dataframes tends to clog up your RAM. 
+
+*  `pandas.read_csv()`
+* `pandas.to_csv()`
+
+__Selecting Dataframes__
+
+A lot of times in a datset, there is a lot fo information that you don't need. We did not end up using a lot of the columns that existed into a dataset. Selecting out the data allows for faster manipulation of the data and also less storage space in the memory or virtual memory. Selecting data in pandas is simple. Add the name of a dataframe and pass an array of strings with the names of the columns. 
+
+```python
+
+    df = pd.DataFrame()
+    df.a = pd.Series(np.arange(10))
+    df.b = pd.Series(np.arange(10))
+    df.c = pd.Series(np.arange(10))
+
+    df_selective = df[['a','b','c']]
+```
+In this case, the columns of `df_selective` would be a subset of `df` columns with columns `a` and `b`.
+
+__Getting size, shape and other dataset information__
+
+There are multiple ways to get information in Pandas to get data about the count of the rows in Pandas. While I have seen many different techniques, the one's I have seen in use are the follwing:
+
+_using shape_
+Since `df.shape` returns a tuple of `(rows, columns)`, using  `df.shape[0]`
+allows us to take out the row information. 
+
+_Getting rows with `len()`_
+The Python inbuilt function `len()` also works on DataFrames returning the number of rows in the DataFrame or the Series. 
+
+_Getting columns from `keys`_
+Using `len(df.keys())` also allows us to get the number of columns.
+
+
+Part 2 of this journal will be presented tomorrow.

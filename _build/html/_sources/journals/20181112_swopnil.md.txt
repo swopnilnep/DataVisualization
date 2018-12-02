@@ -1,0 +1,23 @@
+# Writing the Scripts and Normalizing the Data
+
+Today, I started working on the datsets with one task in mind: to normalize the data for both the datasets. 
+
+I began by looking at both the datasets and noticed the common features. 
+
+Boston's dataset had features like: `seq_id`, `hubway_id`, `status`, `duration`, `start_statn`, and other encoded information like zip code, DOB, gender etc. 
+
+NYC's dataset also had similar features but were encoded differently and had different names for features. 
+
+The first task was to plan out features that we would actually use. We decided that we would use the features `duration`, `start_time`, `end_time`, `start_station`, `end_station`, `start_longitude`, `end_longitude`, `start_latitude`, `end_latitiude`, `user_type`, `gender`. 
+
+For more information on feature selection, take a look at [this journal](20181122_giang.html)
+
+We took the data and firstly removed the data we didn't need by selecting the required features from the dataframe.
+
+For timeseries data we used the `pandas.to_datetime()` function to convert the data to the save string format. 
+
+NYC data had the rides in hours while Boston had the rides in minutes. We converted both these rides to time in minutes.
+
+I also realized that Boston did not have columns for latitude and longitude in the bicycling dataset but had that data in the station dataset. I took data from the station datset and merged them into our new normalized dataset. 
+
+At the end, I wrote some Python scripts that we could run through the Python interpreter which would do all this work. These are the [scripts](https://github.com/swopnilnep/DataVisualization/scripts). 

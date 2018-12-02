@@ -1,0 +1,13 @@
+# Ideas about Dataset Manipulation
+
+Today we downloaded all of the datasets that we plan to use. Downloading all of them at the same time was a problem because the files were split into months for 4 years. That would be 48 files per city or 240 files for all cities and it would take too much time to do manually. 
+
+We attempted to download the files using the Python `urllib` but after a couple of hours of working on this problem we setteled on doing 2 datasets instead of 5. 
+
+We downloaded the biggest cities that use the bikesharing service. These services were NYC's CitiBikes and Boston's Hubway (BlueBikes). After downloading these, we unzipped the files and looked at the main features. 
+
+The data was split into stations and rides. In the stations dataset, each row counted for a station and contained various types of information about the station like station name, station address, precise station gps coordinates, how many bikes it could hold. Boston's dataset also contained a column `existed` that allowed us to keep track of stations that were still in use or removed. 
+
+Moving onto the datasets themselves, we found the data from both the datasets to be similar but not the same. We realized that we would probably have to feature scale some of the data in both the datasets to make them in the same format. 
+
+We ended the planning by plotting out what scripts we could write for us or anyone else who could be following our projects in the future. 

@@ -1,0 +1,18 @@
+# Fundamental matplotlib
+
+We used a learned a lot of new things about the matplotlib module in Python and my impressions of it are that it is a great module. It is very reliable and there is a wide range of support available for it in the community in case you get stuck. These are the most common functions I ended up using in our project and they were quick and easy .
+
+__Bar Chart__
+Firstly there is the bar chart. The barchart is called by running  `matplotlib.pyplot.bar()` or simply `plt.bar()` by importing pyplot as plt and it takes in a x value and a y value as arrays or linked lists, the length of which have to be the same. This means that the function supports Python lists, NumPy arrays, Pandas Series and many other objects. 
+
+__Horizintal bar Chart__
+The horizontal bar chart is a little twist on the bar chart in which it just displays the chart horizontally. It is very useful for categorical data plotting specially if your independent variable labels are very lengthty. 
+
+__Pie Chart__
+Summoned using `plt.pie()`. Takes in a list of category labels and a list of numbers as parameters. Links each category to their respective number and charts out the proportions in a pie. 
+
+__Pandas Plot__
+This is not technically part of Matplotlib but as a user of the Pandas module this seemed relevant. In a Pandas Dataframe if you have a series in a numerical format such as  `int64` or `float64`, you can just call `.plot() on the dataframe` and it makes a plot using matplotlib. Magic! 
+
+__Matplotlib Histogram__
+Same as Pandas plot. You can call `.hist()` to generate a histogram!!
