@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Basis Analysis &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <title>Processor of Normalizing the dataset &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -65,7 +65,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Basis Analysis</a></li>
+<li><a class="reference internal" href="#">Processor of Normalizing the dataset</a></li>
 </ul>
 </ul>
 </li>
@@ -99,11 +99,16 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="basis-analysis">
-<span id="basis-analysis"></span><h1>Basis Analysis<a class="headerlink" href="#basis-analysis" title="Permalink to this headline">¶</a></h1>
-<p>After doing lots of visualization such as gender by usertype, trip duration distribution, accidental checkouts, Swop and I decided to take a look at what we gained from all of this stuff.</p>
-<p>Through the graphs of New York City and Bostion duration distribution without accidental checkouts, we observe that there are few people who are non-members rent the bikeshare with duration time less than 30 minutes while lots people in New York City rent the bikeshare with duration time less than 30 minutes (both members and non-members). However, the range of duration time between New York City and Boston varies a lot: New York City is from 0 to 70 (minutes) and Boston is from 0 - 9000 (minutes). It means that people often rent the bike day by day (short time) in New York City while people in Boston often rent the bike for a whole week (they regard bike as the main vehicle). Therefore, we can see in the graphs that the user type of poeple in Boston are annual member while that in New York varies between subscriber and customer a lot.</p>
-<p>This is the first basis analysis we have from most of the graphs we have. We hope you enjoy it!</p>
+  <div class="section" id="processor-of-normalizing-the-dataset">
+<span id="processor-of-normalizing-the-dataset"></span><h1>Processor of Normalizing the dataset<a class="headerlink" href="#processor-of-normalizing-the-dataset" title="Permalink to this headline">¶</a></h1>
+<p>In my past journals, I talked about the normalizing both datasets to do the data visualization after that. Today, I will talk about my process of normalizing my New York bikeshare dataset step by step.</p>
+<p>After reading my data from pandas, I renamed all the columns with lowercase characters.</p>
+<p><a class="reference external" href="../images/journal_images/change_columns_name.png">Change Column Names</a></p>
+<p>By reading the data file, I also decided to changes the data types of the birth year and tripduration columns. I then use np.nan to deal with the missing data (turning N/As to NaN)</p>
+<p>Birth year column: In this column, I replaced \N with NaN. At the first time, I have a trouble with this replacement because my code cannot define \N. I then tried to figure out the way to deal with this problem. I finally found out that I just had to edit my code a little bit. I just had to replace r”\N” with “NaN” instead of replacing “\N” with “NaN”. My last step was to change the column type from object to float. Here below is my code for this part.</p>
+<p><a class="reference external" href="../images/journal_images/birth_year_normalized.png">Normalizing the birth year column</a></p>
+<p>In the last columns (trip duration, gender, usertype), I converted all the information from seconds to minutes (trip duration), changed gender column from integer to string, and replaced “0, 1, 2” with “Unknown, Male, Female”, and also replaced the userype column from “Subcriber, Customer” to “Member, Non-member”. Here below is my code for this normalization.</p>
+<p><a class="reference external" href="../images/journal_images/tripduration_normalized.png">Normalizing other columns</a></p>
 </div>
 
 

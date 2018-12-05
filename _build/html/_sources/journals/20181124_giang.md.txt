@@ -1,18 +1,7 @@
-# Processor of Normalizing the dataset
+# Heat map
 
-In my past journals, I talked about the normalizing both datasets to do the data visualization after that. Today, I will talk about my process of normalizing my New York bikeshare dataset step by step.
+Today, I try to grapph the heat map and bikeshare station map. I don't know why but I tried different ways to do the map, and it's still not working. I have already imported folium, and folium.plugins. However, when I tried to run the code, it's always showing that "MakerCluster module is not difined". I then found out that if the module of folium is not working, I have to import each module separately. For example with the MakerCluster module, I have imported this line first "from folium.plugins import MarkerCluster" and the MakerCluster will work.
 
-After reading my data from pandas, I renamed all the columns with lowercase characters.
+I also have lots of problems with the heat map. When I run the code, it doesn't show any errors, but it doesn't appear as a HeatMap. Swop and I decided to ask Professor Kent Lee. After about 1 hour struggling with heat map, we found out that I made the mistakes with the orders of longtitude and lattitude, which makes the Heatmap not work at all. 
 
-[Change Column Names](../images/journal_images/change_columns_name.png)
-
-By reading the data file, I also decided to changes the data types of the birth year and tripduration columns. I then use np.nan to deal with the missing data (turning N/As to NaN)
-
-Birth year column: In this column, I replaced \N with NaN. At the first time, I have a trouble with this replacement because my code cannot define \N. I then tried to figure out the way to deal with this problem. I finally found out that I just had to edit my code a little bit. I just had to replace r"\N" with "NaN" instead of replacing "\N" with "NaN". My last step was to change the column type from object to float. Here below is my code for this part.
-
-[Normalizing the birth year column](../images/journal_images/birth_year_normalized.png)
-
-In the last columns (trip duration, gender, usertype), I converted all the information from seconds to minutes (trip duration), changed gender column from integer to string, and replaced "0, 1, 2" with "Unknown, Male, Female", and also replaced the userype column from "Subcriber, Customer" to "Member, Non-member". Here below is my code for this normalization.
-
-[Normalizing other columns](../images/journal_images/tripduration_normalized.png)
-
+Moreover, the number of data is also limited in this graph. If I use all of the data, Jupyter Notebook cannot load the map. Therefore, Swop and I removed all the duplicates bikeshare stations and do the map again. At this time, all different kinds of map are working very well.

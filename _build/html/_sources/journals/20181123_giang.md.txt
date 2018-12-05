@@ -1,10 +1,7 @@
-# Datasets Combination
+# Basis Analysis
 
-## Cleaning Datasets
+After doing lots of visualization such as gender by usertype, trip duration distribution, accidental checkouts, Swop and I decided to take a look at what we gained from all of this stuff. 
 
-Swop and I started cleaning data and transformed all the data into common feature columns as we planned before. We used pandas to set the index, selected all the columns we want to keep, turned all N/A data to NaN by np.nan and convert all the datatypes to the correct types. However, I forgot to change the name of all the columns in my datasets. We just realized that we were going to combine two datasets together. Therefore, it took me a while to change the column names as Swop did. After finishing all the neccessary steps, Swop and I use Ternminal commands to combine two datasets together and push all today work to Github. Our processed datas were saved as boston.csv, nyc.csv and merged.csv in the unified folder. Because the data files are the public datasets; therefore, we put these file into another directory so as not to post into Github.
+Through the graphs of New York City and Bostion duration distribution without accidental checkouts, we observe that there are few people who are non-members rent the bikeshare with duration time less than 30 minutes while lots people in New York City rent the bikeshare with duration time less than 30 minutes (both members and non-members). However, the range of duration time between New York City and Boston varies a lot: New York City is from 0 to 70 (minutes) and Boston is from 0 - 9000 (minutes). It means that people often rent the bike day by day (short time) in New York City while people in Boston often rent the bike for a whole week (they regard bike as the main vehicle). Therefore, we can see in the graphs that the user type of poeple in Boston are annual member while that in New York varies between subscriber and customer a lot.
 
-
-## Dealing with problems 
-
-I felt that the first step to deal with real datasets requiring lots of patience, time and carefullness. We had to prepare for different situations when we chose the datasets. started cleaning the datasets and dealing with it. Sometimes, I felt very frustrated when my code was not working. At that time, I had to search in Google stackoverflow a lot to deal with my own problems. However, beside the frustration, I felt very satisfied when I found the solutions for me questions, and learned lots of new things by my own. This made me realize that learning by myseft and knowing how to use all available resources are the most neccessary skills of 4-year college and so many years working in the future. After all, I learned lots of new things with this part of the final 
+This is the first basis analysis we have from most of the graphs we have. We hope you enjoy it!

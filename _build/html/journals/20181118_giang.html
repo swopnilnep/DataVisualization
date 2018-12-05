@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Heat map &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <title>Overview of the data (Answer the first questions) &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -65,7 +65,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Heat map</a></li>
+<li><a class="reference internal" href="#">Overview of the data (Answer the first questions)</a></li>
 </ul>
 </ul>
 </li>
@@ -99,11 +99,12 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="heat-map">
-<span id="heat-map"></span><h1>Heat map<a class="headerlink" href="#heat-map" title="Permalink to this headline">¶</a></h1>
-<p>Today, I try to grapph the heat map and bikeshare station map. I don’t know why but I tried different ways to do the map, and it’s still not working. I have already imported folium, and folium.plugins. However, when I tried to run the code, it’s always showing that “MakerCluster module is not difined”. I then found out that if the module of folium is not working, I have to import each module separately. For example with the MakerCluster module, I have imported this line first “from folium.plugins import MarkerCluster” and the MakerCluster will work.</p>
-<p>I also have lots of problems with the heat map. When I run the code, it doesn’t show any errors, but it doesn’t appear as a HeatMap. Swop and I decided to ask Professor Kent Lee. After about 1 hour struggling with heat map, we found out that I made the mistakes with the orders of longtitude and lattitude, which makes the Heatmap not work at all.</p>
-<p>Moreover, the number of data is also limited in this graph. If I use all of the data, Jupyter Notebook cannot load the map. Therefore, Swop and I removed all the duplicates bikeshare stations and do the map again. At this time, all different kinds of map are working very well.</p>
+  <div class="section" id="overview-of-the-data-answer-the-first-questions">
+<span id="overview-of-the-data-answer-the-first-questions"></span><h1>Overview of the data (Answer the first questions)<a class="headerlink" href="#overview-of-the-data-answer-the-first-questions" title="Permalink to this headline">¶</a></h1>
+<p>Before plotting any chart or graph, I found it be more efficient to create a function to handle plotting. The function uses seaborn and matplotlib packages. For example, I ploted the bar graph for the all the riders by genders in the both nyc.data,and boston.data. Therefore, it’s more convient with writing a common function for both datasets and then plotted the bar graph for each.</p>
+<p><a class="reference external" href="../images/journal_images/riders_by_gender.png">Import packages</a></p>
+<p>After plotting both bar graphs about the rides by gender for both cities, I can easily observe that the number of the make bikeshare is higher third times as that of the female bikeshare. Moreover, all female and male are subscriber (annual member) and all unknown people are customer (24-hour pass or 3-day pass user - non-member).</p>
+<p>The first steps of visualization is going well. Swop and I will do more data visualization on the next days to see what we can gain from both datasets.</p>
 </div>
 
 

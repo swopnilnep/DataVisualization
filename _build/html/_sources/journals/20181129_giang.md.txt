@@ -1,7 +1,7 @@
-# Some other Data Visualizations
+# After Presentation
 
-We continued doing some data visualization with different goal. We tried to answer the question about the gender by users (percentage). We also wrote the common function for both datasets and then plot the bar graph for each of the dataset. Here below is the code for this function:
+After the presentation, we believed that we did our best. This is the last entry in this journal. I thank Swop for being a great partner and our professor who has always been a great help. Even though Swop and I argued lots of time, we still found the way to deal with all of these problems. Thank you for putting up with me several times, helping me anytime I need you, and being my partner. 
 
-[Gender by User](../images/journal_images/gender_by_user.png)
+Even though we felt proud of our performance, there are still lots of spaces to improve. We could have state our introduction clearer by giving the audience the lists of all the questions we want to find the answer. Also with the conclusion, it will be more clear if we focus on answering the question from the begining. 
 
-With the bar graphs, I observe that male ridership seems to be higher in Boston compared to NYC where male ridership is 80% with females being under 20%. In NYC, male ridership is a little above 60% and female ridership is also higher above 20%. 
+After all, I have learned lots of new things from the projects! And we did a good, Swop!

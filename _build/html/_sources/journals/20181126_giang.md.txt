@@ -1,11 +1,11 @@
-# First step of doing data visualization
+# Wrapping up together
 
-## Import all neccessary packages
+After all of data visualization, I see that we have all the answers to all our questions at the beginning. After 3 weeks of exploring and constantly learning, I feel that we have grown so much knowing all the things we learn could come to use. Looking back myself 1 month ago, I learned lots of new things about using markdown, Github, Matplotlib, Seaborn, folium packages, and some methoad to do the data visualization. This part below is what we think about data science job:
 
-I started by importing packages as one should do. Since we were working with the CSV file, we will need pandas to read the data files. I also decided to import numpy to make calculations more easily, seaborn and matplotlib to plot different kinds of plots such as bar graph, histogram, scatter plot, line graph, and pie chart. 
+Looking at all the data and analysis, we realized that data science consists of many steps and data science is not just about analysis of data. A large part of data science work (sometimes even the majority) consists of collecting and feature scaling / manipulating the datasets. This was about 5% and 10% of the work respectively of the work that we did.
 
-I think people in class also use of these packages as well. I then looked at my datasets, and I found out that my dataset had the information for longtitude and lattitude of the location. I finally imported folium and folium.plugins to graph the locations of all the bikeshare stations in the google map. These graphs will make the visualization more efficiently because people can know what is the most popular stations, and lots of other things.
+The main analysis and visualization generation was also about another 23%.
 
-[Import packages](../images/journal_images/import_packages.png)
+A large part of our effort was put into documenting our work by writing journals and also presenting our story in a legible and informative way taking our audience into consideration. This was probably the largest part of the work as we experimented with markdown, Sphinx, Hugo and different modules to manipulate the data. This was about 27% of the time.
 
-I think the first step is very important because it would guide people to go on the right track.
+Almost all of the time when we encountered a problem, we also took into account learning new things. Whether it is proper repository management, writing in reStructured text and generating documentation websites out of Sphinx, learning new content took almost 35% of our times.

@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Accidental Checkouts Question &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <title>First step of doing data visualization &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -65,7 +65,10 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Accidental Checkouts Question</a></li>
+<li><a class="reference internal" href="#">First step of doing data visualization</a><ul>
+<li><a class="reference internal" href="#import-all-neccessary-packages">Import all neccessary packages</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -99,12 +102,15 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="accidental-checkouts-question">
-<span id="accidental-checkouts-question"></span><h1>Accidental Checkouts Question<a class="headerlink" href="#accidental-checkouts-question" title="Permalink to this headline">¶</a></h1>
-<p>Today, I did some data visualization to explore how many accidental checkouts are in both New York City and Boston. I tried to figure out what are the accidental checkouts and how can we calculate the total accidental checkouts. After plotting the trip duration distribution, I realized that there were lots of trip with durations less than 3 minutes. Therefore, I decided that all the trips less than 3 minutes were regarded as accidental checkouts. Here below is my code to calculate the total accidental checkouts of New York City and Boston and the percentages of all the accidental checkouts:</p>
-<p><a class="reference external" href="../images/journal_images/ny_checkouts.png">New York accidental checkouts</a></p>
-<p><a class="reference external" href="../images/journal_images/boston_checkouts.png">Boston accidental checkouts</a></p>
-<p>After that, I calculated that there are 32668 accidental checkouts in New York and there are 4751 accidental checkouts in Boston. We then tried to drop all the accidental checkouts and see new distributions of trip duration in both cities, but the distributions are not too different.</p>
+  <div class="section" id="first-step-of-doing-data-visualization">
+<span id="first-step-of-doing-data-visualization"></span><h1>First step of doing data visualization<a class="headerlink" href="#first-step-of-doing-data-visualization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="import-all-neccessary-packages">
+<span id="import-all-neccessary-packages"></span><h2>Import all neccessary packages<a class="headerlink" href="#import-all-neccessary-packages" title="Permalink to this headline">¶</a></h2>
+<p>I started by importing packages as one should do. Since we were working with the CSV file, we will need pandas to read the data files. I also decided to import numpy to make calculations more easily, seaborn and matplotlib to plot different kinds of plots such as bar graph, histogram, scatter plot, line graph, and pie chart.</p>
+<p>I think people in class also use of these packages as well. I then looked at my datasets, and I found out that my dataset had the information for longtitude and lattitude of the location. I finally imported folium and folium.plugins to graph the locations of all the bikeshare stations in the google map. These graphs will make the visualization more efficiently because people can know what is the most popular stations, and lots of other things.</p>
+<p><a class="reference external" href="../images/journal_images/import_packages.png">Import packages</a></p>
+<p>I think the first step is very important because it would guide people to go on the right track.</p>
+</div>
 </div>
 
 

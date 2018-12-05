@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Transcription and Unification of the datasets &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
+    <title>Accidental Checkouts Question &#8212; Bikeshare Data Visualization 0.0.1 documentation</title>
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -65,10 +65,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Transcription and Unification of the datasets</a><ul>
-<li><a class="reference internal" href="#features-unification">Features Unification</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Accidental Checkouts Question</a></li>
 </ul>
 </ul>
 </li>
@@ -102,100 +99,12 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="transcription-and-unification-of-the-datasets">
-<h1>Transcription and Unification of the datasets<a class="headerlink" href="#transcription-and-unification-of-the-datasets" title="Permalink to this headline">¶</a></h1>
-<p>Our goal is to compare the similarity and the difference of bikeshare in
-two big cities Boston and New York. Therefore, Swop and I decided to
-normalize all the features in two datasets first. We will be using the
-features listed below:</p>
-<div class="section" id="features-unification">
-<h2>Features Unification<a class="headerlink" href="#features-unification" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="20%" />
-<col width="19%" />
-<col width="26%" />
-<col width="15%" />
-<col width="20%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Feature</th>
-<th class="head">Column</th>
-<th class="head">Unit</th>
-<th class="head">Data Type</th>
-<th class="head">Missing</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Duration</td>
-<td>duration</td>
-<td>minutes</td>
-<td>int64</td>
-<td>No</td>
-</tr>
-<tr class="row-odd"><td>Start Time</td>
-<td>start_time</td>
-<td>datetime</td>
-<td>datetime64</td>
-<td>Yes, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></td>
-</tr>
-<tr class="row-even"><td>End Time</td>
-<td>end_time</td>
-<td>datetime</td>
-<td>datetime64</td>
-<td>Yes, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></td>
-</tr>
-<tr class="row-odd"><td>Start Station</td>
-<td>start_station</td>
-<td>N/A</td>
-<td>object</td>
-<td>Yes, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></td>
-</tr>
-<tr class="row-even"><td>End Station</td>
-<td>end_station</td>
-<td>N/A</td>
-<td>object</td>
-<td>Yes, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></td>
-</tr>
-<tr class="row-odd"><td>Start Longitude</td>
-<td>start_lng</td>
-<td>N/A</td>
-<td>float64</td>
-<td>Yes, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></td>
-</tr>
-<tr class="row-even"><td>End Longitude</td>
-<td>end_lng</td>
-<td>N/A</td>
-<td>float64</td>
-<td>Yes, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></td>
-</tr>
-<tr class="row-odd"><td>Start Latitude</td>
-<td>start_lat</td>
-<td>N/A</td>
-<td>float64</td>
-<td>Yes, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></td>
-</tr>
-<tr class="row-even"><td>End Latitude</td>
-<td>end_lat</td>
-<td>N/A</td>
-<td>float64</td>
-<td>Yes, <code class="docutils literal notranslate"><span class="pre">np.nan</span></code></td>
-</tr>
-<tr class="row-odd"><td>User Type</td>
-<td>start_lng</td>
-<td>Member, Non-Member</td>
-<td>object</td>
-<td>No</td>
-</tr>
-<tr class="row-even"><td>Gender</td>
-<td>gender</td>
-<td>Male, Female, Unknown</td>
-<td>object</td>
-<td>as Unknown</td>
-</tr>
-</tbody>
-</table>
-</div>
+  <div class="section" id="accidental-checkouts-question">
+<span id="accidental-checkouts-question"></span><h1>Accidental Checkouts Question<a class="headerlink" href="#accidental-checkouts-question" title="Permalink to this headline">¶</a></h1>
+<p>Today, I did some data visualization to explore how many accidental checkouts are in both New York City and Boston. I tried to figure out what are the accidental checkouts and how can we calculate the total accidental checkouts. After plotting the trip duration distribution, I realized that there were lots of trip with durations less than 3 minutes. Therefore, I decided that all the trips less than 3 minutes were regarded as accidental checkouts. Here below is my code to calculate the total accidental checkouts of New York City and Boston and the percentages of all the accidental checkouts:</p>
+<p><a class="reference external" href="../images/journal_images/ny_checkouts.png">New York accidental checkouts</a></p>
+<p><a class="reference external" href="../images/journal_images/boston_checkouts.png">Boston accidental checkouts</a></p>
+<p>After that, I calculated that there are 32668 accidental checkouts in New York and there are 4751 accidental checkouts in Boston. We then tried to drop all the accidental checkouts and see new distributions of trip duration in both cities, but the distributions are not too different.</p>
 </div>
 
 
