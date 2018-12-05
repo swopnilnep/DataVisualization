@@ -28,31 +28,65 @@ below.
 +----------------+------------------------------------------------------------+-----------+-----------+
 | 11, Nov 2018   | Journal                                                    | Swopnil   | |img8|    |
 +----------------+------------------------------------------------------------+-----------+-----------+
+| 12, Nov 2018   | Transcription and Unification of the datasets              | Giang     | |img17|   |
++----------------+------------------------------------------------------------+-----------+-----------+
 | 12, Nov 2018   | Writing the Scripts and Normalizing the Data               | Swopnil   | |img9|    |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 13, Nov 2018   | Datasets Combination                                       | Giang     | |img23|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
 | 13, Nov 2018   | Managing the Repository                                    | Swopnil   | |img10|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
+| 13, Nov 2018   | Datasets Combination                                       | Giang     | |img23|   |
++----------------+------------------------------------------------------------+-----------+-----------+
 | 14, Nov 2018   | Modules and Tools that we will be using                    | Swopnil   | |img11|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 14, Nov 2018   | Process of Normalizing the datasets                        | Giang     | |img24|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
 | 15, Nov 2018   | Data Visualization Project Management Schedule             | Swopnil   | |img12|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
+| 15, Nov 2018   | The Process of Merging two datasets together               | Giang     | |img25|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 16, Nov 2018   | First step of doing data visualization                     | Giang     | |img26|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 17, Nov 2018   | Questions before doing data visualization                  | Giang     | |img27|   |
++----------------+------------------------------------------------------------+-----------+-----------+
 | 18, Nov 2018   | Drawback of Self Reported Data                             | Swopnil   | |img13|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 18, Nov 2018   | Overview of the Dataset                                    | Giang     | |img28|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
 | 19, Nov 2018   | Fundamental Pandas Functions                               | Swopnil   | |img14|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
+| 19, Nov 2018   | Some other data visualizations                             | Giang     | |img29|   |
++----------------+------------------------------------------------------------+-----------+-----------+
 | 20, Nov 2018   | Fundamental Pandas Functions (pt2)                         | Swopnil   | |img15|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 20, Nov 2018   | Same Station Visualization                                 | Giang     | |img30|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
 | 21, Nov 2018   | Fundamental matplotlib                                     | Swopnil   | |img16|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
-| 22, Nov 2018   | Transcription and Unification of the datasets              | Giang     | |img17|   |
+| 21, Nov 2018   | Trip Duration less than 30 minutes                         | Giang     | |img31|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
 | 22, Nov 2018   | Journal                                                    | Swopnil   | |img18|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
+| 22, Nov 2018   | Accidental Checkout Questions                              | Giang     | |img32|   |
++----------------+------------------------------------------------------------+-----------+-----------+
 | 23, Nov 2018   | Journal                                                    | Swopnil   | |img19|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 23, Nov 2018   | Basic analysis                                             | Giang     | |img33|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 24, Nov 2018   | Heat Map                                                   | Giang     | |img34|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 25, Nov 2018   | Setting up for the Sphinx Website                          | Giang     | |img35|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 26, Nov 2018   | Wrapping up together                                       | Giang     | |img36|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
 | 28, Nov 2018   | Time Distribution of the Work                              | Swopnil   | |img20|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
+| 28, Nov 2018   | Preparing for Presentation Day                             | Giang     | |img37|   |
++----------------+------------------------------------------------------------+-----------+-----------+
 | 29, Nov 2018   | Conclusions and Learning Summary                           | Swopnil   | |img21|   |
++----------------+------------------------------------------------------------+-----------+-----------+
+| 29, Nov 2018   | After Presentation                                         | Giang     | |img38|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
 | 30, Nov 2018   | Journal                                                    | Swopnil   | |img22|   |
 +----------------+------------------------------------------------------------+-----------+-----------+
@@ -103,3 +137,43 @@ below.
    :target: ../journals/20181129_swopnil.html
 .. |img22| image:: ../images/link.png
    :target: ../journals/20181130_swopnil.html
+.. |img23| image:: ../images/link.png
+   :target: ../journals/20181123_giang.html
+.. |img24| image:: ../images/link.png
+   :target: ../journals/20181124_giang.html
+.. |img25| image:: ../images/link.png
+   :target: ../journals/20181125_giang.html
+.. |img26| image:: ../images/link.png
+   :target: ../journals/20181126_giang.html
+.. |img27| image:: ../images/link.png
+   :target: ../journals/20181127_giang.html
+.. |img28| image:: ../images/link.png
+   :target: ../journals/20181128_giang.html
+.. |img29| image:: ../images/link.png
+   :target: ../journals/20181129_giang.html
+.. |img30| image:: ../images/link.png
+   :target: ../journals/20181130_giang.html
+.. |img31| image:: ../images/link.png
+   :target: ../journals/20181201_giang.html
+.. |img32| image:: ../images/link.png
+   :target: ../journals/20181202_giang.html
+.. |img33| image:: ../images/link.png
+   :target: ../journals/20181203_giang.html
+.. |img34| image:: ../images/link.png
+   :target: ../journals/20181204_giang.html
+.. |img35| image:: ../images/link.png
+   :target: ../journals/20181205_giang.html
+.. |img36| image:: ../images/link.png
+   :target: ../journals/20181206_giang.html
+.. |img37| image:: ../images/link.png
+   :target: ../journals/20181207_giang.html
+.. |img38| image:: ../images/link.png
+   :target: ../journals/20181208_giang.html
+
+
+
+
+
+
+
+
