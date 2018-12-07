@@ -2,9 +2,9 @@
 
 The first 30 minutes of each ride are included in the price of the pass, and you can take as many rides as you want while your pass is active. If you keep a bike out for more than 30 minutes at a time, it's an extra $4 per additional 15 minutes. Therefore, I will look up for the distribution of trip duration less than 30 minutes in both cities:
 
-[New York Trip Duration less than 30 minutes](../images/journal_images/ny_less30.png)
+![New York Trip Duration less than 30 minutes](../images/journal_images/ny_less30.png)
 
-[Boston Trip Duration less than 30 minutes](../images/journal_images/boston_less30.png)
+![Boston Trip Duration less than 30 minutes](../images/journal_images/boston_less30.png)
 
 We can see in the graphs that the usertypes in New York are various while the usertypes in Boston are just non-member. It's very interesting and weird because the range of trip duration in Boston is much greater than that in New York. However, most of riders in Boston are non-member (although most of them use bikeshare service a lot)
 
