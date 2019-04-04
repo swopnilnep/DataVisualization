@@ -11,16 +11,16 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
 
   </head><body>
 
@@ -89,7 +89,7 @@
 <li><a class="reference internal" href="#from-here-to-there">From Here to There</a><ul>
 <li><a class="reference internal" href="#most-popular-stations">Most popular stations</a></li>
 <li><a class="reference internal" href="#next-station-by-location">Next station by location</a><ul>
-<li><a class="reference internal" href="#new-york-city">New York City</a></li>
+<li><a class="reference internal" href="#id1">New York City</a></li>
 </ul>
 </li>
 </ul>
@@ -128,10 +128,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="body col-md-12 content" role="main">
       
   <div class="section" id="the-tale-of-bikesharing-in-the-united-states">
-<span id="the-tale-of-bikesharing-in-the-united-states"></span><h1>The Tale of Bikesharing in the United States<a class="headerlink" href="#the-tale-of-bikesharing-in-the-united-states" title="Permalink to this headline">¶</a></h1>
+<h1>The Tale of Bikesharing in the United States<a class="headerlink" href="#the-tale-of-bikesharing-in-the-united-states" title="Permalink to this headline">¶</a></h1>
 <p>In this project, we look at bike share data from bike-share companies in
 Boston (Hubway) and New York City (Citi Bikes). As bike sharing services
 begin to roll out in many US cities, bike sharing is becoming a more
@@ -143,7 +143,7 @@ rides from publicly available data in both New York City and Boston and distribu
 many parts. Below is how we have documented the process of our data
 analysis. This analysis will be divided into five parts.</p>
 <div class="section" id="overview-of-the-data">
-<span id="overview-of-the-data"></span><h2>Overview of the Data<a class="headerlink" href="#overview-of-the-data" title="Permalink to this headline">¶</a></h2>
+<h2>Overview of the Data<a class="headerlink" href="#overview-of-the-data" title="Permalink to this headline">¶</a></h2>
 <p>We began by combining the datasets from Boston and New York. We took the most relevant features and added them to our data frames and wrote Python scripts to collect, combine and feature scale the information. The datasets included the following features:</p>
 <ol class="simple">
 <li>Duration - time each bike was checked out for</li>
@@ -157,106 +157,102 @@ analysis. This analysis will be divided into five parts.</p>
 </ol>
 <p>After making the dataset, we looked at the fundamental information of the dataset using Python Data Visualization tools like <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="section" id="distribution-of-gender">
-<span id="distribution-of-gender"></span><h3>Distribution of Gender<a class="headerlink" href="#distribution-of-gender" title="Permalink to this headline">¶</a></h3>
-<p><img alt="Riders by genders" src="_images/distribution_by_gender_nyc.png" /> <img alt="Riders by the hour" src="_images/distribution_by_gender_bos.png" /></p>
+<h3>Distribution of Gender<a class="headerlink" href="#distribution-of-gender" title="Permalink to this headline">¶</a></h3>
+<p><img alt="_images/distribution_by_gender_nyc.png" src="_images/distribution_by_gender_nyc.png" />Riders by genders <img alt="_images/distribution_by_gender_bos.png" src="_images/distribution_by_gender_bos.png" />Riders by the hour</p>
 <p>Looking at the data, there was an immediate observation of the gender distribution of bike share riders. It was that women were using bikeshare services way less than men. In New York City, the ratio of men to women was 70% to 30% whereas in Boston, this ratio was close to 80% to 20%. In either case, men were three or four times more likely to use bike share services.</p>
 <p>As to why women don’t ride bicycles as much as men, there have been many theories including factors such as perceived safety mentioned in <a class="reference external" href="https://fivethirtyeight.com/features/why-women-dont-cycle/">this article by FiveThirtyEight</a>, and the data holds true to its claim.</p>
 </div>
 <div class="section" id="distribution-of-trip-duration">
-<span id="distribution-of-trip-duration"></span><h3>Distribution of Trip Duration<a class="headerlink" href="#distribution-of-trip-duration" title="Permalink to this headline">¶</a></h3>
-<p><img alt="Riders by the hour" src="_images/general_ny_duration_distribution_nyc.png" /> <img alt="Riders by the hour" src="_images/general_boston_duration_distribution_bos.png" /></p>
+<h3>Distribution of Trip Duration<a class="headerlink" href="#distribution-of-trip-duration" title="Permalink to this headline">¶</a></h3>
+<p><img alt="_images/general_ny_duration_distribution_nyc.png" src="_images/general_ny_duration_distribution_nyc.png" />Riders by the hour <img alt="_images/general_boston_duration_distribution_bos.png" src="_images/general_boston_duration_distribution_bos.png" />Riders by the hour</p>
 <p>In regards to the duration of the rides, people in Boston were much more likely to have checked out the bikes for a longer time. While the range of duration time in New York is from 0 to 70 minutes, that in Boston is from 0 - 9000 minutes (about 6 days).</p>
 <p>Since Citi Bikes puts a restriction of 30 minutes on bicycle checkout, most of the rides in New York were under 30 minutes.</p>
 <p>However, in Boston, people checked the bikes out for a much longer period as there was a longer checkout period for the bikes. Hence a lot of people even checked out the bikes for 5 days. We then wonder about the special case with trips from Station A all the way to Station A. We find out that the percentages of same station trips in New York and Boston are 2.5 % (13,707 trips out of 5,562,321 total trips ) and 4.8% (76, 311 trips out of 1,579,025 total trips).</p>
 <div class="section" id="members-and-nonmembers">
-<span id="members-and-nonmembers"></span><h4>Members and Nonmembers<a class="headerlink" href="#members-and-nonmembers" title="Permalink to this headline">¶</a></h4>
+<h4>Members and Nonmembers<a class="headerlink" href="#members-and-nonmembers" title="Permalink to this headline">¶</a></h4>
 <p>We then continued to do some distribution of trip duration by the user type (member, and non-member). Here below are the histograms of New York and Boston’s trip durations by the user types. We can easily observe that the number of members and non-member in New York is quite the same while most of the riders in Boston is a non-member.</p>
-<p><img alt="Distribution of trip duration by user type" src="_images/duration_distribution_by_usertype_nyc.png" />  <img alt="Distribution of trip duration by user type" src="_images/boston_duration_distribution_by_usertype_bos.png" /></p>
+<p><img alt="_images/duration_distribution_by_usertype_nyc.png" src="_images/duration_distribution_by_usertype_nyc.png" />Distribution of trip duration by user type  <img alt="_images/boston_duration_distribution_by_usertype_bos.png" src="_images/boston_duration_distribution_by_usertype_bos.png" />Distribution of trip duration by user type</p>
 </div>
 <div class="section" id="accidental-checkouts">
-<span id="accidental-checkouts"></span><h4>Accidental Checkouts<a class="headerlink" href="#accidental-checkouts" title="Permalink to this headline">¶</a></h4>
+<h4>Accidental Checkouts<a class="headerlink" href="#accidental-checkouts" title="Permalink to this headline">¶</a></h4>
 <p>For Citibike, the first 30 minutes of each ride are included in the price of the pass, and you can take as many rides as you want while your pass is active. If you keep a bike out for more than 30 minutes at a time, it’s an extra $4 per additional 15 minutes. Therefore, we will look up for the distribution of trip duration less than 30 minutes:</p>
-<p><img alt="Distribution of trip duration &lt; 30 in NY" src="_images/nyc_duration_distribution_&lt;30nyc.png" /> <img alt="Distribution of trip duration &lt; 30 in Boston" src="_images/boston_duration_distribution_&lt;30_bos.png" /></p>
+<p><img alt="images/1/nyc_duration_distribution_%3C30nyc.png" src="images/1/nyc_duration_distribution_%3C30nyc.png" />Distribution of trip duration &lt; 30 in NY <img alt="images/1/boston_duration_distribution_%3C30_bos.png" src="images/1/boston_duration_distribution_%3C30_bos.png" />Distribution of trip duration &lt; 30 in Boston</p>
 <p>We notice that lots of trip durations are less than 3 minutes. We can regardless than three-minute trip duration is the accidental checkout. Therefore, the number of accidentals checkouts in New York and Boston are 32668 and 4751 respectively. Here is the distribution of duration trips &lt; 30 minutes of two cities after dropping all the accidental checkouts:</p>
-<p><img alt="Distribution of trip duration &lt; 30 without accidental checkouts" src="_images/ny_duration_distribution_without_accidentalcheckouts_nyc.png" /> <img alt="Distribution of trip duration &lt; 30 without accidental checkouts" src="_images/boston_duration_distribution_without_accidentalcheckouts_bos.png" /></p>
+<p><img alt="_images/ny_duration_distribution_without_accidentalcheckouts_nyc.png" src="_images/ny_duration_distribution_without_accidentalcheckouts_nyc.png" />Distribution of trip duration &lt; 30 without accidental checkouts <img alt="_images/boston_duration_distribution_without_accidentalcheckouts_bos.png" src="_images/boston_duration_distribution_without_accidentalcheckouts_bos.png" />Distribution of trip duration &lt; 30 without accidental checkouts</p>
 <p>We can observe that the graphs with and without accidental checkouts are not different a lot. Therefore, we can conclude that the number of accidental checkouts doesn’t affect the model of two datasets a lot.</p>
 </div>
 </div>
 <div class="section" id="distribution-by-age">
-<span id="distribution-by-age"></span><h3>Distribution by Age<a class="headerlink" href="#distribution-by-age" title="Permalink to this headline">¶</a></h3>
+<h3>Distribution by Age<a class="headerlink" href="#distribution-by-age" title="Permalink to this headline">¶</a></h3>
 <p>The next question is “How does bike share service usage differ by age?”. Taking a closer look at the main data. We can see that the distribution of age is skewed to the right. The majority of the users are between their 30s-50s. A reason for the use of bicycles for the current demographic could be 2 reasons in my opinion: 1. As people earn more, they stray away from bicycles. Hence people with higher median earnings (who generally tend to be older, could use other means of transportation) 2. While the bicycles are cheaper than taxis and ride-hailing apps, they are more expensive than the metro in NYC or Boston. Demographics with a lower income, generally 20-year-olds or older could use the metro otherwise.</p>
-<p><img alt="Users by age" src="_images/duration_distribution_by_age_nyc.png" /> <img alt="Users by age" src="_images/duration_distribution_by_age_bos.png" /> !<img alt="Users by age" src="_images/duration_distribution_by_age_all.png" /></p>
+<p><img alt="_images/duration_distribution_by_age_nyc.png" src="_images/duration_distribution_by_age_nyc.png" />Users by age <img alt="_images/duration_distribution_by_age_bos.png" src="_images/duration_distribution_by_age_bos.png" />Users by age !<img alt="_images/duration_distribution_by_age_all.png" src="_images/duration_distribution_by_age_all.png" />Users by age</p>
 </div>
 </div>
 <div class="section" id="what-happens-in-a-day">
-<span id="what-happens-in-a-day"></span><h2>What Happens in a Day<a class="headerlink" href="#what-happens-in-a-day" title="Permalink to this headline">¶</a></h2>
+<h2>What Happens in a Day<a class="headerlink" href="#what-happens-in-a-day" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="in-a-day">
-<span id="in-a-day"></span><h3>In a day<a class="headerlink" href="#in-a-day" title="Permalink to this headline">¶</a></h3>
+<h3>In a day<a class="headerlink" href="#in-a-day" title="Permalink to this headline">¶</a></h3>
 <p>In one day in a city like Boston or New York City, a lot of activity takes place in different areas of towns. In essence, the data is also a reflection of what New Yorkers or people in Boston live their lives.</p>
 <p>Looking at activity by time of day, we can see that even during late nights some New Yorkers are still active on their bicycles.</p>
-<p><img alt="NYC by day" src="_images/riders_by_hour_nyc.png" /></p>
+<p><img alt="_images/riders_by_hour_nyc.png" src="_images/riders_by_hour_nyc.png" />NYC by day</p>
 <p>In the midst of dusk and dawn around 3 am is the lowest bicycle traffic. The distribution is bimodal containing two peaks representing the two times that New Yorkers rush in and out of work; these take place around 8am and between 5-7pm.</p>
 <p>The higher peak in the evening hours could also have been affected by more tourists choosing to ride bicycles or more people biking around for recreation.</p>
-<p><img alt="BOS by day" src="_images/riders_by_hour_bos.png" /></p>
+<p><img alt="_images/riders_by_hour_bos.png" src="_images/riders_by_hour_bos.png" />BOS by day</p>
 <p>Boston also follows a similar peak where the traffic drops drastically around 8pm until around 7am when it rises back to a peak and drops for the midday until around mega rush hour.</p>
 <p>The similarity of these peaks tells us that the location (in this case New York City or Boston) does not that that much effect on the bike riding trend.</p>
 <p>In fact, if we combine both plots we almost get the same plot again.</p>
-<p><img alt="All by day" src="_images/riders_by_hour_all.png" /></p>
+<p><img alt="_images/riders_by_hour_all.png" src="_images/riders_by_hour_all.png" />All by day</p>
 </div>
 <div class="section" id="by-day-of-the-year">
-<span id="by-day-of-the-year"></span><h3>By day of the year<a class="headerlink" href="#by-day-of-the-year" title="Permalink to this headline">¶</a></h3>
+<h3>By day of the year<a class="headerlink" href="#by-day-of-the-year" title="Permalink to this headline">¶</a></h3>
 <p>if we look at riders by the day of the week, the data adds a clear picture of the seasonal cycling trends in both cities. People tend to go out during the summer and spring month and enjoy the sun and the weather whereas stay indoors specially in the snowy northeast.</p>
 <p>This trend is reflected by the annual trends.</p>
-<p><img alt="Nyc by year" src="_images/riders_by_month_nyc.png" /></p>
+<p><img alt="_images/riders_by_month_nyc.png" src="_images/riders_by_month_nyc.png" />Nyc by year</p>
 <p>In New York City, there is almost no traffic in the months of January and February, whereas as the seasons pass, fall has the highest traffic. This could also be directly related to weather trends.</p>
-<p><img alt="Bos by year" src="_images/riders_by_month_bos.png" /></p>
+<p><img alt="_images/riders_by_month_bos.png" src="_images/riders_by_month_bos.png" />Bos by year</p>
 <p>Boston contains a similar picture. Sometimes even the services close down during deep snow winter months in the cities so there is hardly any usage data for the rides during this time. Even Boston usage peaks around September and late August before the fall.</p>
 </div>
 </div>
 <div class="section" id="looking-from-above">
-<span id="looking-from-above"></span><h2>Looking from Above<a class="headerlink" href="#looking-from-above" title="Permalink to this headline">¶</a></h2>
+<h2>Looking from Above<a class="headerlink" href="#looking-from-above" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="new-york-city">
-<span id="new-york-city"></span><h3>New York City<a class="headerlink" href="#new-york-city" title="Permalink to this headline">¶</a></h3>
+<h3>New York City<a class="headerlink" href="#new-york-city" title="Permalink to this headline">¶</a></h3>
 <p>If we look into the availability of stations we can see that almost all of the stations in New York City are in Manhattan. While Manhattan has over 300 stations, Brooklyn has less than 20 combined. Queens, Staten Island, and the Bronx don’t even have a bike-share station.</p>
 <p><strong>Cluster location of stations</strong>
 <a class="reference external" href="../../images/3/nyc_bikeshare_stops_cluster.html"><em>Click to view projection</em>
-<img alt="Bos by year" src="_images/nyc_cluster.png" /></a></p>
+<img alt="_images/nyc_cluster.png" src="_images/nyc_cluster.png" />Bos by year</a></p>
 <p>Amongst those in availability in NYC, most of the density of usage takes place in midtown and downtown Manhattan. This makes sense as midtown consists of a lot of major businesses and tourist sites whereas downtown consists of areas such a Chinatown and Wall Street which is also a hub for greater traffic.</p>
 <p>This density map matches directly in proportion with the population density of these areas.</p>
 <p><strong>Density of usage</strong>
 <a class="reference external" href="../../images/3/nyc_heatmap.html"><em>Click to view projection</em>
-<img alt="Bos by year" src="_images/nyc_heat.png" /></a></p>
+<img alt="_images/nyc_heat.png" src="_images/nyc_heat.png" />Bos by year</a></p>
 </div>
 <div class="section" id="boston">
-<span id="boston"></span><h3>Boston<a class="headerlink" href="#boston" title="Permalink to this headline">¶</a></h3>
+<h3>Boston<a class="headerlink" href="#boston" title="Permalink to this headline">¶</a></h3>
 <p>The same case is in Boston where there are more stations in the downtown area. Boston is also a little different in this case as Boston consists of a hub of universities which the bike share company probably targetted by placing the stations near the universities or even inside them.</p>
 <p><strong>Cluster location of stations</strong>
 <a class="reference external" href="../../images/3/boston_bikeshare_stops_cluster.html"><em>Click to view projection</em>
-<img alt="Bos by year" src="_images/boston_cluster.png" /></a></p>
+<img alt="_images/boston_cluster.png" src="_images/boston_cluster.png" />Bos by year</a></p>
 <p>However, the stations with university locations like Harvard, UMass or MIT are underused compared to the main Boston downtown areas. While these do provide a sustainable means of transportation for college students, these areas areas are underutilized.</p>
 <p><strong>Density of usage</strong>
 <a class="reference external" href="../../images/3/boston_heatmap.html"><em>Click to view projection</em>
-<img alt="Bos by year" src="_images/boston_heat.png" /></a></p>
+<img alt="_images/boston_heat.png" src="_images/boston_heat.png" />Bos by year</a></p>
 </div>
 </div>
 <div class="section" id="from-here-to-there">
-<span id="from-here-to-there"></span><h2>From Here to There<a class="headerlink" href="#from-here-to-there" title="Permalink to this headline">¶</a></h2>
+<h2>From Here to There<a class="headerlink" href="#from-here-to-there" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="most-popular-stations">
-<span id="most-popular-stations"></span><h3>Most popular stations<a class="headerlink" href="#most-popular-stations" title="Permalink to this headline">¶</a></h3>
+<h3>Most popular stations<a class="headerlink" href="#most-popular-stations" title="Permalink to this headline">¶</a></h3>
 <p>Representing the same informaition in a chart, we can see that the downtown areas have the highest frequency of use. In fact, for both NYC and Boston, all of the top 20 stations are downtown.</p>
-<p><img alt="Bos by year" src="_images/20_popular_nyc.png" /> <img alt="Bos by year" src="_images/20_popular_bos.png" /></p>
+<p><img alt="_images/20_popular_nyc.png" src="_images/20_popular_nyc.png" />Bos by year <img alt="_images/20_popular_bos.png" src="_images/20_popular_bos.png" />Bos by year</p>
 <p>By seperating this data by station we can make further calculation and find some insights about where people are going from which station. As we notice in the interactive plots below, for NYC stations in midtown and downtown Manhattan are popular amonst all the stations, whereas neighbouring stations are the next popular.</p>
 </div>
 <div class="section" id="next-station-by-location">
-<span id="next-station-by-location"></span><h3>Next station by location<a class="headerlink" href="#next-station-by-location" title="Permalink to this headline">¶</a></h3>
+<h3>Next station by location<a class="headerlink" href="#next-station-by-location" title="Permalink to this headline">¶</a></h3>
 <p>From where you are, where would you most likely go?</p>
-<div class="section" id="new-york-city">
-<span id="id1"></span><h4>New York City<a class="headerlink" href="#new-york-city" title="Permalink to this headline">¶</a></h4>
-<p><html><head></p>
-<!-- Load require.js. Delete this if your page already loads require.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
-<script type="application/vnd.jupyter.widget-state+json">
+<div class="section" id="id1">
+<h4>New York City<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<html><head><!-- Load require.js. Delete this if your page already loads require.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script><script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script><script type="application/vnd.jupyter.widget-state+json">
 {
     "version_major": 2,
     "version_minor": 0,
@@ -2111,8 +2107,7 @@ analysis. This analysis will be divided into five parts.</p>
         }
     }
 }
-</script>
-</head>
+</script></head>
 <body><script type="application/vnd.jupyter.widget-view+json">
 {
     "version_major": 2,
@@ -2132,12 +2127,12 @@ analysis. This analysis will be divided into five parts.</p>
 </div>
 </div>
 <div class="section" id="conclusion">
-<span id="conclusion"></span><h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>Looking at all the data and analysis, we realized that data science consists of many steps and data science is not just about analysis of data. A large part of data science work (sometimes even the majority) consists of collecting and feature scaling / manipulating the datasets. This was about 5% and 10% of the work respectively of the work that we did.</p>
 <p>The main analysis and visualization generation was also about another 23%.</p>
 <p>A large part of our effort was put into documenting our work by writing journals and also presenting our story in a legible and informative way taking our audience into consideration. This was probably the largest part of the work as we experimented with markdown, Sphinx, Hugo and different modules to manipulate the data. This was about 27% of the time.</p>
 <p>Almost all of the time when we encountered a problem, we also took into account learning new things. Whether it is proper repository management, writing in reStructured text and generating documentation websites out of Sphinx, learning new content took almost 35% of our times.</p>
-<p><img alt="apple pie" src="_images/apple_pie.png" /></p>
+<p><img alt="_images/apple_pie.png" src="_images/apple_pie.png" />apple pie</p>
 <p>In the end, we learned that raw data consists of the many of the insights that we can convert into information but it is up to us to define what that is. Looking at the bikeshare usage of NYC and Boston, these reflect a meagre take of people who live there giving us insight about what time they go to work, where they go work and how they live their lives. Many insights can also be taken from what is not represented in the data. In this way, even though it is about bikesharing in these cities, represents stories about the lives of its users.</p>
 </div>
 </div>
@@ -2155,7 +2150,7 @@ analysis. This analysis will be divided into five parts.</p>
     </p>
     <p>
         &copy; Copyright 2018, Gia Swop.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.<br/>
     </p>
   </div>
 </footer>

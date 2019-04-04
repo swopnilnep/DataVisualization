@@ -11,16 +11,16 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
 
@@ -102,7 +102,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="body col-md-12 content" role="main">
       
   
 <style>
@@ -159,18 +159,18 @@ div.nblast {
 
 /* input prompt */
 div.nbinput div.prompt pre {
-    color: #303F9F;
+    color: #307FC1;
 }
 
 /* output prompt */
 div.nboutput div.prompt pre {
-    color: #D84315;
+    color: #BF5B3D;
 }
 
 /* all prompts */
 div.nbinput div.prompt,
 div.nboutput div.prompt {
-    min-width: 9ex;
+    min-width: 7ex;
     padding-top: 0.4em;
     padding-right: 0.4em;
     text-align: right;
@@ -210,9 +210,9 @@ div.nboutput div.output_area {
 
 /* input area */
 div.nbinput div.input_area {
-    border: 1px solid #cfcfcf;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f7f7f7;
+    background: #f5f5f5;
 }
 
 /* override MathJax center alignment in output cells */
@@ -220,7 +220,7 @@ div.nboutput div[class*=MathJax] {
     text-align: left !important;
 }
 
-/* override sphinx.ext.pngmath center alignment in output cells */
+/* override sphinx.ext.imgmath center alignment in output cells */
 div.nboutput div.math p {
     text-align: left;
 }
@@ -269,10 +269,43 @@ div.nboutput div.output_area.stderr {
 
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
 </style>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -286,8 +319,7 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -298,8 +330,7 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -310,8 +341,7 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -320,11 +350,10 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -446,8 +475,7 @@ div.nboutput div.output_area.stderr {
 <div class="section" id="Map-of-start-station-and-end-station">
 <h1>Map of start station and end station<a class="headerlink" href="#Map-of-start-station-and-end-station" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -456,8 +484,7 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -466,8 +493,7 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -476,8 +502,7 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -486,8 +511,7 @@ div.nboutput div.output_area.stderr {
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area highlight-none notranslate"><div class="highlight"><pre>
@@ -563,8 +587,7 @@ Name: start_station, Length: 137, dtype: object
 <div class="section" id="New-York-City">
 <h2>New York City<a class="headerlink" href="#New-York-City" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -576,19 +599,17 @@ Name: start_station, Length: 137, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVM9ZmFsc2U7IExfTk9fVE9VQ0g9ZmFsc2U7IExfRElTQUJMRV8zRD1mYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIi8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9MZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy8yLjAuMi9sZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy5jc3MiLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9yYXdnaXQuY29tL3B5dGhvbi12aXN1YWxpemF0aW9uL2ZvbGl1bS9tYXN0ZXIvZm9saXVtL3RlbXBsYXRlcy9sZWFmbGV0LmF3ZXNvbWUucm90YXRlLmNzcyIvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgPHN0eWxlPiNtYXBfNzFlYWJkOTM0NTY4NDRiZDk0ZTYyNjlkMWEyYzA1N2YgewogICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsKICAgICAgICB3aWR0aDogMTAwLjAlOwogICAgICAgIGhlaWdodDogMTAwLjAlOwogICAgICAgIGxlZnQ6IDAuMCU7CiAgICAgICAgdG9wOiAwLjAlOwogICAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9sZWFmbGV0LmdpdGh1Yi5pby9MZWFmbGV0LmhlYXQvZGlzdC9sZWFmbGV0LWhlYXQuanMiPjwvc2NyaXB0Pgo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgPGRpdiBjbGFzcz0iZm9saXVtLW1hcCIgaWQ9Im1hcF83MWVhYmQ5MzQ1Njg0NGJkOTRlNjI2OWQxYTJjMDU3ZiIgPjwvZGl2Pgo8L2JvZHk+CjxzY3JpcHQ+ICAgIAogICAgCiAgICAKICAgICAgICB2YXIgYm91bmRzID0gbnVsbDsKICAgIAoKICAgIHZhciBtYXBfNzFlYWJkOTM0NTY4NDRiZDk0ZTYyNjlkMWEyYzA1N2YgPSBMLm1hcCgKICAgICAgICAnbWFwXzcxZWFiZDkzNDU2ODQ0YmQ5NGU2MjY5ZDFhMmMwNTdmJywgewogICAgICAgIGNlbnRlcjogWzQwLjczNTMzNiwgLTczLjk5ODAwNF0sCiAgICAgICAgem9vbTogMTIsCiAgICAgICAgbWF4Qm91bmRzOiBib3VuZHMsCiAgICAgICAgbGF5ZXJzOiBbXSwKICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICBjcnM6IEwuQ1JTLkVQU0czODU3LAogICAgICAgIHpvb21Db250cm9sOiB0cnVlLAogICAgICAgIH0pOwoKICAgIAogICAgCiAgICB2YXIgdGlsZV9sYXllcl83NDNlZmMzMzI0ZjU0NjdiOGJkMjhjZTk5NGZiNTUwMSA9IEwudGlsZUxheWVyKAogICAgICAgICdodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZycsCiAgICAgICAgewogICAgICAgICJhdHRyaWJ1dGlvbiI6IG51bGwsCiAgICAgICAgImRldGVjdFJldGluYSI6IGZhbHNlLAogICAgICAgICJtYXhOYXRpdmVab29tIjogMTgsCiAgICAgICAgIm1heFpvb20iOiAxOCwKICAgICAgICAibWluWm9vbSI6IDAsCiAgICAgICAgIm5vV3JhcCI6IGZhbHNlLAogICAgICAgICJzdWJkb21haW5zIjogImFiYyIKfSkuYWRkVG8obWFwXzcxZWFiZDkzNDU2ODQ0YmQ5NGU2MjY5ZDFhMmMwNTdmKTsKICAgIAogICAgICAgICAgICB2YXIgaGVhdF9tYXBfZGIwNDZkNmMzODU5NDhkZDhjYzU3ZmE1NzBlM2Q4ZTEgPSBMLmhlYXRMYXllcigKICAgICAgICAgICAgICAgIFtbNDAuNzA1MzA5NTQsIC03NC4wMDYxMjU3Ml0sIFs0MC43NDkwMTI3MSwgLTczLjk4ODQ4Mzk1XSwgWzQwLjczNTQzOTM0LCAtNzMuOTk0NTM5NDhdLCBbNDAuNzM2MTk2NywgLTc0LjAwODU5MjA3XSwgWzQwLjc0OTAxMjcxLCAtNzMuOTg4NDgzOTVdLCBbNDAuNzMwNDc3NDcsIC03My45OTkwNjA2NV0sIFs0MC43NjM0MTM3OSwgLTczLjk5NjY3NDQ0XSwgWzQwLjc1MDAxOTg2LCAtNzMuOTY5MDUzMDFdLCBbNDAuNzI3NzkxMjYsIC03My45ODU2NDk0NV0sIFs0MC43MTI5MTIyNCwgLTc0LjAxMDIwMjM0XSwgWzQwLjY4NTM5NTY3LCAtNzMuOTc0MzE0NThdLCBbNDAuNzU4NDkxMTYsIC03My45NTkyMDYyMl0sIFs0MC43NTUxMDI2NywgLTczLjk3NDk4Njk2XSwgWzQwLjcyNDM5OSwgLTc0LjAwNDcwNF0sIFs0MC43MjE4NTM3OSwgLTc0LjAwNzcxNzc5XSwgWzQwLjc1Nzk3MzIyLCAtNzMuOTY2MDMzMDhdLCBbNDAuNzM0NTQ1NjcsIC03My45OTA3NDE0Ml0sIFs0MC43NDE0NzI4NiwgLTczLjk4MzIwOTI4XSwgWzQwLjczNjI0NTI3LCAtNzMuOTg0NzM3NjVdLCBbNDAuNjk3NjAxMjcsIC03My45OTM0NDU1OV0sIFs0MC43NTc1Njk4OTk5OTk5OSwgLTczLjk5MDk4NTA3XSwgWzQwLjY5NTk3NjgzLCAtNzMuOTkwMTQ4OTJdLCBbNDAuNzM2MjQ1MjcsIC03My45ODQ3Mzc2NV0sIFs0MC43MjkwMzkxNywgLTczLjk5NDA0NjQ5XSwgWzQwLjc2MDA5NDM3LCAtNzMuOTk0NjE4NDNdLCBbNDAuNzMwMzg1OTksIC03NC4wMDIxNDk4OF0sIFs0MC43MzkzMjMsIC03NC4wMDgxMTldLCBbNDAuNzY2OTUzMTcsIC03My45ODE2OTMzM10sIFs0MC43MjcxMDI1OCwgLTc0LjAwMjk3MDg4XSwgWzQwLjc1MDM4MDA5LCAtNzMuOTgzMzg5ODhdLCBbNDAuNzE2MDU4NjYsIC03My45OTE5MDc1OV0sIFs0MC43NDU0OTczLCAtNzQuMDAxOTcxMzldLCBbNDAuNzQ4MjM4LCAtNzMuOTc4MzExXSwgWzQwLjczOTcxMzAxLCAtNzMuOTk0NTY0MDVdLCBbNDAuNzU2NDU4MjQsIC03My45OTM3MjIyMl0sIFs0MC43NTUxMDI2NywgLTczLjk3NDk4Njk2XSwgWzQwLjY5Nzk0LCAtNzMuOTY5ODY4NDhdLCBbNDAuNzYwODc1MDIsIC03NC4wMDI3NzY2OF0sIFs0MC43MTkxMTU1MiwgLTc0LjAwNjY2NjYxXSwgWzQwLjY5MTY1MTgzLCAtNzMuOTk5OTc4NTk5OTk5OThdLCBbNDAuNzM0MjMyLCAtNzMuOTg2OTIzXSwgWzQwLjczMDI4NjY2LCAtNzMuOTkwNzY0N10sIFs0MC43NTE3MjYzMiwgLTczLjk4NzUzNTIzXSwgWzQwLjczODE3NjUsIC03My45NzczODY2Ml0sIFs0MC43NjA4NzUwMiwgLTc0LjAwMjc3NjY4XSwgWzQwLjcyMjE3NDQ0LCAtNzMuOTgzNjg3NzldLCBbNDAuNzQzMTU1NjYsIC03My45NzQzNDcyNl0sIFs0MC43NjIyODgyNiwgLTczLjk4MzM2MTgzXSwgWzQwLjcyMjk5MjA4LCAtNzMuOTc5OTU0NjZdLCBbNDAuNzQzOTQzMTQsIC03My45Nzk2NjA2OV0sIFs0MC43NTAxOTk5NSwgLTczLjk5MDkzMDg1XSwgWzQwLjczODI3NDI4LCAtNzMuOTg3NTE5NjhdLCBbNDAuNzE0Mjc0ODcsIC03My45ODk5MDAyNV0sIFs0MC43Mjk1NTM2MSwgLTczLjk4MDU3MjQ5XSwgWzQwLjczMTcyNDI4LCAtNzQuMDA2NzQ0MzZdLCBbNDAuNzI3NDM0MjMsIC03My45OTM3OTAyNV0sIFs0MC42OTE3ODIzMiwgLTczLjk3MzcyOTg5XSwgWzQwLjcxMjkxMjI0LCAtNzQuMDEwMjAyMzRdLCBbNDAuNzAxMjIxMjgsIC03NC4wMTIzNDIxOF0sIFs0MC43Mjk1MzgzNywgLTczLjk4NDI2NzI2XSwgWzQwLjczOTEyNjAxLCAtNzMuOTc5NzM3NzZdLCBbNDAuNzQ2NzQ1LCAtNzQuMDA3NzU2XSwgWzQwLjczNDE2MDU5LCAtNzMuOTgwMjQyODldLCBbNDAuNzAzNjUxODIsIC03NC4wMTE2Nzc5N10sIFs0MC43NjAwOTQzNywgLTczLjk5NDYxODQzXSwgWzQwLjcxNTU5NTA5LCAtNzMuOTg3MDI5NV0sIFs0MC43NDgyMzgsIC03My45NzgzMTFdLCBbNDAuNzYwMTkyNTIsIC03My45OTEyNTUxXSwgWzQwLjcyMDE5NTc2LCAtNzMuOTg5OTc4MjVdLCBbNDAuNzQwNTgyNiwgLTc0LjAwNTUwODY3XSwgWzQwLjc1NDYwMTEwMjYsIC03My45NzE4Nzg4NTVdLCBbNDAuNzI4NzM4ODgsIC03NC4wMDc0ODg0Ml0sIFs0MC43NTY0MDU0OCwgLTczLjk5MDAyNjJdLCBbNDAuNzMwMzg1OTksIC03NC4wMDIxNDk4OF0sIFs0MC43MzQ5MjY5NSwgLTczLjk5MjAwNTA5XSwgWzQwLjczNDU0NTY3LCAtNzMuOTkwNzQxNDJdLCBbNDAuNzM1MzUzOTgsIC03NC4wMDQ4MzA5MV0sIFs0MC43NTI1NTQzNCwgLTczLjk3MjgyNjI1XSwgWzQwLjczOTcxMzAxLCAtNzMuOTk0NTY0MDVdLCBbNDAuNzUwNDQ5OTksIC03My45OTQ4MTA1MV0sIFs0MC43MzA0NzMwOSwgLTczLjk4NjcyMzc4XSwgWzQwLjcyMDQzNDExLCAtNzQuMDEwMjA2MDldLCBbNDAuNzI4NzM4ODgsIC03NC4wMDc0ODg0Ml0sIFs0MC42OTE5NjAzNSwgLTczLjk2NTM2ODUxXSwgWzQwLjc0MDM0MzIwMDAwMDAxLCAtNzMuOTg5NTUxMDldLCBbNDAuNzI0MDU1NDksIC03NC4wMDk2NTk2NV0sIFs0MC43MjUyMTMxMSwgLTczLjk3NzY4NzUyXSwgWzQwLjcxOTExNTUyLCAtNzQuMDA2NjY2NjFdLCBbNDAuNjk1NzMzOTgsIC03My45NzEyOTY2OF0sIFs0MC43MzQyMzIsIC03My45ODY5MjNdLCBbNDAuNzUzMjMwOTgsIC03My45NzAzMjUxN10sIFs0MC42OTc4ODM0OSwgLTczLjk3MzUwMzMyXSwgWzQwLjY4NzUzNDA2LCAtNzMuOTcyNjUxODNdLCBbNDAuNzI4NzM4ODgsIC03NC4wMDc0ODg0Ml0sIFs0MC43NjA5NTc1NiwgLTczLjk2NzI0NDY3XSwgWzQwLjc1MTg4NDA2LCAtNzMuOTc3NzAxNjRdLCBbNDAuNzU1MDAyNTQsIC03My45ODAxNDQzN10sIFs0MC42OTIzNjE3OCwgLTczLjk4NjMxNzQ2XSwgWzQwLjczNDIzMiwgLTczLjk4NjkyM10sIFs0MC43MTkxMDUzNywgLTczLjk5OTczMzM3XV0sCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgbWluT3BhY2l0eTogMC41LAogICAgICAgICAgICAgICAgICAgIG1heFpvb206IDE4LAogICAgICAgICAgICAgICAgICAgIG1heDogMS4wLAogICAgICAgICAgICAgICAgICAgIHJhZGl1czogMjUsCiAgICAgICAgICAgICAgICAgICAgYmx1cjogMTUsCiAgICAgICAgICAgICAgICAgICAgZ3JhZGllbnQ6IG51bGwKICAgICAgICAgICAgICAgICAgICB9KQogICAgICAgICAgICAgICAgLmFkZFRvKG1hcF83MWVhYmQ5MzQ1Njg0NGJkOTRlNjI2OWQxYTJjMDU3Zik7CiAgICAgICAgCjwvc2NyaXB0Pg==" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div>
 </div>
 </div>
 <div class="section" id="Boston">
 <h2>Boston<a class="headerlink" href="#Boston" title="Permalink to this headline">¶</a></h2>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -600,16 +621,14 @@ Name: start_station, Length: 137, dtype: object
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>Out[17]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="output_area docutils container">
+<div class="output_area rendered_html docutils container">
 <div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVM9ZmFsc2U7IExfTk9fVE9VQ0g9ZmFsc2U7IExfRElTQUJMRV8zRD1mYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2FqYXguZ29vZ2xlYXBpcy5jb20vYWpheC9saWJzL2pxdWVyeS8xLjExLjEvanF1ZXJ5Lm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvanMvYm9vdHN0cmFwLm1pbi5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuanMiPjwvc2NyaXB0PgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvbnBtL2xlYWZsZXRAMS4yLjAvZGlzdC9sZWFmbGV0LmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLm1pbi5jc3MiLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC10aGVtZS5taW4uY3NzIi8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9MZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy8yLjAuMi9sZWFmbGV0LmF3ZXNvbWUtbWFya2Vycy5jc3MiLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9yYXdnaXQuY29tL3B5dGhvbi12aXN1YWxpemF0aW9uL2ZvbGl1bS9tYXN0ZXIvZm9saXVtL3RlbXBsYXRlcy9sZWFmbGV0LmF3ZXNvbWUucm90YXRlLmNzcyIvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgPHN0eWxlPiNtYXBfYzdkOWZiMmQyMDU1NDAxMmIxZDk2NTkyMWE2ZjhhOWIgewogICAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTsKICAgICAgICB3aWR0aDogMTAwLjAlOwogICAgICAgIGhlaWdodDogMTAwLjAlOwogICAgICAgIGxlZnQ6IDAuMCU7CiAgICAgICAgdG9wOiAwLjAlOwogICAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9sZWFmbGV0LmdpdGh1Yi5pby9MZWFmbGV0LmhlYXQvZGlzdC9sZWFmbGV0LWhlYXQuanMiPjwvc2NyaXB0Pgo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgPGRpdiBjbGFzcz0iZm9saXVtLW1hcCIgaWQ9Im1hcF9jN2Q5ZmIyZDIwNTU0MDEyYjFkOTY1OTIxYTZmOGE5YiIgPjwvZGl2Pgo8L2JvZHk+CjxzY3JpcHQ+ICAgIAogICAgCiAgICAKICAgICAgICB2YXIgYm91bmRzID0gbnVsbDsKICAgIAoKICAgIHZhciBtYXBfYzdkOWZiMmQyMDU1NDAxMmIxZDk2NTkyMWE2ZjhhOWIgPSBMLm1hcCgKICAgICAgICAnbWFwX2M3ZDlmYjJkMjA1NTQwMTJiMWQ5NjU5MjFhNmY4YTliJywgewogICAgICAgIGNlbnRlcjogWzQyLjM1OTY3NywgLTcxLjA1OTM2NF0sCiAgICAgICAgem9vbTogMTIsCiAgICAgICAgbWF4Qm91bmRzOiBib3VuZHMsCiAgICAgICAgbGF5ZXJzOiBbXSwKICAgICAgICB3b3JsZENvcHlKdW1wOiBmYWxzZSwKICAgICAgICBjcnM6IEwuQ1JTLkVQU0czODU3LAogICAgICAgIHpvb21Db250cm9sOiB0cnVlLAogICAgICAgIH0pOwoKICAgIAogICAgCiAgICB2YXIgdGlsZV9sYXllcl8zOGE2YjVmMzIwZDM0YjA1ODUyZWMzOTFhMjM4OWE3MSA9IEwudGlsZUxheWVyKAogICAgICAgICdodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZycsCiAgICAgICAgewogICAgICAgICJhdHRyaWJ1dGlvbiI6IG51bGwsCiAgICAgICAgImRldGVjdFJldGluYSI6IGZhbHNlLAogICAgICAgICJtYXhOYXRpdmVab29tIjogMTgsCiAgICAgICAgIm1heFpvb20iOiAxOCwKICAgICAgICAibWluWm9vbSI6IDAsCiAgICAgICAgIm5vV3JhcCI6IGZhbHNlLAogICAgICAgICJzdWJkb21haW5zIjogImFiYyIKfSkuYWRkVG8obWFwX2M3ZDlmYjJkMjA1NTQwMTJiMWQ5NjU5MjFhNmY4YTliKTsKICAgIAogICAgICAgICAgICB2YXIgaGVhdF9tYXBfN2U1NmIyNWJmMGY5NDZmM2JlMTljYzcyNGIxNmQzM2QgPSBMLmhlYXRMYXllcigKICAgICAgICAgICAgICAgIFtbNDIuMzU1NTk2MDAwMDAwMDEsIC03MS4wNzI3ODAwMDAwMDAwMl0sIFs0Mi4zNDcyNjUsIC03MS4wODgwODhdLCBbNDIuMzUyMDk2LCAtNzEuMDcwMzc4XSwgWzQyLjMzMDcxNiwgLTcxLjA1NzA0Mzk5OTk5OTk4XSwgWzQyLjM2MjgxMSwgLTcxLjA1NjA2N10sIFs0Mi4zNTExLCAtNzEuMDQ5Nl0sIFs0Mi4zNTAwNzUsIC03MS4xMDU4ODRdLCBbNDIuMzY2NDI2LCAtNzEuMTA1NDk0OTk5OTk5OThdLCBbNDIuMzU0OTc5LCAtNzEuMDYzMzQ4XSwgWzQyLjM1MjE3NSwgLTcxLjA1NTU0N10sIFs0Mi4zNTAwNzUsIC03MS4xMDU4ODRdLCBbNDIuMzcxODQ4LCAtNzEuMDYwMjkyXSwgWzQyLjM3MzI2OCwgLTcxLjExODU3OV0sIFs0Mi4zNjYyMzEsIC03MS4wNjA4NjhdLCBbNDIuMzU4OTIsIC03MS4wNTc2MjldLCBbNDIuMzUwODUxLCAtNzEuMDg5ODg1OTk5OTk5OThdLCBbNDIuMzU0NTk0LCAtNzEuMDU4OTZdLCBbNDIuMzQzOTEyLCAtNzEuMTAyMjIxXSwgWzQyLjM1MTE0NiwgLTcxLjA2NjI4OV0sIFs0Mi4zNzMyMzEsIC03MS4xMjA4ODZdLCBbNDIuMzU3MTQzLCAtNzEuMDUwNjk5XSwgWzQyLjM1Njc1NSwgLTcxLjA1NTQwNjk5OTk5OTk3XSwgWzQyLjM0NzUyNywgLTcxLjEwNTgyOF0sIFs0Mi4zNjY0MjYsIC03MS4xMDU0OTQ5OTk5OTk5OF0sIFs0Mi4zMzQwNzMsIC03MS4xMDUyMjFdLCBbNDIuMzY2NjIxLCAtNzEuMTE0MjE0XSwgWzQyLjM0NzI2NSwgLTcxLjA4ODA4OF0sIFs0Mi4zNjYyNzcsIC03MS4wOTE2OV0sIFs0Mi4zNjM1NjIsIC03MS4xMDA0Ml0sIFs0Mi4zNDkwNDYsIC03MS4wOTY4MzEwMDAwMDAwMl0sIFs0Mi4zODAyODcsIC03MS4xMjUxMDddLCBbNDIuMzYyODExLCAtNzEuMDU2MDY3XSwgWzQyLjM1MjE3NSwgLTcxLjA1NTU0N10sIFs0Mi4zNTI0MDksIC03MS4wNjI2NzldLCBbNDIuMzc3OTQ1LCAtNzEuMTE2ODY1XSwgWzQyLjM0MTgxNCwgLTcxLjA5MDE3OV0sIFs0Mi4zNDQwMjMsIC03MS4wNTcwNTQwMDAwMDAwMl0sIFs0Mi4zNTIxNzUsIC03MS4wNTU1NDddLCBbNDIuMzYzNTYyLCAtNzEuMTAwNDJdLCBbNDIuMzMxNTY3LCAtNzEuMDk0NzM0XSwgWzQyLjM5MDgyLCAtNzEuMTA5NDJdLCBbNDIuMzQxNTIyLCAtNzEuMDY4OTIyXSwgWzQyLjM0MDI5OSwgLTcxLjEwOTkyN10sIFs0Mi4zNDY1NjMsIC03MS4xMjgzNzRdLCBbNDIuMzQ5NjczLCAtNzEuMDc3MzAzXSwgWzQyLjM1MDA3NSwgLTcxLjEwNTg4NF0sIFs0Mi4zNDg3MTcsIC03MS4wODU5NTRdLCBbNDIuMzYyNDI5LCAtNzEuMDkwMTg4XSwgWzQyLjM0NjU2MywgLTcxLjEyODM3NF0sIFs0Mi4zNTcxNDMsIC03MS4wNTA2OTldLCBbNDIuMzY2OTgxLCAtNzEuMDc2NDcyXSwgWzQyLjM0Mzg2NCwgLTcxLjA4NTkxOF0sIFs0Mi4zNTExLCAtNzEuMDQ5Nl0sIFs0Mi4zMzcxNzEwMDAwMDAwMSwgLTcxLjEwMjc5N10sIFs0Mi4zMzE1NjcsIC03MS4wOTQ3MzRdLCBbNDIuMzY1MDcsIC03MS4xMDMxXSwgWzQyLjM0NzQzMywgLTcxLjA3NjE2M10sIFs0Mi4zNDc1MjcsIC03MS4xMDU4MjhdLCBbNDIuMzU5NzcwMDAwMDAwMDEsIC03MS4wNTE2MDFdLCBbNDIuMzYzODcxLCAtNzEuMDUwODc3XSwgWzQyLjMzNDA3MywgLTcxLjEwNTIyMV0sIFs0Mi4zNTIxNzUsIC03MS4wNTU1NDddLCBbNDIuMzczMjY4LCAtNzEuMTE4NTc5XSwgWzQyLjM2MjgxMSwgLTcxLjA1NjA2N10sIFs0Mi4zNTQ5NzksIC03MS4wNjMzNDhdLCBbNDIuMzUxMTQ2LCAtNzEuMDY2Mjg5XSwgWzQyLjMzODYyMywgLTcxLjA3NDE4Ml0sIFs0Mi4zNDU5NTksIC03MS4wODI1NzhdLCBbNDIuMzU1NDAyMDAwMDAwMDEsIC03MS4wNTgwODddLCBbNDIuMzQxNTk4LCAtNzEuMTIzMzM4XSwgWzQyLjM1NzE0MywgLTcxLjA1MDY5OV0sIFs0Mi4zNDc1LCAtNzEuMDQ0MV0sIFs0Mi4zMzg2MjksIC03MS4xMDY1XSwgWzQyLjM1MjE3NSwgLTcxLjA1NTU0N10sIFs0Mi4zNTIxNzUsIC03MS4wNTU1NDddLCBbNDIuMzU2NzU1LCAtNzEuMDU1NDA2OTk5OTk5OTddLCBbNDIuMzY1MDcsIC03MS4xMDMxXSwgWzQyLjMzNzE3MTAwMDAwMDAxLCAtNzEuMTAyNzk3XSwgWzQyLjM1MjE3NSwgLTcxLjA1NTU0N10sIFs0Mi4zNDEzMzIsIC03MS4wNzY4NDddLCBbNDIuMzYzODcxLCAtNzEuMDUwODc3XSwgWzQyLjM1MTgyMSwgLTcxLjA0NTQ2MV0sIFs0Mi4zNTIxNzUsIC03MS4wNTU1NDddLCBbNDIuMzQxMzMyLCAtNzEuMDc2ODQ3XSwgWzQyLjM2NjIyMiwgLTcxLjA1OTkxNF0sIFs0Mi4zNDkwNDYsIC03MS4wOTY4MzEwMDAwMDAwMl0sIFs0Mi4zNTIxNzUsIC03MS4wNTU1NDddLCBbNDIuMzQ0MDIzLCAtNzEuMDU3MDU0MDAwMDAwMDJdLCBbNDIuMzUyNDA5LCAtNzEuMDYyNjc5XSwgWzQyLjM1MDk4OSwgLTcxLjA3MzY0Mzk5OTk5OTk5XSwgWzQyLjM1OTc3MDAwMDAwMDAxLCAtNzEuMDUxNjAxXSwgWzQyLjM0OTY3MywgLTcxLjA3NzMwM10sIFs0Mi4zNDg3NjIsIC03MS4wODIzODNdLCBbNDIuMzczMjY4LCAtNzEuMTE4NTc5XSwgWzQyLjM1NzE0MywgLTcxLjA1MDY5OV0sIFs0Mi4zNTEzNTYsIC03MS4wNTkzNjcwMDAwMDAwMl0sIFs0Mi4zNzgzMzgsIC03MS4wNDg5MjddLCBbNDIuMzUyMTc1LCAtNzEuMDU1NTQ3XSwgWzQyLjM1MjE3NSwgLTcxLjA1NTU0N10sIFs0Mi4zNDUzOTIsIC03MS4wNjk2MTZdXSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBtaW5PcGFjaXR5OiAwLjUsCiAgICAgICAgICAgICAgICAgICAgbWF4Wm9vbTogMTgsCiAgICAgICAgICAgICAgICAgICAgbWF4OiAxLjAsCiAgICAgICAgICAgICAgICAgICAgcmFkaXVzOiAyNSwKICAgICAgICAgICAgICAgICAgICBibHVyOiAxNSwKICAgICAgICAgICAgICAgICAgICBncmFkaWVudDogbnVsbAogICAgICAgICAgICAgICAgICAgIH0pCiAgICAgICAgICAgICAgICAuYWRkVG8obWFwX2M3ZDlmYjJkMjA1NTQwMTJiMWQ5NjU5MjFhNmY4YTliKTsKICAgICAgICAKPC9zY3JpcHQ+" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -621,8 +640,7 @@ Name: start_station, Length: 137, dtype: object
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre>
-<span></span>In [ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -646,7 +664,7 @@ Name: start_station, Length: 137, dtype: object
     </p>
     <p>
         &copy; Copyright 2018, Gia Swop.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.<br/>
     </p>
   </div>
 </footer>

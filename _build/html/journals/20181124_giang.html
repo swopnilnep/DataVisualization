@@ -11,16 +11,16 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
 
@@ -97,10 +97,10 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="body col-md-12 content" role="main">
       
   <div class="section" id="heat-map">
-<span id="heat-map"></span><h1>Heat map<a class="headerlink" href="#heat-map" title="Permalink to this headline">¶</a></h1>
+<h1>Heat map<a class="headerlink" href="#heat-map" title="Permalink to this headline">¶</a></h1>
 <p>Today, I try to grapph the heat map and bikeshare station map. I don’t know why but I tried different ways to do the map, and it’s still not working. I have already imported folium, and folium.plugins. However, when I tried to run the code, it’s always showing that “MakerCluster module is not difined”. I then found out that if the module of folium is not working, I have to import each module separately. For example with the MakerCluster module, I have imported this line first “from folium.plugins import MarkerCluster” and the MakerCluster will work.</p>
 <p>I also have lots of problems with the heat map. When I run the code, it doesn’t show any errors, but it doesn’t appear as a HeatMap. Swop and I decided to ask Professor Kent Lee. After about 1 hour struggling with heat map, we found out that I made the mistakes with the orders of longtitude and lattitude, which makes the Heatmap not work at all.</p>
 <p>Moreover, the number of data is also limited in this graph. If I use all of the data, Jupyter Notebook cannot load the map. Therefore, Swop and I removed all the duplicates bikeshare stations and do the map again. At this time, all different kinds of map are working very well.</p>
@@ -119,7 +119,7 @@
     </p>
     <p>
         &copy; Copyright 2018, Gia Swop.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.<br/>
     </p>
   </div>
 </footer>

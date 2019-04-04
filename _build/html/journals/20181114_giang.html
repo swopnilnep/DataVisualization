@@ -11,16 +11,16 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
 
@@ -97,18 +97,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="body col-md-12 content" role="main">
       
   <div class="section" id="processor-of-normalizing-the-dataset">
-<span id="processor-of-normalizing-the-dataset"></span><h1>Processor of Normalizing the dataset<a class="headerlink" href="#processor-of-normalizing-the-dataset" title="Permalink to this headline">¶</a></h1>
+<h1>Processor of Normalizing the dataset<a class="headerlink" href="#processor-of-normalizing-the-dataset" title="Permalink to this headline">¶</a></h1>
 <p>In my past journals, I talked about the normalizing both datasets to do the data visualization after that. Today, I will talk about my process of normalizing my New York bikeshare dataset step by step.</p>
 <p>After reading my data from pandas, I renamed all the columns with lowercase characters.</p>
-<p><img alt="Change Column Names" src="../_images/change_columns_name.png" /></p>
+<p><img alt="../_images/change_columns_name.png" src="../_images/change_columns_name.png" />Change Column Names</p>
 <p>By reading the data file, I also decided to changes the data types of the birth year and tripduration columns. I then use np.nan to deal with the missing data (turning N/As to NaN)</p>
 <p>Birth year column: In this column, I replaced \N with NaN. At the first time, I have a trouble with this replacement because my code cannot define \N. I then tried to figure out the way to deal with this problem. I finally found out that I just had to edit my code a little bit. I just had to replace r”\N” with “NaN” instead of replacing “\N” with “NaN”. My last step was to change the column type from object to float. Here below is my code for this part.</p>
-<p><img alt="Normalizing the birth year column" src="../_images/birth_year_normalized.png" /></p>
+<p><img alt="../_images/birth_year_normalized.png" src="../_images/birth_year_normalized.png" />Normalizing the birth year column</p>
 <p>In the last columns (trip duration, gender, usertype), I converted all the information from seconds to minutes (trip duration), changed gender column from integer to string, and replaced “0, 1, 2” with “Unknown, Male, Female”, and also replaced the userype column from “Subcriber, Customer” to “Member, Non-member”. Here below is my code for this normalization.</p>
-<p><img alt="Normalizing other columns" src="../_images/tripduration_normalized.png" /></p>
+<p><img alt="../_images/tripduration_normalized.png" src="../_images/tripduration_normalized.png" />Normalizing other columns</p>
 </div>
 
 
@@ -124,7 +124,7 @@
     </p>
     <p>
         &copy; Copyright 2018, Gia Swop.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.<br/>
     </p>
   </div>
 </footer>

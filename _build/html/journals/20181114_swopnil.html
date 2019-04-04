@@ -11,16 +11,16 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
 
@@ -103,13 +103,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="body col-md-12 content" role="main">
       
   <div class="section" id="modules-and-tools-that-we-will-be-using">
-<span id="modules-and-tools-that-we-will-be-using"></span><h1>Modules and Tools that we will be using<a class="headerlink" href="#modules-and-tools-that-we-will-be-using" title="Permalink to this headline">¶</a></h1>
+<h1>Modules and Tools that we will be using<a class="headerlink" href="#modules-and-tools-that-we-will-be-using" title="Permalink to this headline">¶</a></h1>
 <p>After deciding that we would be using git and GitHub for repository management and Ipython notebooks for analysis, we had to make some decisions on what Python modules we would. Here is what we decided to use and the logic behind that:</p>
 <div class="section" id="website">
-<span id="website"></span><h2>Website<a class="headerlink" href="#website" title="Permalink to this headline">¶</a></h2>
+<h2>Website<a class="headerlink" href="#website" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>Hugo</strong>: Hugo was my first choice for making the website. It allowed for various ways to add markdown files and make a blogging website out of that. It supported Markdown tables and other markdown feature but one of the drawbacks I initially found was embedding IPython notesbooks into Hugo. I coulddn’t find something like <code class="docutils literal notranslate"><span class="pre">nbviewer</span></code>. Later I realized that were other extensions that supported the use of Jupyter Notebooks but I had already delved deep into the world of Sphinx.</li>
 <li><strong>Sphinx</strong>: Sphinx is mostly used for documenting Python projects so I initially looked for other modules that could generate websties, but I couldn’t find a better alternative that could embed Jupyter notebooks which I wanted to be a part of the website. Using Sphinx, I had to learn <code class="docutils literal notranslate"><span class="pre">reStructured</span></code> text. The benefit of using Sphinx is that is it already a well establised tool so there is a lot of support and extensions for it on the interewbs. I later added a markdown extension an a bootstrap theme extension.</li>
@@ -117,21 +117,21 @@
 </ul>
 </div>
 <div class="section" id="geographical-vizualizations">
-<span id="geographical-vizualizations"></span><h2>Geographical Vizualizations<a class="headerlink" href="#geographical-vizualizations" title="Permalink to this headline">¶</a></h2>
+<h2>Geographical Vizualizations<a class="headerlink" href="#geographical-vizualizations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>Folium</strong>: Giang discovered folium and it was a great extension to use to generate creative and stylistic geographical plots quickly.</li>
 <li><strong>Leaftet.js</strong>: I attempted to use Leaflet and generated some geographical plots but having geographical plots in both Leaflet and Folium did not add any value to the website so we just stuck with Folium.</li>
 </ul>
 </div>
 <div class="section" id="charts-plots-histograms">
-<span id="charts-plots-histograms"></span><h2>Charts, Plots, Histograms<a class="headerlink" href="#charts-plots-histograms" title="Permalink to this headline">¶</a></h2>
+<h2>Charts, Plots, Histograms<a class="headerlink" href="#charts-plots-histograms" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>Matplotlib</strong>: Matplotlib was the default library we used to generate plots. It allowed for customizability, and convenience due to its relizbility and support.</li>
 <li><strong>Seaborn</strong>: For some plots that were easier to generate in Seaborn like stacked plots, we used the Seaborn library. We did not get the chance to get in depth with Seaborn but it is something I would love to have more time with!</li>
 </ul>
 </div>
 <div class="section" id="interactive-plots">
-<span id="interactive-plots"></span><h2>Interactive Plots<a class="headerlink" href="#interactive-plots" title="Permalink to this headline">¶</a></h2>
+<h2>Interactive Plots<a class="headerlink" href="#interactive-plots" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><strong>Matplotlib</strong>: We used matplotlib again for interactive plotting</li>
 <li><strong>mpld3</strong>: Library that works in accordance with MatplotLib that allows for interaction with the plots</li>
@@ -153,7 +153,7 @@
     </p>
     <p>
         &copy; Copyright 2018, Gia Swop.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.<br/>
     </p>
   </div>
 </footer>

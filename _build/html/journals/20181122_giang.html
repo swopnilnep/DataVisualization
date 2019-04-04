@@ -11,16 +11,16 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
 
@@ -97,13 +97,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 content">
+    <div class="body col-md-12 content" role="main">
       
   <div class="section" id="accidental-checkouts-question">
-<span id="accidental-checkouts-question"></span><h1>Accidental Checkouts Question<a class="headerlink" href="#accidental-checkouts-question" title="Permalink to this headline">¶</a></h1>
+<h1>Accidental Checkouts Question<a class="headerlink" href="#accidental-checkouts-question" title="Permalink to this headline">¶</a></h1>
 <p>Today, I did some data visualization to explore how many accidental checkouts are in both New York City and Boston. I tried to figure out what are the accidental checkouts and how can we calculate the total accidental checkouts. After plotting the trip duration distribution, I realized that there were lots of trip with durations less than 3 minutes. Therefore, I decided that all the trips less than 3 minutes were regarded as accidental checkouts. Here below is my code to calculate the total accidental checkouts of New York City and Boston and the percentages of all the accidental checkouts:</p>
-<p><img alt="New York accidental checkouts" src="../_images/ny_checkouts.png" /></p>
-<p><img alt="Boston accidental checkouts" src="../_images/boston_checkouts.png" /></p>
+<p><img alt="../_images/ny_checkouts.png" src="../_images/ny_checkouts.png" />New York accidental checkouts</p>
+<p><img alt="../_images/boston_checkouts.png" src="../_images/boston_checkouts.png" />Boston accidental checkouts</p>
 <p>After that, I calculated that there are 32668 accidental checkouts in New York and there are 4751 accidental checkouts in Boston. We then tried to drop all the accidental checkouts and see new distributions of trip duration in both cities, but the distributions are not too different.</p>
 </div>
 
@@ -120,7 +120,7 @@
     </p>
     <p>
         &copy; Copyright 2018, Gia Swop.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.9.<br/>
     </p>
   </div>
 </footer>
